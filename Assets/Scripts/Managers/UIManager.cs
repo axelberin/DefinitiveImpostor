@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Setup - Options")]
     [SerializeField] private Toggle hintsToggle;
+    [SerializeField] private Toggle rerollToggle;
     [SerializeField] private Button startGameButton;
 
     [Header("Reveal UI")]
@@ -92,6 +93,7 @@ public class UIManager : MonoBehaviour
 
         RefreshImpostorCountUI();
         BuildCategoryToggles();
+        UpdateStartGameButtonState();
     }
 
     private void OnEnable()
@@ -139,7 +141,12 @@ public class UIManager : MonoBehaviour
         {
             players.Remove(player);
             Destroy(row.gameObject);
+            RefreshImpostorCountUI();
+            UpdateStartGameButtonState();
         });
+
+        RefreshImpostorCountUI();
+        UpdateStartGameButtonState();
     }
 
     private void BuildCategoryToggles()
@@ -153,6 +160,7 @@ public class UIManager : MonoBehaviour
         {
             CategoryToggleUI toggleUI = Instantiate(categoryTogglePrefab, categoriesContent);
             toggleUI.Setup(category);
+            toggleUI.OnValueChanged += UpdateStartGameButtonState;
             categoryToggles.Add(toggleUI);
         }
     }
@@ -181,6 +189,7 @@ public class UIManager : MonoBehaviour
         impostorCount = Mathf.Clamp(impostorCount, 1, maxImpostors);
 
         impostorCountText.text = impostorCount.ToString();
+        UpdateStartGameButtonState();
     }
 
     public void StartGameButton()
@@ -192,6 +201,15 @@ public class UIManager : MonoBehaviour
 
         gameRoundManager.StartRound(settings);
         ShowRevealScreen();
+    }
+
+    private void UpdateStartGameButtonState()
+    {
+        bool hasEnoughPlayers = players.Count >= 3;
+        bool hasCategorySelected = GetEnabledCategories().Count > 0;
+        bool hasAtLeastOneImpostor = impostorCount >= 1;
+
+        startGameButton.interactable = hasEnoughPlayers && hasCategorySelected && hasAtLeastOneImpostor;
     }
 
     private GameSettings BuildSettingsFromUI()
@@ -283,6 +301,9 @@ public class UIManager : MonoBehaviour
 
     public void RerollWordButton()
     {
+        if (!rerollToggle.isOn)
+            return;
+
         gameRoundManager.RerollCurrentWord();
     }
 
@@ -363,7 +384,7 @@ public class UIManager : MonoBehaviour
 
         bool isCivilian = !gameRoundManager.CurrentPlayer.IsImpostor;
 
-        rerollWordButton.gameObject.SetActive(isCivilian);
+        rerollWordButton.gameObject.SetActive(isCivilian && rerollToggle.isOn);
         wordDescriptionButton.gameObject.SetActive(isCivilian);
 
         HideWordDescription();
