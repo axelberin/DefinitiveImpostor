@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameRoundManager : MonoBehaviour
@@ -33,17 +34,7 @@ public class GameRoundManager : MonoBehaviour
 
         AssignRandomImpostors(Settings);
 
-        CurrentWordData = wordDatabase.GetRandomWordFromEnabledCategories(
-            Settings.EnabledCategories,
-            out string selectedCategory
-        );
-
-        if (CurrentWordData == null)
-        {
-            SendError("No se pudo elegir una palabra.");
-            return;
-        }
-
+        CurrentWordData = GetRandomWordForRound(out string selectedCategory);
         CurrentCategory = selectedCategory;
 
         CurrentPlayerIndex = 0;
@@ -222,10 +213,7 @@ public class GameRoundManager : MonoBehaviour
         if (CurrentPlayer.IsImpostor)
             return;
 
-        WordData newWordData = wordDatabase.GetRandomWordFromEnabledCategories(
-            Settings.EnabledCategories,
-            out string selectedCategory
-        );
+        WordData newWordData = GetRandomWordForRound(out string selectedCategory);
 
         if (newWordData == null)
         {
@@ -241,6 +229,43 @@ public class GameRoundManager : MonoBehaviour
         IsRoleVisible = false;
 
         NotifyCurrentPlayer();
+    }
+
+    private WordData GetRandomWordForRound(out string selectedCategory)
+    {
+        selectedCategory = Settings.EnabledCategories[
+            UnityEngine.Random.Range(0, Settings.EnabledCategories.Count)];
+
+        WordCategory category = wordDatabase.GetCategory(selectedCategory);
+
+        if (category == null)
+        {
+            SendError($"No existe la categoría: {selectedCategory}");
+            return null;
+        }
+
+        if (category.CategoryType == CategoryType.PlayerNames)
+        {
+            return CreatePlayerNameWord(Settings);
+        }
+
+        return wordDatabase.GetRandomWordFromEnabledCategories(
+            new List<string> { selectedCategory },
+            out _
+        );
+    }
+
+    private WordData CreatePlayerNameWord(GameSettings settings)
+    {
+        PlayerData randomPlayer =
+            settings.Players[UnityEngine.Random.Range(0, settings.Players.Count)];
+
+        return new WordData
+        {
+            Word = randomPlayer.PlayerName,
+            Hint = "Jugador",
+            Description = $"{randomPlayer.PlayerName} es un jugador de esta partida."
+        };
     }
 
     private void SendError(string message)

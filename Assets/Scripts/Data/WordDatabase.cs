@@ -330,6 +330,12 @@ public class WordDatabase : ScriptableObject
                 W("Venom", "Negro.")
             )
         };
+
+        categories.Add(new WordCategory
+        {
+            CategoryName = "Jugadores",
+            CategoryType = CategoryType.PlayerNames
+        });
     }
 
     private WordCategory CreateCategory(string categoryName, params WordData[] words)
@@ -349,5 +355,10 @@ public class WordDatabase : ScriptableObject
             Hint = hint,
             Description = description
         };
+    }
+
+    public WordCategory GetCategory(string categoryName)
+    {
+        return categories.Find(c => c.CategoryName == categoryName);
     }
 }
