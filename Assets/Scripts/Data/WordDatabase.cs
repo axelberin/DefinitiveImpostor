@@ -49,7 +49,7 @@ public class WordDatabase : ScriptableObject
         categories = new List<WordCategory>
         {
             CreateCategory("Famosos argentinos",
-                W("Messi", "Pelota."),
+                W("Messi", "Pelota.", "Lionel Messi es un futbolista argentino, considerado uno de los mejores jugadores de la historia."),
                 W("Maradona", "Diez."),
                 W("Lali Espósito", "Pop."),
                 W("Tini Stoessel", "Disney."),
@@ -193,7 +193,7 @@ public class WordDatabase : ScriptableObject
             ),
 
             CreateCategory("Videojuegos",
-                W("Minecraft", "Bloques."),
+                W("Minecraft", "Bloques.", "Videojuego de mundo abierto donde los jugadores exploran, construyen y sobreviven usando bloques."),
                 W("Fortnite", "Construcción."),
                 W("Roblox", "Mundos."),
                 W("Among Us", "Impostor."),
@@ -341,12 +341,13 @@ public class WordDatabase : ScriptableObject
         };
     }
 
-    private WordData W(string word, string hint)
+    private WordData W(string word, string hint, string description = "")
     {
         return new WordData
         {
             Word = word,
-            Hint = hint
+            Hint = hint,
+            Description = description
         };
     }
 }

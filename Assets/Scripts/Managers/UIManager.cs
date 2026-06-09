@@ -48,6 +48,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button revealRoleButton;
     [SerializeField] private Button nextPlayerButton;
     [SerializeField] private Button rerollWordButton;
+    [SerializeField] private Button wordDescriptionButton;
+
+    [Header("Word Description UI")]
+    [SerializeField] private GameObject wordDescriptionPanel;
+    [SerializeField] private TMP_Text wordDescriptionText;
+    [SerializeField] private Button closeWordDescriptionButton;
 
     [Header("Discussion UI")]
     [SerializeField] private TMP_Text discussionTitleText;
@@ -76,6 +82,9 @@ public class UIManager : MonoBehaviour
         increaseImpostorButton.onClick.AddListener(IncreaseImpostorCount);
         revealResultsButton.onClick.AddListener(ShowResultsScreen);
         rerollWordButton.onClick.AddListener(RerollWordButton);
+        wordDescriptionButton.onClick.AddListener(ShowWordDescription);
+        closeWordDescriptionButton.onClick.AddListener(HideWordDescription);
+
         restartButton.onClick.AddListener(ShowSetupScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
 
@@ -112,7 +121,6 @@ public class UIManager : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(playerName))
         {
-            HandleError("Escribí un nombre para agregar jugador.");
             return;
         }
 
@@ -292,6 +300,7 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
+        HideWordDescription();
     }
 
     private void ShowSetupScreen()
@@ -302,6 +311,7 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
+        HideWordDescription();
     }
 
     private void ShowRevealScreen()
@@ -312,6 +322,7 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(false);
         errorScreen.SetActive(false);
         resultsScreen.SetActive(false);
+        HideWordDescription();
 
         ShowRoleHiddenState();
     }
@@ -325,6 +336,7 @@ public class UIManager : MonoBehaviour
         errorScreen.SetActive(false);
 
         discussionTitleText.text = "Que comience el juego...";
+        HideWordDescription();
     }
 
     private void ShowRoleHiddenState()
@@ -335,6 +347,9 @@ public class UIManager : MonoBehaviour
         revealRoleButton.gameObject.SetActive(true);
         nextPlayerButton.gameObject.SetActive(false);
         rerollWordButton.gameObject.SetActive(false);
+        wordDescriptionButton.gameObject.SetActive(false);
+
+        HideWordDescription();
     }
 
     private void ShowRoleVisibleState()
@@ -346,6 +361,39 @@ public class UIManager : MonoBehaviour
         revealRoleButton.gameObject.SetActive(false);
         nextPlayerButton.gameObject.SetActive(true);
 
-        rerollWordButton.gameObject.SetActive(!gameRoundManager.CurrentPlayer.IsImpostor);
+        bool isCivilian = !gameRoundManager.CurrentPlayer.IsImpostor;
+
+        rerollWordButton.gameObject.SetActive(isCivilian);
+        wordDescriptionButton.gameObject.SetActive(isCivilian);
+
+        HideWordDescription();
+    }
+
+    private void ShowWordDescription()
+    {
+        if (wordDescriptionPanel == null || wordDescriptionText == null)
+            return;
+
+        WordData currentWord = gameRoundManager.CurrentWordData;
+
+        if (currentWord == null)
+        {
+            wordDescriptionText.text = "No hay una palabra cargada.";
+        }
+        else if (string.IsNullOrWhiteSpace(currentWord.Description))
+        {
+            wordDescriptionText.text = $"{currentWord.Word}: no tiene descripción cargada todavía.";
+        }
+        else
+        {
+            wordDescriptionText.text = currentWord.Description;
+        }
+
+        wordDescriptionPanel.SetActive(true);
+    }
+
+    private void HideWordDescription()
+    {
+        wordDescriptionPanel.SetActive(false);
     }
 }
