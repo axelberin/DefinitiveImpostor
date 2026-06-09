@@ -403,6 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2933460344564088088}
   - component: {fileID: 1275461911613249956}
+  - component: {fileID: -3427459097991717035}
   m_Layer: 5
   m_Name: PlayerRow
   m_TagString: Untagged
@@ -445,3 +446,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 720064521503358570}
   removeButton: {fileID: 545170860477603261}
+--- !u!114 &-3427459097991717035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030884134313768755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: 90
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1

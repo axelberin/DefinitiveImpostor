@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
 
     [Header("Setup - Players")]
     [SerializeField] private TMP_InputField playerNameInput;
-    [SerializeField] private Button addPlayerButton;
     [SerializeField] private Transform playersContent;
     [SerializeField] private PlayerRowUI playerRowPrefab;
 
@@ -68,7 +67,6 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         initialButton.onClick.AddListener(ShowSetupScreen);
-        addPlayerButton.onClick.AddListener(AddPlayerFromInput);
         startGameButton.onClick.AddListener(StartGameButton);
 
         revealRoleButton.onClick.AddListener(RevealRoleButton);
@@ -78,6 +76,8 @@ public class UIManager : MonoBehaviour
         revealResultsButton.onClick.AddListener(ShowResultsScreen);
         restartButton.onClick.AddListener(ShowSetupScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
+
+        playerNameInput.onEndEdit.AddListener(AddPlayerFromInput);
 
         RefreshImpostorCountUI();
         BuildCategoryToggles();
@@ -106,10 +106,8 @@ public class UIManager : MonoBehaviour
         ShowInitialScreen();
     }
 
-    private void AddPlayerFromInput()
+    private void AddPlayerFromInput(string playerName)
     {
-        string playerName = playerNameInput.text.Trim();
-
         if (string.IsNullOrWhiteSpace(playerName))
         {
             HandleError("Escribí un nombre para agregar jugador.");
