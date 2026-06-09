@@ -356,7 +356,8 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(true);
         errorScreen.SetActive(false);
 
-        discussionTitleText.text = "Que comience el juego...";
+        var players = gameRoundManager.Settings.Players;
+        discussionTitleText.text = $"Empieza {players[Random.Range(0, players.Count)].PlayerName}";
         HideWordDescription();
     }
 
