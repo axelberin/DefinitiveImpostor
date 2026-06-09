@@ -211,6 +211,38 @@ public class GameRoundManager : MonoBehaviour
         return true;
     }
 
+    public void RerollCurrentWord()
+    {
+        if (!IsRoundValid())
+            return;
+
+        if (!IsRoleVisible)
+            return;
+
+        if (CurrentPlayer.IsImpostor)
+            return;
+
+        WordData newWordData = wordDatabase.GetRandomWordFromEnabledCategories(
+            Settings.EnabledCategories,
+            out string selectedCategory
+        );
+
+        if (newWordData == null)
+        {
+            SendError("No se pudo rollear una nueva palabra.");
+            return;
+        }
+
+        CurrentWordData = newWordData;
+        CurrentCategory = selectedCategory;
+
+        CurrentPlayerIndex = 0;
+        IsRevealFinished = false;
+        IsRoleVisible = false;
+
+        NotifyCurrentPlayer();
+    }
+
     private void SendError(string message)
     {
         Debug.LogError(message);

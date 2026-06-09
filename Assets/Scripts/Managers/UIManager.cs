@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text roleText;
     [SerializeField] private Button revealRoleButton;
     [SerializeField] private Button nextPlayerButton;
+    [SerializeField] private Button rerollWordButton;
 
     [Header("Discussion UI")]
     [SerializeField] private TMP_Text discussionTitleText;
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour
         decreaseImpostorButton.onClick.AddListener(DecreaseImpostorCount);
         increaseImpostorButton.onClick.AddListener(IncreaseImpostorCount);
         revealResultsButton.onClick.AddListener(ShowResultsScreen);
+        rerollWordButton.onClick.AddListener(RerollWordButton);
         restartButton.onClick.AddListener(ShowSetupScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
 
@@ -271,6 +273,11 @@ public class UIManager : MonoBehaviour
         ShowDiscussionScreen();
     }
 
+    public void RerollWordButton()
+    {
+        gameRoundManager.RerollCurrentWord();
+    }
+
     private void HandleError(string message)
     {
         errorText.text = message;
@@ -327,6 +334,7 @@ public class UIManager : MonoBehaviour
 
         revealRoleButton.gameObject.SetActive(true);
         nextPlayerButton.gameObject.SetActive(false);
+        rerollWordButton.gameObject.SetActive(false);
     }
 
     private void ShowRoleVisibleState()
@@ -337,5 +345,7 @@ public class UIManager : MonoBehaviour
 
         revealRoleButton.gameObject.SetActive(false);
         nextPlayerButton.gameObject.SetActive(true);
+
+        rerollWordButton.gameObject.SetActive(!gameRoundManager.CurrentPlayer.IsImpostor);
     }
 }
