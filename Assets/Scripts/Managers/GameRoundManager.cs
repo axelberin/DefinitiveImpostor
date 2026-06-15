@@ -25,6 +25,9 @@ public class GameRoundManager : MonoBehaviour
     public event Action OnRevealFinished;
     public event Action<string> OnError;
 
+    private readonly Dictionary<PlayerData, string> impostorHints = new();
+    private readonly List<string> availableHints = new();
+
     public void StartRound(GameSettings settings)
     {
         if (!CanStartRound(settings))
@@ -36,6 +39,7 @@ public class GameRoundManager : MonoBehaviour
 
         CurrentWordData = GetRandomWordForRound(out string selectedCategory);
         CurrentCategory = selectedCategory;
+        PrepareImpostorHints();
 
         CurrentPlayerIndex = 0;
         IsRoundStarted = true;
@@ -123,10 +127,11 @@ public class GameRoundManager : MonoBehaviour
     {
         if (player.IsImpostor)
         {
-            if (Settings.HintsEnabled && !string.IsNullOrWhiteSpace(CurrentWordData.Hint))
-                return $"Sos impostor.\n\nPista: {CurrentWordData.Hint}";
+            string impostorText = $"Sos impostor.\nCategoría: {CurrentCategory}";
+            if (Settings.HintsEnabled && impostorHints.TryGetValue(player, out string hint))
+                return impostorText + $"\nPista: {hint}";
 
-            return "Sos impostor.";
+            return impostorText;
         }
 
         return $"Categoría: {CurrentCategory}\n\nPalabra: {CurrentWordData.Word}";
@@ -224,6 +229,8 @@ public class GameRoundManager : MonoBehaviour
         CurrentWordData = newWordData;
         CurrentCategory = selectedCategory;
 
+        PrepareImpostorHints();
+
         CurrentPlayerIndex = 0;
         IsRevealFinished = false;
         IsRoleVisible = false;
@@ -263,9 +270,45 @@ public class GameRoundManager : MonoBehaviour
         return new WordData
         {
             Word = randomPlayer.PlayerName,
-            Hint = "Jugador",
+            Hints = new()
+            {
+                "Jugador",
+            },
             Description = $"{randomPlayer.PlayerName} es un jugador de esta partida."
         };
+    }
+
+    private void PrepareImpostorHints()
+    {
+        impostorHints.Clear();
+        availableHints.Clear();
+
+        if (CurrentWordData == null || CurrentWordData.Hints == null)
+            return;
+
+        List<string> allHints = new();
+
+        foreach (string hint in CurrentWordData.Hints)
+        {
+            if (!string.IsNullOrWhiteSpace(hint))
+                allHints.Add(hint);
+        }
+
+        if (allHints.Count == 0)
+            return;
+
+        foreach (PlayerData player in Settings.Players)
+        {
+            if (!player.IsImpostor)
+                continue;
+
+            if (availableHints.Count == 0)
+                availableHints.AddRange(allHints);
+
+            int randomIndex = UnityEngine.Random.Range(0, availableHints.Count);
+            impostorHints[player] = availableHints[randomIndex];
+            availableHints.RemoveAt(randomIndex);
+        }
     }
 
     private void SendError(string message)
