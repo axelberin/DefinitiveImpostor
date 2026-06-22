@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
     [Header("Screens")]
     [SerializeField] private GameObject initialScreen;
     [SerializeField] private GameObject setupScreen;
+    [SerializeField] private GameObject menuSetupScreen;
+    [SerializeField] private GameObject impostorSetupScreen;
+    [SerializeField] private GameObject playersSetupScreen;
+    [SerializeField] private GameObject categorySetupScreen;
     [SerializeField] private GameObject revealScreen;
     [SerializeField] private GameObject roleHiddenScreen;
     [SerializeField] private GameObject roleVisibleScreen;
@@ -20,15 +24,23 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Button initialButton;
 
+    [Header("Setup")]
+    [SerializeField] private Button impostorSettingsButton;
+    [SerializeField] private Button playerSettingsButton;
+    [SerializeField] private Button categorySettingsButton;
+    [SerializeField] private Button backMenuSettingsButton;
+
     [Header("Setup - Players")]
     [SerializeField] private TMP_InputField playerNameInput;
     [SerializeField] private Transform playersContent;
     [SerializeField] private PlayerRowUI playerRowPrefab;
+    [SerializeField] private Button backPlayerSettingsButton;
 
     [Header("Setup - Impostors")]
     [SerializeField] private TMP_Text impostorCountText;
     [SerializeField] private Button decreaseImpostorButton;
     [SerializeField] private Button increaseImpostorButton;
+    [SerializeField] private Button backImpostorSettingsButton;
 
     private int impostorCount = 1;
 
@@ -36,6 +48,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform categoriesContent;
     [SerializeField] private CategoryToggleUI categoryTogglePrefab;
     [SerializeField] private WordDatabase wordDatabase;
+    [SerializeField] private Button backCategorySettingsButton;
 
     [Header("Setup - Options")]
     [SerializeField] private Toggle hintsToggle;
@@ -76,6 +89,15 @@ public class UIManager : MonoBehaviour
     {
         initialButton.onClick.AddListener(ShowSetupScreen);
         startGameButton.onClick.AddListener(StartGameButton);
+
+        impostorSettingsButton.onClick.AddListener(ShowImpostorSettingsScreen);
+        playerSettingsButton.onClick.AddListener(ShowPlayersSettingsScreen);
+        categorySettingsButton.onClick.AddListener(ShowCategorySettingsScreen);
+
+        backMenuSettingsButton.onClick.AddListener(ShowInitialScreen);
+        backImpostorSettingsButton.onClick.AddListener(ShowSetupScreen);
+        backPlayerSettingsButton.onClick.AddListener(ShowSetupScreen);
+        backCategorySettingsButton.onClick.AddListener(ShowSetupScreen);
 
         revealRoleButton.onClick.AddListener(RevealRoleButton);
         nextPlayerButton.onClick.AddListener(NextPlayerButton);
@@ -321,6 +343,9 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
+        impostorSetupScreen.SetActive(false);
+        playersSetupScreen.SetActive(false);
+        categorySetupScreen.SetActive(false);
         HideWordDescription();
     }
 
@@ -332,7 +357,43 @@ public class UIManager : MonoBehaviour
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
+
+        menuSetupScreen.SetActive(true);
+        impostorSetupScreen.SetActive(false);
+        playersSetupScreen.SetActive(false);
+        categorySetupScreen.SetActive(false);
+
         HideWordDescription();
+    }
+
+    private void ShowImpostorSettingsScreen()
+    {
+        setupScreen.SetActive(true);
+
+        menuSetupScreen.SetActive(false);
+        impostorSetupScreen.SetActive(true);
+        playersSetupScreen.SetActive(false);
+        categorySetupScreen.SetActive(false);
+    }
+
+    private void ShowPlayersSettingsScreen()
+    {
+        setupScreen.SetActive(true);
+
+        menuSetupScreen.SetActive(false);
+        impostorSetupScreen.SetActive(false);
+        playersSetupScreen.SetActive(true);
+        categorySetupScreen.SetActive(false);
+    }
+
+    private void ShowCategorySettingsScreen()
+    {
+        setupScreen.SetActive(true);
+
+        menuSetupScreen.SetActive(false);
+        impostorSetupScreen.SetActive(false);
+        playersSetupScreen.SetActive(false);
+        categorySetupScreen.SetActive(true);
     }
 
     private void ShowRevealScreen()
