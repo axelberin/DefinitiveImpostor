@@ -12,4 +12,1123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe647c7fdc7b754983d357ba66652b6, type: 3}
   m_Name: WordsDataBase
   m_EditorClassIdentifier: 
-  Categories: []
+  categories:
+  - CategoryName: Famosos argentinos
+    Description: "Sin descripci\xF3n"
+    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    CategoryImage: {fileID: 0}
+    CategoryType: 0
+    Words:
+    - Word: Messi
+      Hints:
+      - Pelota.
+      Description: Lionel Messi es un futbolista argentino, considerado uno de los
+        mejores jugadores de la historia.
+    - Word: Maradona
+      Hints:
+      - Diez.
+      Description: 
+    - Word: "Lali Esp\xF3sito"
+      Hints:
+      - Pop.
+      Description: 
+    - Word: Tini Stoessel
+      Hints:
+      - Disney.
+      Description: 
+    - Word: Duki
+      Hints:
+      - Trap.
+      Description: 
+    - Word: Bizarrap
+      Hints:
+      - "Sesi\xF3n."
+      Description: 
+    - Word: "Ricardo Dar\xEDn"
+      Hints:
+      - Cine.
+      Description: 
+    - Word: Guillermo Francella
+      Hints:
+      - Racing.
+      Description: 
+    - Word: "Susana Gim\xE9nez"
+      Hints:
+      - "Tel\xE9fono."
+      Description: 
+    - Word: Mirtha Legrand
+      Hints:
+      - Almuerzo.
+      Description: 
+    - Word: "Charly Garc\xEDa"
+      Hints:
+      - Piano.
+      Description: 
+    - Word: "Fito P\xE1ez"
+      Hints:
+      - Rosario.
+      Description: 
+    - Word: Gustavo Cerati
+      Hints:
+      - Soda.
+      Description: 
+    - Word: Abel Pintos
+      Hints:
+      - Pelado.
+      Description: 
+    - Word: Nicki Nicole
+      Hints:
+      - Petisa.
+      Description: 
+    - Word: Wanda Nara
+      Hints:
+      - Show.
+      Description: 
+    - Word: "Moria Cas\xE1n"
+      Hints:
+      - Rating.
+      Description: 
+    - Word: Paulo Dybala
+      Hints:
+      - Joya.
+      Description: 
+    - Word: "\xC1ngel Di Mar\xEDa"
+      Hints:
+      - Pasta.
+      Description: 
+    - Word: Ricardo Ford
+      Hints:
+      - Rol Royce.
+      Description: 
+  - CategoryName: Famosos globales
+    Description: "Sin descripci\xF3n"
+    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    CategoryImage: {fileID: 0}
+    CategoryType: 0
+    Words:
+    - Word: Taylor Swift
+      Hints:
+      - Eras.
+      Description: 
+    - Word: Cristiano Ronaldo
+      Hints:
+      - Ego.
+      Description: 
+    - Word: Dwayne Johnson
+      Hints:
+      - Piedra.
+      Description: 
+    - Word: "Beyonc\xE9"
+      Hints:
+      - Corona.
+      Description: 
+    - Word: Shakira
+      Hints:
+      - Caderas.
+      Description: 
+    - Word: Bad Bunny
+      Hints:
+      - Maldad.
+      Description: 
+    - Word: Ariana Grande
+      Hints:
+      - Agudo.
+      Description: 
+    - Word: Leonardo DiCaprio
+      Hints:
+      - Oscar.
+      Description: 
+    - Word: Tom Holland
+      Hints:
+      - "Ara\xF1a."
+      Description: 
+    - Word: Kim Kardashian
+      Hints:
+      - Reality.
+      Description: 
+    - Word: Elon Musk
+      Hints:
+      - Cohete.
+      Description: 
+    - Word: Billie Eilish
+      Hints:
+      - Susurro.
+      Description: 
+    - Word: Rihanna
+      Hints:
+      - Fenty.
+      Description: 
+    - Word: Justin Bieber
+      Hints:
+      - "Beb\xE9."
+      Description: 
+    - Word: Drake
+      Hints:
+      - "Canad\xE1."
+      Description: 
+    - Word: Lady Gaga
+      Hints:
+      - Ropa.
+      Description: 
+    - Word: Brad Pitt
+      Hints:
+      - Facha.
+      Description: 
+    - Word: Angelina Jolie
+      Hints:
+      - Juego.
+      Description: 
+    - Word: Ed Sheeran
+      Hints:
+      - Colorado.
+      Description: 
+  - CategoryName: "Pa\xEDses"
+    Description: Naciones del mundo
+    CategoryColor: {r: 0.9176471, g: 0.7019608, b: 0.03137255, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Argentina
+      Hints:
+      - Mate.
+      Description: 
+    - Word: Brasil
+      Hints:
+      - Carnaval.
+      Description: 
+    - Word: Chile
+      Hints:
+      - Cordillera.
+      Description: 
+    - Word: Uruguay
+      Hints:
+      - Termo.
+      Description: 
+    - Word: Paraguay
+      Hints:
+      - "Alba\xF1il."
+      Description: 
+    - Word: Bolivia
+      Hints:
+      - Altura.
+      Description: 
+    - Word: "Per\xFA"
+      Hints:
+      - Ruinas.
+      Description: 
+    - Word: Colombia
+      Hints:
+      - Fafa.
+      Description: 
+    - Word: "M\xE9xico"
+      Hints:
+      - Inseguro.
+      Description: 
+    - Word: Estados Unidos
+      Hints:
+      - Estrellas.
+      Description: 
+    - Word: "Canad\xE1"
+      Hints:
+      - Maple.
+      Description: 
+    - Word: "Espa\xF1a"
+      Hints:
+      - Flamenco.
+      Description: 
+    - Word: Francia
+      Hints:
+      - Torre.
+      Description: 
+    - Word: Italia
+      Hints:
+      - Pasta.
+      Description: 
+    - Word: Alemania
+      Hints:
+      - Autos.
+      Description: 
+    - Word: "Jap\xF3n"
+      Hints:
+      - Anime.
+      Description: 
+    - Word: China
+      Hints:
+      - Muralla.
+      Description: 
+    - Word: Australia
+      Hints:
+      - Animales.
+      Description: 
+    - Word: Egipto
+      Hints:
+      - "Pir\xE1mide."
+      Description: 
+    - Word: "Sud\xE1frica"
+      Hints:
+      - Safari.
+      Description: 
+  - CategoryName: Comidas
+    Description: "Gastronom\xEDa global"
+    CategoryColor: {r: 0.97647065, g: 0.45098042, b: 0.08627451, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 42fe27d3c86ed8f48b1a4e6534140fe0, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Pizza
+      Hints:
+      - Queso.
+      Description: 
+    - Word: Hamburguesa
+      Hints:
+      - Pan.
+      Description: 
+    - Word: Empanada
+      Hints:
+      - Repulgue.
+      Description: 
+    - Word: Milanesa
+      Hints:
+      - Empanado.
+      Description: 
+    - Word: Asado
+      Hints:
+      - Parrilla.
+      Description: 
+    - Word: Sushi
+      Hints:
+      - Arroz.
+      Description: 
+    - Word: Taco
+      Hints:
+      - Tortilla.
+      Description: 
+    - Word: Pasta
+      Hints:
+      - Salsa.
+      Description: 
+    - Word: Ravioles
+      Hints:
+      - Relleno.
+      Description: 
+    - Word: "\xD1oquis"
+      Hints:
+      - Papa.
+      Description: 
+    - Word: Helado
+      Hints:
+      - "Fr\xEDo."
+      Description: 
+    - Word: Torta
+      Hints:
+      - Vela.
+      Description: 
+    - Word: Pancho
+      Hints:
+      - Salchicha.
+      Description: 
+    - Word: Lomito
+      Hints:
+      - "S\xE1ndwich."
+      Description: 
+    - Word: "Chorip\xE1n"
+      Hints:
+      - Chorizo.
+      Description: 
+    - Word: Ensalada
+      Hints:
+      - Verde.
+      Description: 
+    - Word: Pollo frito
+      Hints:
+      - Crocante.
+      Description: 
+    - Word: Papas fritas
+      Hints:
+      - "Bast\xF3n."
+      Description: 
+    - Word: Arroz
+      Hints:
+      - Grano.
+      Description: 
+    - Word: Lasagna
+      Hints:
+      - Capas.
+      Description: 
+  - CategoryName: Objetos
+    Description: Objetos
+    CategoryColor: {r: 0.5529412, g: 0.34117648, b: 0.16078432, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 4912e7ea4ae37484fa35aadde3fb53b3, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Celular
+      Hints:
+      - Pantalla.
+      Description: 
+    - Word: Computadora
+      Hints:
+      - Trabajo.
+      Description: 
+    - Word: Teclado
+      Hints:
+      - Teclas.
+      Description: 
+    - Word: Mouse
+      Hints:
+      - Cursor.
+      Description: 
+    - Word: Monitor
+      Hints:
+      - Imagen.
+      Description: 
+    - Word: Mesa
+      Hints:
+      - Apoyo.
+      Description: 
+    - Word: Silla
+      Hints:
+      - Sentarse.
+      Description: 
+    - Word: Botella
+      Hints:
+      - Agua.
+      Description: 
+    - Word: Vaso
+      Hints:
+      - Bebida.
+      Description: 
+    - Word: Plato
+      Hints:
+      - Comida.
+      Description: 
+    - Word: Cuchara
+      Hints:
+      - Sopa.
+      Description: 
+    - Word: Tenedor
+      Hints:
+      - Puntas.
+      Description: 
+    - Word: Cuchillo
+      Hints:
+      - Corte.
+      Description: 
+    - Word: Mochila
+      Hints:
+      - Espalda.
+      Description: 
+    - Word: Libro
+      Hints:
+      - "P\xE1ginas."
+      Description: 
+    - Word: "L\xE1piz"
+      Hints:
+      - Grafito.
+      Description: 
+    - Word: Lapicera
+      Hints:
+      - Tinta.
+      Description: 
+    - Word: Cuaderno
+      Hints:
+      - Hojas.
+      Description: 
+    - Word: Auriculares
+      Hints:
+      - Sonido.
+      Description: 
+    - Word: Control remoto
+      Hints:
+      - Botones.
+      Description: 
+    - Word: Televisor
+      Hints:
+      - Series.
+      Description: 
+    - Word: "L\xE1mpara"
+      Hints:
+      - Luz.
+      Description: 
+    - Word: Cama
+      Hints:
+      - "Sue\xF1o."
+      Description: 
+    - Word: Almohada
+      Hints:
+      - Cabeza.
+      Description: 
+    - Word: Reloj
+      Hints:
+      - Hora.
+      Description: 
+    - Word: Billetera
+      Hints:
+      - Plata.
+      Description: 
+    - Word: Llaves
+      Hints:
+      - Puerta.
+      Description: 
+    - Word: Paraguas
+      Hints:
+      - Lluvia.
+      Description: 
+    - Word: Zapatilla
+      Hints:
+      - Cordones.
+      Description: 
+    - Word: Campera
+      Hints:
+      - Abrigo.
+      Description: 
+    - Word: Gorra
+      Hints:
+      - Visera.
+      Description: 
+    - Word: Espejo
+      Hints:
+      - Reflejo.
+      Description: 
+    - Word: Cepillo
+      Hints:
+      - Cerdas.
+      Description: 
+    - Word: Toalla
+      Hints:
+      - Seco.
+      Description: 
+    - Word: "Jab\xF3n"
+      Hints:
+      - Espuma.
+      Description: 
+    - Word: Shampoo
+      Hints:
+      - Pelo.
+      Description: 
+    - Word: Ventilador
+      Hints:
+      - Aire.
+      Description: 
+    - Word: Heladera
+      Hints:
+      - "Fr\xEDo."
+      Description: 
+    - Word: Microondas
+      Hints:
+      - "R\xE1pido."
+      Description: 
+    - Word: Horno
+      Hints:
+      - Calor.
+      Description: 
+    - Word: "Sart\xE9n"
+      Hints:
+      - Fuego.
+      Description: 
+    - Word: Olla
+      Hints:
+      - Agua.
+      Description: 
+    - Word: Tijera
+      Hints:
+      - Papel.
+      Description: 
+    - Word: Cinta
+      Hints:
+      - Pegamento.
+      Description: 
+    - Word: Caja
+      Hints:
+      - Guardar.
+      Description: 
+    - Word: Bolsa
+      Hints:
+      - Compras.
+      Description: 
+    - Word: Pelota
+      Hints:
+      - Juego.
+      Description: 
+    - Word: Bicicleta
+      Hints:
+      - Ruedas.
+      Description: 
+    - Word: Cargador
+      Hints:
+      - "Bater\xEDa."
+      Description: 
+    - Word: Pendrive
+      Hints:
+      - Archivos.
+      Description: 
+  - CategoryName: Videojuegos
+    Description: "Personajes y t\xEDtulos"
+    CategoryColor: {r: 0.023529414, g: 0.7137255, b: 0.8313726, a: 1}
+    CategoryImage: {fileID: 21300000, guid: a09d3525dd1951f45a7c7a4ae541a983, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Minecraft
+      Hints:
+      - Bloques.
+      Description: Videojuego de mundo abierto donde los jugadores exploran, construyen
+        y sobreviven usando bloques.
+    - Word: Fortnite
+      Hints:
+      - "Construcci\xF3n."
+      Description: 
+    - Word: Roblox
+      Hints:
+      - Mundos.
+      Description: 
+    - Word: Among Us
+      Hints:
+      - Impostor.
+      Description: 
+    - Word: GTA
+      Hints:
+      - Ciudad.
+      Description: 
+    - Word: The Sims
+      Hints:
+      - Vida.
+      Description: 
+    - Word: FIFA
+      Hints:
+      - Cancha.
+      Description: 
+    - Word: Call of Duty
+      Hints:
+      - Guerra.
+      Description: 
+    - Word: Valorant
+      Hints:
+      - Agentes.
+      Description: 
+    - Word: League of Legends
+      Hints:
+      - "L\xEDneas."
+      Description: 
+    - Word: Counter Strike
+      Hints:
+      - Bomba.
+      Description: 
+    - Word: Fall Guys
+      Hints:
+      - Carrera.
+      Description: 
+    - Word: Mario Kart
+      Hints:
+      - Kart.
+      Description: 
+    - Word: Zelda
+      Hints:
+      - Trifuerza.
+      Description: 
+    - Word: "Pok\xE9mon"
+      Hints:
+      - Criaturas.
+      Description: 
+    - Word: Resident Evil
+      Hints:
+      - Zombies.
+      Description: 
+    - Word: Silent Hill
+      Hints:
+      - Niebla.
+      Description: 
+    - Word: Elden Ring
+      Hints:
+      - Anillo.
+      Description: 
+    - Word: God of War
+      Hints:
+      - Hacha.
+      Description: 
+    - Word: The Last of Us
+      Hints:
+      - Infectados.
+      Description: 
+  - CategoryName: Animales
+    Description: Fauna del mundo
+    CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 1ac1e909073a80e47a63387c64b494a9, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Perro
+      Hints:
+      - Ladrido.
+      Description: 
+    - Word: Gato
+      Hints:
+      - Maullido.
+      Description: 
+    - Word: "Le\xF3n"
+      Hints:
+      - Melena.
+      Description: 
+    - Word: Tigre
+      Hints:
+      - Rayas.
+      Description: 
+    - Word: Elefante
+      Hints:
+      - Trompa.
+      Description: 
+    - Word: Jirafa
+      Hints:
+      - Cuello.
+      Description: 
+    - Word: Mono
+      Hints:
+      - Banana.
+      Description: 
+    - Word: Caballo
+      Hints:
+      - Galope.
+      Description: 
+    - Word: Vaca
+      Hints:
+      - Leche.
+      Description: 
+    - Word: Cerdo
+      Hints:
+      - Granja.
+      Description: 
+    - Word: Gallina
+      Hints:
+      - Huevos.
+      Description: 
+    - Word: Pato
+      Hints:
+      - Cuac.
+      Description: 
+    - Word: Conejo
+      Hints:
+      - Orejas.
+      Description: 
+    - Word: Oso
+      Hints:
+      - Miel.
+      Description: 
+    - Word: Lobo
+      Hints:
+      - Manada.
+      Description: 
+    - Word: Zorro
+      Hints:
+      - Astuto.
+      Description: 
+    - Word: "Delf\xEDn"
+      Hints:
+      - Salto.
+      Description: 
+    - Word: "Tibur\xF3n"
+      Hints:
+      - Dientes.
+      Description: 
+    - Word: "Ping\xFCino"
+      Hints:
+      - Hielo.
+      Description: 
+    - Word: Cocodrilo
+      Hints:
+      - "Mand\xEDbula."
+      Description: 
+  - CategoryName: "Pel\xEDculas"
+    Description: Cine y series
+    CategoryColor: {r: 0.23137257, g: 0.50980395, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 9a6e1a042db724646b8802e0adc1ac33, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Titanic
+      Hints:
+      - Barco.
+      Description: 
+    - Word: Avatar
+      Hints:
+      - Azul.
+      Description: 
+    - Word: Toy Story
+      Hints:
+      - Juguetes.
+      Description: 
+    - Word: Shrek
+      Hints:
+      - Ogro.
+      Description: 
+    - Word: Frozen
+      Hints:
+      - Hielo.
+      Description: 
+    - Word: Harry Potter
+      Hints:
+      - Varita.
+      Description: 
+    - Word: "El Se\xF1or de los Anillos"
+      Hints:
+      - Anillo.
+      Description: 
+    - Word: Star Wars
+      Hints:
+      - Galaxia.
+      Description: 
+    - Word: Jurassic Park
+      Hints:
+      - Dinosaurio.
+      Description: 
+    - Word: Spider-Man
+      Hints:
+      - "Telara\xF1a."
+      Description: 
+    - Word: Batman
+      Hints:
+      - "Murci\xE9lago."
+      Description: 
+    - Word: Avengers
+      Hints:
+      - Equipo.
+      Description: 
+    - Word: Iron Man
+      Hints:
+      - Armadura.
+      Description: 
+    - Word: Coco
+      Hints:
+      - Recuerdo.
+      Description: 
+    - Word: Buscando a Nemo
+      Hints:
+      - "Oc\xE9ano."
+      Description: 
+    - Word: "R\xE1pidos y Furiosos"
+      Hints:
+      - Autos.
+      Description: 
+    - Word: Matrix
+      Hints:
+      - "C\xF3digo."
+      Description: 
+    - Word: "El Rey Le\xF3n"
+      Hints:
+      - Selva.
+      Description: 
+    - Word: Intensamente
+      Hints:
+      - "Emoci\xF3n."
+      Description: 
+    - Word: Barbie
+      Hints:
+      - Rosa.
+      Description: 
+  - CategoryName: Marcas
+    Description: Empresas globales
+    CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 692b951fffc046144b386477375126aa, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Nike
+      Hints:
+      - Zapatilla.
+      Description: 
+    - Word: Adidas
+      Hints:
+      - Rayas.
+      Description: 
+    - Word: Apple
+      Hints:
+      - Manzana.
+      Description: 
+    - Word: Samsung
+      Hints:
+      - Pantalla.
+      Description: 
+    - Word: Coca-Cola
+      Hints:
+      - Rojo.
+      Description: 
+    - Word: Pepsi
+      Hints:
+      - Azul.
+      Description: 
+    - Word: McDonald's
+      Hints:
+      - Cajita.
+      Description: 
+    - Word: Burger King
+      Hints:
+      - Corona.
+      Description: 
+    - Word: Netflix
+      Hints:
+      - Streaming.
+      Description: 
+    - Word: Disney
+      Hints:
+      - "Rat\xF3n."
+      Description: 
+    - Word: Google
+      Hints:
+      - Buscar.
+      Description: 
+    - Word: Microsoft
+      Hints:
+      - Ventana.
+      Description: 
+    - Word: Amazon
+      Hints:
+      - Paquete.
+      Description: 
+    - Word: PlayStation
+      Hints:
+      - Control.
+      Description: 
+    - Word: Xbox
+      Hints:
+      - Verde.
+      Description: 
+    - Word: Nintendo
+      Hints:
+      - Bigote.
+      Description: 
+    - Word: Puma
+      Hints:
+      - Felino.
+      Description: 
+    - Word: Gucci
+      Hints:
+      - Lujo.
+      Description: 
+    - Word: Zara
+      Hints:
+      - Ropa.
+      Description: 
+    - Word: Mercado Libre
+      Hints:
+      - Compra.
+      Description: 
+  - CategoryName: Profesiones
+    Description: Oficios y carreras
+    CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: "M\xE9dico"
+      Hints:
+      - Guardapolvo.
+      Description: 
+    - Word: Abogado
+      Hints:
+      - Juicio.
+      Description: 
+    - Word: Profesor
+      Hints:
+      - Aula.
+      Description: 
+    - Word: Programador
+      Hints:
+      - "C\xF3digo."
+      Description: 
+    - Word: "Dise\xF1ador"
+      Hints:
+      - Visual.
+      Description: 
+    - Word: Arquitecto
+      Hints:
+      - Planos.
+      Description: 
+    - Word: Ingeniero
+      Hints:
+      - "T\xE9cnica."
+      Description: 
+    - Word: Cocinero
+      Hints:
+      - Receta.
+      Description: 
+    - Word: "Polic\xEDa"
+      Hints:
+      - Sirena.
+      Description: 
+    - Word: Bombero
+      Hints:
+      - Fuego.
+      Description: 
+    - Word: Veterinario
+      Hints:
+      - Mascota.
+      Description: 
+    - Word: "Psic\xF3logo"
+      Hints:
+      - Mente.
+      Description: 
+    - Word: Contador
+      Hints:
+      - Impuestos.
+      Description: 
+    - Word: Periodista
+      Hints:
+      - Noticia.
+      Description: 
+    - Word: Actor
+      Hints:
+      - Escena.
+      Description: 
+    - Word: Cantante
+      Hints:
+      - "Micr\xF3fono."
+      Description: 
+    - Word: Electricista
+      Hints:
+      - Cable.
+      Description: 
+    - Word: Plomero
+      Hints:
+      - "Ca\xF1o."
+      Description: 
+    - Word: Carpintero
+      Hints:
+      - Madera.
+      Description: 
+    - Word: Peluquero
+      Hints:
+      - Tijera.
+      Description: 
+  - CategoryName: "Superh\xE9roes"
+    Description: "Personajes de c\xF3mic y cine"
+    CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
+    CategoryType: 0
+    Words:
+    - Word: Spider-Man
+      Hints:
+      - "M\xE1scara"
+      Description: 
+    - Word: Batman
+      Hints:
+      - Noche.
+      Description: 
+    - Word: Superman
+      Hints:
+      - Volar.
+      Description: 
+    - Word: Wonder Woman
+      Hints:
+      - "L\xE1tigo."
+      Description: 
+    - Word: Iron Man
+      Hints:
+      - Genio.
+      Description: 
+    - Word: Captain America
+      Hints:
+      - Escudo.
+      Description: 
+    - Word: Thor
+      Hints:
+      - Martillo.
+      Description: 
+    - Word: Hulk
+      Hints:
+      - Verde.
+      Description: 
+    - Word: Black Widow
+      Hints:
+      - Insecto.
+      Description: 
+    - Word: Doctor Strange
+      Hints:
+      - Capa.
+      Description: 
+    - Word: Black Panther
+      Hints:
+      - Animal.
+      Description: 
+    - Word: Flash
+      Hints:
+      - Velocidad.
+      Description: 
+    - Word: Aquaman
+      Hints:
+      - Tridente.
+      Description: 
+    - Word: Wolverine
+      Hints:
+      - Garras.
+      Description: 
+    - Word: Deadpool
+      Hints:
+      - Sarcasmo.
+      Description: 
+    - Word: Ant-Man
+      Hints:
+      - Chiquito.
+      Description: 
+    - Word: Captain Marvel
+      Hints:
+      - "Energ\xEDa."
+      Description: 
+    - Word: Green Lantern
+      Hints:
+      - Anillo.
+      Description: 
+    - Word: Daredevil
+      Hints:
+      - Vista.
+      Description: 
+    - Word: Venom
+      Hints:
+      - Negro.
+      Description: 
+  - CategoryName: Jugadores
+    Description: Participantes de la partida
+    CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 60f9d6d8aa1d6f34b9bf92b5dc7f6faa, type: 3}
+    CategoryType: 1
+    Words: []
+  categoryVisualData:
+  - CategoryName: Famosos argentinos
+    Description: Celebridades de Argentina
+    CategoryColor: {r: 0.92549026, g: 0.28235295, b: 0.6, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryName: Animales
+    Description: Fauna del mundo
+    CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 1ac1e909073a80e47a63387c64b494a9, type: 3}
+  - CategoryName: Comidas
+    Description: "Gastronom\xEDa global"
+    CategoryColor: {r: 0.97647065, g: 0.45098042, b: 0.08627451, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 42fe27d3c86ed8f48b1a4e6534140fe0, type: 3}
+  - CategoryName: Objetos
+    Description: Objetos
+    CategoryColor: {r: 0.5529412, g: 0.34117648, b: 0.16078432, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 4912e7ea4ae37484fa35aadde3fb53b3, type: 3}
+  - CategoryName: "Pa\xEDses"
+    Description: Naciones del mundo
+    CategoryColor: {r: 0.9176471, g: 0.7019608, b: 0.03137255, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryName: "Pel\xEDculas"
+    Description: Cine y series
+    CategoryColor: {r: 0.23137257, g: 0.50980395, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 9a6e1a042db724646b8802e0adc1ac33, type: 3}
+  - CategoryName: Profesiones
+    Description: Oficios y carreras
+    CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryName: Videojuegos
+    Description: "Personajes y t\xEDtulos"
+    CategoryColor: {r: 0.023529414, g: 0.7137255, b: 0.8313726, a: 1}
+    CategoryImage: {fileID: 21300000, guid: a09d3525dd1951f45a7c7a4ae541a983, type: 3}
+  - CategoryName: Famosos globales
+    Description: Celebridades globales
+    CategoryColor: {r: 0.46274513, g: 0.2392157, b: 0.34901962, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryName: Marcas
+    Description: Empresas globales
+    CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 692b951fffc046144b386477375126aa, type: 3}
+  - CategoryName: "Superh\xE9roes"
+    Description: "Personajes de c\xF3mic y cine"
+    CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
+  - CategoryName: Jugadores
+    Description: Participantes de la partida
+    CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 60f9d6d8aa1d6f34b9bf92b5dc7f6faa, type: 3}

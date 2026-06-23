@@ -54,6 +54,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CategoryToggleUI categoryTogglePrefab;
     [SerializeField] private WordDatabase wordDatabase;
     [SerializeField] private Button backCategorySettingsButton;
+    [SerializeField] private TMP_Text selectedCategoriesText;
+    [SerializeField] private Button selectAllCategoriesButton;
+    [SerializeField] private Button deselectAllCategoriesButton;
 
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
@@ -108,6 +111,8 @@ public class UIManager : MonoBehaviour
         rerollWordButton.onClick.AddListener(RerollWordButton);
         wordDescriptionButton.onClick.AddListener(ShowWordDescription);
         closeWordDescriptionButton.onClick.AddListener(HideWordDescription);
+        selectAllCategoriesButton.onClick.AddListener(SelectAllCategories);
+        deselectAllCategoriesButton.onClick.AddListener(DeselectAllCategories);
 
         restartButton.onClick.AddListener(ShowSetupScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
@@ -228,13 +233,60 @@ public class UIManager : MonoBehaviour
 
         categoryToggles.Clear();
 
-        foreach (string category in wordDatabase.GetCategoryNames())
+        foreach (string categoryName in wordDatabase.GetCategoryNames())
         {
+            WordCategory category = wordDatabase.GetCategory(categoryName);
+
+            if (category == null)
+                continue;
+
             CategoryToggleUI toggleUI = Instantiate(categoryTogglePrefab, categoriesContent);
             toggleUI.Setup(category);
-            toggleUI.OnValueChanged += UpdateStartGameButtonState;
+
+            toggleUI.OnValueChanged += UpdateCategoriesUI;
+
             categoryToggles.Add(toggleUI);
         }
+
+        UpdateCategoriesUI();
+    }
+
+    private void UpdateCategoriesUI()
+    {
+        int selectedCount = GetEnabledCategories().Count;
+
+        if (selectedCategoriesText != null)
+        {
+            selectedCategoriesText.text = $"{selectedCount} seleccionadas";
+        }
+
+        if (selectAllCategoriesButton != null)
+            selectAllCategoriesButton.interactable = selectedCount < categoryToggles.Count;
+
+        if (deselectAllCategoriesButton != null)
+            deselectAllCategoriesButton.interactable = selectedCount > 0;
+
+        UpdateStartGameButtonState();
+    }
+
+    private void SelectAllCategories()
+    {
+        SetAllCategories(true);
+    }
+
+    private void DeselectAllCategories()
+    {
+        SetAllCategories(false);
+    }
+
+    private void SetAllCategories(bool isSelected)
+    {
+        foreach (CategoryToggleUI toggleUI in categoryToggles)
+        {
+            toggleUI.SetSelected(isSelected, false);
+        }
+
+        UpdateCategoriesUI();
     }
 
     private void IncreaseImpostorCount()

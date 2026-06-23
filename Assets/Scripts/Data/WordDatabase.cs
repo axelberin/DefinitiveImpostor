@@ -6,6 +6,7 @@ using UnityEngine;
 public class WordDatabase : ScriptableObject
 {
     [SerializeField] private List<WordCategory> categories = new();
+    [SerializeField] private List<CategoryVisualData> categoryVisualData = new();
 
     public IReadOnlyList<WordCategory> Categories => categories;
 
@@ -45,11 +46,16 @@ public class WordDatabase : ScriptableObject
         return randomCategory.Words[Random.Range(0, randomCategory.Words.Count)];
     }
 
+    private CategoryVisualData GetVisualData(string categoryName)
+    {
+        return categoryVisualData.Find(x => x.CategoryName == categoryName);
+    }
+
     private void LoadDefaultCategories()
     {
         categories = new()
         {
-            CreateCategory("Famosos argentinos",
+            CreateCategory("Famosos argentinos", CategoryType.Normal,
                 W("Messi", new[] { "Pelota." }, "Lionel Messi es un futbolista argentino, considerado uno de los mejores jugadores de la historia."),
                 W("Maradona", new[] { "Diez." }),
                 W("Lali Espósito", new[] { "Pop." }),
@@ -72,7 +78,7 @@ public class WordDatabase : ScriptableObject
                 W("Ricardo Ford", new[] { "Rol Royce." })
             ),
 
-            CreateCategory("Famosos globales",
+            CreateCategory("Famosos globales", CategoryType.Normal,
                 W("Taylor Swift", new[] { "Eras." }),
                 W("Cristiano Ronaldo", new[] { "Ego." }),
                 W("Dwayne Johnson", new[] { "Piedra." }),
@@ -94,7 +100,7 @@ public class WordDatabase : ScriptableObject
                 W("Ed Sheeran", new[] { "Colorado." })
             ),
 
-            CreateCategory("Países",
+            CreateCategory("Países", CategoryType.Normal,
                 W("Argentina", new[] { "Mate." }),
                 W("Brasil", new[] { "Carnaval." }),
                 W("Chile", new[] { "Cordillera." }),
@@ -117,7 +123,7 @@ public class WordDatabase : ScriptableObject
                 W("Sudáfrica", new[] { "Safari." })
             ),
 
-            CreateCategory("Comidas",
+            CreateCategory("Comidas", CategoryType.Normal,
                 W("Pizza", new[] { "Queso." }),
                 W("Hamburguesa", new[] { "Pan." }),
                 W("Empanada", new[] { "Repulgue." }),
@@ -140,7 +146,7 @@ public class WordDatabase : ScriptableObject
                 W("Lasagna", new[] { "Capas." })
             ),
 
-            CreateCategory("Objetos",
+            CreateCategory("Objetos", CategoryType.Normal,
                 W("Celular", new[] { "Pantalla." }),
                 W("Computadora", new[] { "Trabajo." }),
                 W("Teclado", new[] { "Teclas." }),
@@ -193,7 +199,7 @@ public class WordDatabase : ScriptableObject
                 W("Pendrive", new[] { "Archivos." })
             ),
 
-            CreateCategory("Videojuegos",
+            CreateCategory("Videojuegos", CategoryType.Normal,
                 W("Minecraft", new[] { "Bloques." }, "Videojuego de mundo abierto donde los jugadores exploran, construyen y sobreviven usando bloques."),
                 W("Fortnite", new[] { "Construcción." }),
                 W("Roblox", new[] { "Mundos." }),
@@ -216,7 +222,7 @@ public class WordDatabase : ScriptableObject
                 W("The Last of Us", new[] { "Infectados." })
             ),
 
-            CreateCategory("Animales",
+            CreateCategory("Animales", CategoryType.Normal,
                 W("Perro", new[] { "Ladrido." }),
                 W("Gato", new[] { "Maullido." }),
                 W("León", new[] { "Melena." }),
@@ -239,7 +245,7 @@ public class WordDatabase : ScriptableObject
                 W("Cocodrilo", new[] { "Mandíbula." })
             ),
 
-            CreateCategory("Películas",
+            CreateCategory("Películas", CategoryType.Normal,
                 W("Titanic", new[] { "Barco." }),
                 W("Avatar", new[] { "Azul." }),
                 W("Toy Story", new[] { "Juguetes." }),
@@ -262,7 +268,7 @@ public class WordDatabase : ScriptableObject
                 W("Barbie", new[] { "Rosa." })
             ),
 
-            CreateCategory("Marcas",
+            CreateCategory("Marcas", CategoryType.Normal,
                 W("Nike", new[] { "Zapatilla." }),
                 W("Adidas", new[] { "Rayas." }),
                 W("Apple", new[] { "Manzana." }),
@@ -285,7 +291,7 @@ public class WordDatabase : ScriptableObject
                 W("Mercado Libre", new[] { "Compra." })
             ),
 
-            CreateCategory("Profesiones",
+            CreateCategory("Profesiones", CategoryType.Normal,
                 W("Médico", new[] { "Guardapolvo." }),
                 W("Abogado", new[] { "Juicio." }),
                 W("Profesor", new[] { "Aula." }),
@@ -308,7 +314,7 @@ public class WordDatabase : ScriptableObject
                 W("Peluquero", new[] { "Tijera." })
             ),
 
-            CreateCategory("Superhéroes",
+            CreateCategory("Superhéroes", CategoryType.Normal,
                 W("Spider-Man", new[] { "Máscara" }),
                 W("Batman", new[] { "Noche." }),
                 W("Superman", new[] { "Volar." }),
@@ -330,20 +336,32 @@ public class WordDatabase : ScriptableObject
                 W("Daredevil", new[] { "Vista." }),
                 W("Venom", new[] { "Negro." })
             ),
-            new WordCategory
-            {
-                CategoryName = "Jugadores",
-                CategoryType = CategoryType.PlayerNames
-            }
+            CreateCategory("Jugadores", CategoryType.PlayerNames)
         };
     }
 
-    private WordCategory CreateCategory(string categoryName, params WordData[] words)
+    private WordCategory CreateCategory(string name, CategoryType categoryType, params WordData[] words)
     {
+        CategoryVisualData visualData = GetVisualData(name);
+
         return new WordCategory
         {
-            CategoryName = categoryName,
-            Words = new List<WordData>(words)
+            CategoryName = name,
+
+            Description = visualData != null
+                ? visualData.Description
+                : "Sin descripción",
+
+            CategoryColor = visualData != null
+                ? visualData.CategoryColor
+                : Color.gray,
+
+            CategoryImage = visualData != null
+                ? visualData.CategoryImage
+                : null,
+
+            CategoryType = categoryType,
+            Words = words.ToList()
         };
     }
 
@@ -361,4 +379,17 @@ public class WordDatabase : ScriptableObject
     {
         return categories.Find(c => c.CategoryName == categoryName);
     }
+}
+
+[System.Serializable]
+public class CategoryVisualData
+{
+    public string CategoryName;
+
+    [TextArea]
+    public string Description;
+
+    public Color CategoryColor = Color.white;
+
+    public Sprite CategoryImage;
 }
