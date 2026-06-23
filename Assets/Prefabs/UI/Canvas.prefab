@@ -597,6 +597,7 @@ MonoBehaviour:
   playersSetupScreen: {fileID: 3197538258076405402}
   categorySetupScreen: {fileID: 7983355002480752910}
   revealScreen: {fileID: 1774597043366623324}
+  playerRevealSelectionScreen: {fileID: 0}
   roleHiddenScreen: {fileID: 1657404173374949385}
   roleVisibleScreen: {fileID: 3434559079307852852}
   discussionScreen: {fileID: 1643826300918553900}
@@ -627,6 +628,10 @@ MonoBehaviour:
   selectedCategoriesText: {fileID: 6030020534905120205}
   selectAllCategoriesButton: {fileID: 3673795562013376462}
   deselectAllCategoriesButton: {fileID: 7457161380192420349}
+  revealPlayersContent: {fileID: 0}
+  revealPlayerRowPrefab: {fileID: 0}
+  revealPlayersCounterText: {fileID: 0}
+  revealPlayerVisuals: []
   playerNameText: {fileID: 879154457569112368}
   playerCounterText: {fileID: 9120634137105156348}
   roleText: {fileID: 2575803957885006337}
@@ -11879,7 +11884,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 400, y: 400}
+  m_CellSize: {x: 400, y: 380}
   m_Spacing: {x: 25, y: 25}
   m_Constraint: 1
   m_ConstraintCount: 2

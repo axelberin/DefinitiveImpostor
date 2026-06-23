@@ -12,26 +12,32 @@ public class GameRoundManager : MonoBehaviour
     public string CurrentCategory { get; private set; }
     public WordData CurrentWordData { get; private set; }
 
-    public int CurrentPlayerIndex { get; private set; }
-    public PlayerData CurrentPlayer => Settings.Players[CurrentPlayerIndex];
+    public int CurrentPlayerIndex { get; private set; } = -1;
+    public PlayerData CurrentPlayer => HasCurrentPlayer ? Settings.Players[CurrentPlayerIndex] : null;
 
     public bool IsRoundStarted { get; private set; }
     public bool IsRevealFinished { get; private set; }
     public bool IsRoleVisible { get; private set; }
+    public bool HasCurrentPlayer => Settings != null && Settings.Players != null && CurrentPlayerIndex >= 0 && CurrentPlayerIndex < Settings.Players.Count;
+
+    public int RevealedPlayerCount => revealedPlayers.Count;
 
     public event Action<PlayerData, int> OnPlayerChanged;
     public event Action<string> OnRoleRevealed;
     public event Action OnRoleHidden;
+    public event Action OnPlayerRevealCompleted;
+    public event Action OnRevealReset;
     public event Action OnRevealFinished;
     public event Action<string> OnError;
 
     private readonly Dictionary<PlayerData, string> impostorHints = new();
     private readonly List<string> availableHints = new();
+    private readonly HashSet<PlayerData> revealedPlayers = new();
 
-    public void StartRound(GameSettings settings)
+    public bool StartRound(GameSettings settings)
     {
         if (!CanStartRound(settings))
-            return;
+            return false;
 
         Settings = settings;
 
@@ -39,14 +45,19 @@ public class GameRoundManager : MonoBehaviour
 
         CurrentWordData = GetRandomWordForRound(out string selectedCategory);
         CurrentCategory = selectedCategory;
+
+        if (CurrentWordData == null)
+            return false;
+
         PrepareImpostorHints();
 
-        CurrentPlayerIndex = 0;
+        CurrentPlayerIndex = -1;
+        revealedPlayers.Clear();
         IsRoundStarted = true;
         IsRevealFinished = false;
         IsRoleVisible = false;
 
-        NotifyCurrentPlayer();
+        return true;
     }
 
     private void AssignRandomImpostors(GameSettings settings)
@@ -69,9 +80,60 @@ public class GameRoundManager : MonoBehaviour
         }
     }
 
-    public void RevealCurrentPlayerRole()
+    public bool SelectPlayerForReveal(PlayerData player)
     {
         if (!IsRoundValid())
+            return false;
+
+        if (IsRevealFinished)
+            return false;
+
+        if (player == null)
+        {
+            SendError("El jugador seleccionado no es válido.");
+            return false;
+        }
+
+        int playerIndex = Settings.Players.IndexOf(player);
+
+        if (playerIndex < 0)
+        {
+            SendError("El jugador seleccionado no pertenece a esta partida.");
+            return false;
+        }
+
+        if (HasPlayerRevealed(player))
+            return false;
+
+        CurrentPlayerIndex = playerIndex;
+        IsRoleVisible = false;
+
+        OnPlayerChanged?.Invoke(player, playerIndex);
+        return true;
+    }
+
+    public bool SelectPlayerForReveal(int playerIndex)
+    {
+        if (!IsRoundValid())
+            return false;
+
+        if (playerIndex < 0 || playerIndex >= Settings.Players.Count)
+        {
+            SendError("El índice del jugador seleccionado no es válido.");
+            return false;
+        }
+
+        return SelectPlayerForReveal(Settings.Players[playerIndex]);
+    }
+
+    public bool HasPlayerRevealed(PlayerData player)
+    {
+        return player != null && revealedPlayers.Contains(player);
+    }
+
+    public void RevealCurrentPlayerRole()
+    {
+        if (!IsCurrentPlayerValid())
             return;
 
         if (IsRevealFinished)
@@ -85,42 +147,49 @@ public class GameRoundManager : MonoBehaviour
 
     public void HideCurrentPlayerRole()
     {
-        if (!IsRoundValid())
+        if (!IsCurrentPlayerValid())
             return;
 
         IsRoleVisible = false;
         OnRoleHidden?.Invoke();
     }
 
-    public void GoToNextPlayer()
+    public void CompleteCurrentPlayerReveal()
     {
-        if (!IsRoundValid())
+        if (!IsCurrentPlayerValid())
             return;
 
-        HideCurrentPlayerRole();
+        if (!IsRoleVisible)
+            return;
 
-        CurrentPlayerIndex++;
+        PlayerData completedPlayer = CurrentPlayer;
+        revealedPlayers.Add(completedPlayer);
 
-        if (CurrentPlayerIndex >= Settings.Players.Count)
+        CurrentPlayerIndex = -1;
+        IsRoleVisible = false;
+
+        if (revealedPlayers.Count >= Settings.Players.Count)
         {
             FinishRevealPhase();
             return;
         }
 
-        NotifyCurrentPlayer();
+        OnPlayerRevealCompleted?.Invoke();
+    }
+
+    // Lo dejo para no romper botones o referencias viejas del Inspector.
+    public void GoToNextPlayer()
+    {
+        CompleteCurrentPlayerReveal();
     }
 
     private void FinishRevealPhase()
     {
         IsRevealFinished = true;
         IsRoleVisible = false;
+        CurrentPlayerIndex = -1;
 
         OnRevealFinished?.Invoke();
-    }
-
-    private void NotifyCurrentPlayer()
-    {
-        OnPlayerChanged?.Invoke(CurrentPlayer, CurrentPlayerIndex);
     }
 
     private string GetRevealTextForPlayer(PlayerData player)
@@ -128,6 +197,7 @@ public class GameRoundManager : MonoBehaviour
         if (player.IsImpostor)
         {
             string impostorText = $"Sos impostor.\nCategoría: {CurrentCategory}";
+
             if (Settings.HintsEnabled && impostorHints.TryGetValue(player, out string hint))
                 return impostorText + $"\nPista: {hint}";
 
@@ -198,9 +268,17 @@ public class GameRoundManager : MonoBehaviour
             return false;
         }
 
-        if (CurrentPlayerIndex < 0 || CurrentPlayerIndex >= Settings.Players.Count)
+        return true;
+    }
+
+    private bool IsCurrentPlayerValid()
+    {
+        if (!IsRoundValid())
+            return false;
+
+        if (!HasCurrentPlayer)
         {
-            SendError("El jugador actual no es válido.");
+            SendError("No hay ningún jugador seleccionado para revelar.");
             return false;
         }
 
@@ -209,7 +287,7 @@ public class GameRoundManager : MonoBehaviour
 
     public void RerollCurrentWord()
     {
-        if (!IsRoundValid())
+        if (!IsCurrentPlayerValid())
             return;
 
         if (!IsRoleVisible)
@@ -231,11 +309,12 @@ public class GameRoundManager : MonoBehaviour
 
         PrepareImpostorHints();
 
-        CurrentPlayerIndex = 0;
+        CurrentPlayerIndex = -1;
+        revealedPlayers.Clear();
         IsRevealFinished = false;
         IsRoleVisible = false;
 
-        NotifyCurrentPlayer();
+        OnRevealReset?.Invoke();
     }
 
     private WordData GetRandomWordForRound(out string selectedCategory)

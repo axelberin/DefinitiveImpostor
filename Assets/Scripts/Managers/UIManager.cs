@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject playersSetupScreen;
     [SerializeField] private GameObject categorySetupScreen;
     [SerializeField] private GameObject revealScreen;
+    [SerializeField] private GameObject playerRevealSelectionScreen;
     [SerializeField] private GameObject roleHiddenScreen;
     [SerializeField] private GameObject roleVisibleScreen;
     [SerializeField] private GameObject discussionScreen;
@@ -58,6 +60,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button selectAllCategoriesButton;
     [SerializeField] private Button deselectAllCategoriesButton;
 
+    [Header("Reveal Selection UI")]
+    [SerializeField] private Transform revealPlayersContent;
+    [SerializeField] private RoleRevealPlayerRowUI revealPlayerRowPrefab;
+    [SerializeField] private TMP_Text revealPlayersCounterText;
+    [SerializeField] private List<PlayerRevealVisualData> revealPlayerVisuals = new();
+
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
     [SerializeField] private TMP_Text playerCounterText;
@@ -88,6 +96,7 @@ public class UIManager : MonoBehaviour
     private readonly List<PlayerData> players = new();
     private readonly List<PlayerRowUI> playerRows = new();
     private readonly List<CategoryToggleUI> categoryToggles = new();
+    private readonly List<RoleRevealPlayerRowUI> revealPlayerRows = new();
 
     private void Awake()
     {
@@ -133,6 +142,8 @@ public class UIManager : MonoBehaviour
         gameRoundManager.OnPlayerChanged += HandlePlayerChanged;
         gameRoundManager.OnRoleRevealed += HandleRoleRevealed;
         gameRoundManager.OnRoleHidden += HandleRoleHidden;
+        gameRoundManager.OnPlayerRevealCompleted += HandlePlayerRevealCompleted;
+        gameRoundManager.OnRevealReset += HandleRevealReset;
         gameRoundManager.OnRevealFinished += HandleRevealFinished;
         gameRoundManager.OnError += HandleError;
     }
@@ -142,6 +153,8 @@ public class UIManager : MonoBehaviour
         gameRoundManager.OnPlayerChanged -= HandlePlayerChanged;
         gameRoundManager.OnRoleRevealed -= HandleRoleRevealed;
         gameRoundManager.OnRoleHidden -= HandleRoleHidden;
+        gameRoundManager.OnPlayerRevealCompleted -= HandlePlayerRevealCompleted;
+        gameRoundManager.OnRevealReset -= HandleRevealReset;
         gameRoundManager.OnRevealFinished -= HandleRevealFinished;
         gameRoundManager.OnError -= HandleError;
     }
@@ -323,8 +336,8 @@ public class UIManager : MonoBehaviour
         if (settings == null)
             return;
 
-        gameRoundManager.StartRound(settings);
-        ShowRevealScreen();
+        if (gameRoundManager.StartRound(settings))
+            ShowRevealScreen();
     }
 
     private void UpdateStartGameButtonState()
@@ -368,6 +381,7 @@ public class UIManager : MonoBehaviour
         initialScreen.SetActive(false);
         setupScreen.SetActive(false);
         revealScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(true);
         errorScreen.SetActive(false);
@@ -391,7 +405,7 @@ public class UIManager : MonoBehaviour
 
     public void NextPlayerButton()
     {
-        gameRoundManager.GoToNextPlayer();
+        gameRoundManager.CompleteCurrentPlayerReveal();
     }
 
     public void CloseErrorButton()
@@ -418,6 +432,17 @@ public class UIManager : MonoBehaviour
         ShowRoleHiddenState();
     }
 
+    private void HandlePlayerRevealCompleted()
+    {
+        ShowRevealSelectionState();
+    }
+
+    private void HandleRevealReset()
+    {
+        BuildRevealPlayerRows();
+        ShowRevealSelectionState();
+    }
+
     private void HandleRevealFinished()
     {
         ShowDiscussionScreen();
@@ -442,6 +467,7 @@ public class UIManager : MonoBehaviour
         initialScreen.SetActive(true);
         setupScreen.SetActive(false);
         revealScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
@@ -456,6 +482,7 @@ public class UIManager : MonoBehaviour
         initialScreen.SetActive(false);
         setupScreen.SetActive(true);
         revealScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
@@ -508,7 +535,92 @@ public class UIManager : MonoBehaviour
         resultsScreen.SetActive(false);
         HideWordDescription();
 
-        ShowRoleHiddenState();
+        BuildRevealPlayerRows();
+        ShowRevealSelectionState();
+    }
+
+    private void BuildRevealPlayerRows()
+    {
+        foreach (Transform child in revealPlayersContent)
+            Destroy(child.gameObject);
+
+        revealPlayerRows.Clear();
+
+        if (gameRoundManager.Settings == null || gameRoundManager.Settings.Players == null)
+            return;
+
+        for (int i = 0; i < gameRoundManager.Settings.Players.Count; i++)
+        {
+            PlayerData player = gameRoundManager.Settings.Players[i];
+            PlayerRevealVisualData visualData = GetRevealVisualData(i);
+
+            RoleRevealPlayerRowUI row = Instantiate(revealPlayerRowPrefab, revealPlayersContent);
+            row.Setup(
+                player.PlayerName,
+                visualData.CircleColor,
+                visualData.Emoji,
+                gameRoundManager.HasPlayerRevealed(player),
+                () => SelectPlayerForReveal(player)
+            );
+
+            revealPlayerRows.Add(row);
+        }
+
+        UpdateRevealPlayerRows();
+    }
+
+    private void SelectPlayerForReveal(PlayerData player)
+    {
+        gameRoundManager.SelectPlayerForReveal(player);
+    }
+
+    private void UpdateRevealPlayerRows()
+    {
+        if (gameRoundManager.Settings == null || gameRoundManager.Settings.Players == null)
+            return;
+
+        for (int i = 0; i < revealPlayerRows.Count; i++)
+        {
+            PlayerData player = gameRoundManager.Settings.Players[i];
+            revealPlayerRows[i].SetRevealed(gameRoundManager.HasPlayerRevealed(player));
+        }
+
+        if (revealPlayersCounterText != null)
+        {
+            revealPlayersCounterText.text =
+                $"{gameRoundManager.RevealedPlayerCount}/{gameRoundManager.Settings.Players.Count} revelados";
+        }
+    }
+
+    private PlayerRevealVisualData GetRevealVisualData(int playerIndex)
+    {
+        if (revealPlayerVisuals != null && revealPlayerVisuals.Count > 0)
+            return revealPlayerVisuals[playerIndex % revealPlayerVisuals.Count];
+
+        return PlayerRevealVisualData.Default;
+    }
+
+    private void ShowRevealSelectionState()
+    {
+        initialScreen.SetActive(false);
+        setupScreen.SetActive(false);
+        revealScreen.SetActive(true);
+        discussionScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+        errorScreen.SetActive(false);
+
+        playerRevealSelectionScreen.SetActive(true);
+        roleHiddenScreen.SetActive(false);
+        roleVisibleScreen.SetActive(false);
+
+        revealRoleButton.gameObject.SetActive(false);
+        nextPlayerButton.gameObject.SetActive(false);
+        rerollWordButton.gameObject.SetActive(false);
+        wordDescriptionButton.gameObject.SetActive(false);
+
+        roleText.text = "";
+        HideWordDescription();
+        UpdateRevealPlayerRows();
     }
 
     private void ShowDiscussionScreen()
@@ -516,16 +628,19 @@ public class UIManager : MonoBehaviour
         initialScreen.SetActive(false);
         setupScreen.SetActive(false);
         revealScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         discussionScreen.SetActive(true);
+        resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
 
         var players = gameRoundManager.Settings.Players;
-        discussionTitleText.text = $"Empieza {players[Random.Range(0, players.Count)].PlayerName}";
+        discussionTitleText.text = $"Empieza {players[UnityEngine.Random.Range(0, players.Count)].PlayerName}";
         HideWordDescription();
     }
 
     private void ShowRoleHiddenState()
     {
+        playerRevealSelectionScreen.SetActive(false);
         roleHiddenScreen.SetActive(true);
         roleVisibleScreen.SetActive(false);
 
@@ -540,6 +655,7 @@ public class UIManager : MonoBehaviour
     private void ShowRoleVisibleState()
     {
         initialScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         roleHiddenScreen.SetActive(false);
         roleVisibleScreen.SetActive(true);
 
@@ -567,7 +683,7 @@ public class UIManager : MonoBehaviour
         }
         else if (string.IsNullOrWhiteSpace(currentWord.Description))
         {
-            wordDescriptionText.text = $"{currentWord.Word}: no tiene descripci�n cargada todav�a.";
+            wordDescriptionText.text = $"{currentWord.Word}: no tiene descripción cargada todavía.";
         }
         else
         {
@@ -579,6 +695,20 @@ public class UIManager : MonoBehaviour
 
     private void HideWordDescription()
     {
-        wordDescriptionPanel.SetActive(false);
+        if (wordDescriptionPanel != null)
+            wordDescriptionPanel.SetActive(false);
     }
+}
+
+[System.Serializable]
+public class PlayerRevealVisualData
+{
+    public Color CircleColor = new(1f, 0.25f, 0.25f, 1f);
+    public string Emoji = "🚗";
+
+    public static PlayerRevealVisualData Default => new()
+    {
+        CircleColor = new Color(1f, 0.25f, 0.25f, 1f),
+        Emoji = "🚗"
+    };
 }
