@@ -29,18 +29,23 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button playerSettingsButton;
     [SerializeField] private Button categorySettingsButton;
     [SerializeField] private Button backMenuSettingsButton;
+    [SerializeField] private Button startGameButton;
 
     [Header("Setup - Players")]
     [SerializeField] private TMP_InputField playerNameInput;
+    [SerializeField] private Button addPlayerButton;
     [SerializeField] private Transform playersContent;
     [SerializeField] private PlayerRowUI playerRowPrefab;
+    [SerializeField] private GameObject noPlayersConteiner;
     [SerializeField] private Button backPlayerSettingsButton;
+    [SerializeField] private Toggle rerollToggle;
 
     [Header("Setup - Impostors")]
     [SerializeField] private TMP_Text impostorCountText;
     [SerializeField] private Button decreaseImpostorButton;
     [SerializeField] private Button increaseImpostorButton;
     [SerializeField] private Button backImpostorSettingsButton;
+    [SerializeField] private Toggle hintsToggle;
 
     private int impostorCount = 1;
 
@@ -49,11 +54,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CategoryToggleUI categoryTogglePrefab;
     [SerializeField] private WordDatabase wordDatabase;
     [SerializeField] private Button backCategorySettingsButton;
-
-    [Header("Setup - Options")]
-    [SerializeField] private Toggle hintsToggle;
-    [SerializeField] private Toggle rerollToggle;
-    [SerializeField] private Button startGameButton;
 
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
@@ -83,6 +83,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button closeErrorButton;
 
     private readonly List<PlayerData> players = new();
+    private readonly List<PlayerRowUI> playerRows = new();
     private readonly List<CategoryToggleUI> categoryToggles = new();
 
     private void Awake()
@@ -112,7 +113,11 @@ public class UIManager : MonoBehaviour
         closeErrorButton.onClick.AddListener(CloseErrorButton);
 
         playerNameInput.onEndEdit.AddListener(AddPlayerFromInput);
+        addPlayerButton.onClick.AddListener(AddPlayerFromButton);
+        playerNameInput.onValueChanged.AddListener(UpdateAddPlayerButtonState);
+        UpdateAddPlayerButtonState(playerNameInput.text);
 
+        UpdateNoPlayersConteiner();
         RefreshImpostorCountUI();
         BuildCategoryToggles();
         UpdateStartGameButtonState();
@@ -141,15 +146,31 @@ public class UIManager : MonoBehaviour
         ShowInitialScreen();
     }
 
+    private void AddPlayerFromButton()
+    {
+        AddPlayerFromInput(playerNameInput.text);
+    }
+
+    private void UpdateAddPlayerButtonState(string playerName)
+    {
+        addPlayerButton.interactable = !string.IsNullOrWhiteSpace(playerName);
+    }
+
     private void AddPlayerFromInput(string playerName)
     {
+        playerName = playerName.Trim();
+
         if (string.IsNullOrWhiteSpace(playerName))
         {
+            UpdateAddPlayerButtonState(playerNameInput.text);
             return;
         }
 
         AddPlayer(playerName);
+
         playerNameInput.text = "";
+        UpdateAddPlayerButtonState(playerNameInput.text);
+
         playerNameInput.ActivateInputField();
     }
 
@@ -159,16 +180,45 @@ public class UIManager : MonoBehaviour
         players.Add(player);
 
         PlayerRowUI row = Instantiate(playerRowPrefab, playersContent);
-        row.Setup(playerName, () =>
+        playerRows.Add(row);
+
+        row.Setup(playerName, players.Count, () =>
         {
-            players.Remove(player);
-            Destroy(row.gameObject);
-            RefreshImpostorCountUI();
-            UpdateStartGameButtonState();
+            RemovePlayer(player, row);
         });
 
+        UpdatePlayersUI();
+    }
+
+    private void RemovePlayer(PlayerData player, PlayerRowUI row)
+    {
+        players.Remove(player);
+        playerRows.Remove(row);
+
+        Destroy(row.gameObject);
+
+        RefreshPlayerRowsOrder();
+        UpdatePlayersUI();
+    }
+
+    private void RefreshPlayerRowsOrder()
+    {
+        for (int i = 0; i < playerRows.Count; i++)
+        {
+            playerRows[i].SetPlayerNumber(i + 1);
+        }
+    }
+
+    private void UpdatePlayersUI()
+    {
+        UpdateNoPlayersConteiner();
         RefreshImpostorCountUI();
         UpdateStartGameButtonState();
+    }
+
+    private void UpdateNoPlayersConteiner()
+    {
+        noPlayersConteiner.SetActive(players.Count <= 0);
     }
 
     private void BuildCategoryToggles()

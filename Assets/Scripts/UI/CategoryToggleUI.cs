@@ -9,6 +9,8 @@ public class CategoryToggleUI : MonoBehaviour
 
     [SerializeField] private TMP_Text categoryNameText;
     [SerializeField] private Toggle toggle;
+    [SerializeField] private Image icon;
+    [SerializeField] private Color toggleColor = Color.white;
 
     public string CategoryName { get; private set; }
     public bool IsOn => toggle.isOn;
