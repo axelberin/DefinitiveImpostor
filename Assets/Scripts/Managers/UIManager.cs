@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameRoundManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -70,7 +71,10 @@ public class UIManager : MonoBehaviour
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
     [SerializeField] private TMP_Text playerCounterText;
+    [SerializeField] private TMP_Text categoryText;
     [SerializeField] private TMP_Text roleText;
+    [SerializeField] private TMP_Text wordText;
+    [SerializeField] private TMP_Text hintText;
     [SerializeField] private Button revealRoleButton;
     [SerializeField] private Button nextPlayerButton;
     [SerializeField] private Button rerollWordButton;
@@ -422,15 +426,19 @@ public class UIManager : MonoBehaviour
         ShowRoleHiddenState();
     }
 
-    private void HandleRoleRevealed(string roleMessage)
+    private void HandleRoleRevealed(RoleRevealData revealData)
     {
-        roleText.text = roleMessage;
+        SetTextAndVisibility(categoryText, $"Categoría: {revealData.Category}");
+        SetTextAndVisibility(roleText, $"Rol: {revealData.Role}");
+        SetTextAndVisibility(wordText, revealData.HasWord ? $"Palabra: {revealData.Word}" : "");
+        SetTextAndVisibility(hintText, revealData.HasHint ? $"Pista: {revealData.Hint}" : "");
+
         ShowRoleVisibleState();
     }
 
     private void HandleRoleHidden()
     {
-        roleText.text = "";
+        ClearRevealTexts();
         ShowRoleHiddenState();
     }
 
@@ -625,7 +633,7 @@ public class UIManager : MonoBehaviour
         rerollWordButton.gameObject.SetActive(false);
         wordDescriptionButton.gameObject.SetActive(false);
 
-        roleText.text = "";
+        ClearRevealTexts();
         HideWordDescription();
         UpdateRevealPlayerRows();
     }
@@ -727,5 +735,24 @@ public class UIManager : MonoBehaviour
     {
         if (wordDescriptionPanel != null)
             wordDescriptionPanel.SetActive(false);
+    }
+
+    private void SetTextAndVisibility(TMP_Text text, string value)
+    {
+        if (text == null)
+            return;
+
+        bool hasValue = !string.IsNullOrWhiteSpace(value);
+
+        text.text = hasValue ? value : "";
+        text.gameObject.SetActive(hasValue);
+    }
+
+    private void ClearRevealTexts()
+    {
+        SetTextAndVisibility(categoryText, "");
+        SetTextAndVisibility(roleText, "");
+        SetTextAndVisibility(wordText, "");
+        SetTextAndVisibility(hintText, "");
     }
 }

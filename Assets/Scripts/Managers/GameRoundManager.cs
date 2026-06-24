@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class GameRoundManager : MonoBehaviour
 {
+    public struct RoleRevealData
+    {
+        public string Category;
+        public string Role;
+        public string Word;
+        public string Hint;
+
+        public bool HasWord => !string.IsNullOrWhiteSpace(Word);
+        public bool HasHint => !string.IsNullOrWhiteSpace(Hint);
+    }
+
     [Header("Database")]
     [SerializeField] private WordDatabase wordDatabase;
 
@@ -23,7 +34,7 @@ public class GameRoundManager : MonoBehaviour
     public int RevealedPlayerCount => revealedPlayers.Count;
 
     public event Action<PlayerData, int> OnPlayerChanged;
-    public event Action<string> OnRoleRevealed;
+    public event Action<RoleRevealData> OnRoleRevealed;
     public event Action OnRoleHidden;
     public event Action OnPlayerRevealCompleted;
     public event Action OnRevealReset;
@@ -141,8 +152,8 @@ public class GameRoundManager : MonoBehaviour
 
         IsRoleVisible = true;
 
-        string text = GetRevealTextForPlayer(CurrentPlayer);
-        OnRoleRevealed?.Invoke(text);
+        RoleRevealData revealData = GetRevealDataForPlayer(CurrentPlayer);
+        OnRoleRevealed?.Invoke(revealData);
     }
 
     public void HideCurrentPlayerRole()
@@ -192,19 +203,22 @@ public class GameRoundManager : MonoBehaviour
         OnRevealFinished?.Invoke();
     }
 
-    private string GetRevealTextForPlayer(PlayerData player)
+    private RoleRevealData GetRevealDataForPlayer(PlayerData player)
     {
-        if (player.IsImpostor)
+        RoleRevealData data = new()
         {
-            string impostorText = $"Sos impostor.\nCategoría: {CurrentCategory}";
+            Category = CurrentCategory,
+            Role = player.IsImpostor ? "Impostor" : "Civil",
+            Word = player.IsImpostor ? "" : CurrentWordData.Word,
+            Hint = ""
+        };
 
-            if (Settings.HintsEnabled && impostorHints.TryGetValue(player, out string hint))
-                return impostorText + $"\nPista: {hint}";
-
-            return impostorText;
+        if (player.IsImpostor && Settings.HintsEnabled && impostorHints.TryGetValue(player, out string hint))
+        {
+            data.Hint = hint;
         }
 
-        return $"Categoría: {CurrentCategory}\n\nPalabra: {CurrentWordData.Word}";
+        return data;
     }
 
     private bool CanStartRound(GameSettings settings)
