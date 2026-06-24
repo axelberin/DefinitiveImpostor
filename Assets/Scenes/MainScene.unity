@@ -396,7 +396,7 @@ PrefabInstance:
       propertyPath: gameRoundManager
       value: 
       objectReference: {fileID: 581693304}
-    - target: {fileID: 6638789956942356519, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
+    - target: {fileID: 2816043674531605315, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}

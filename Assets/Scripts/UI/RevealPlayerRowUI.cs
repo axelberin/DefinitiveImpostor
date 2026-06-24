@@ -8,10 +8,10 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private Button rowButton;
     [SerializeField] private TMP_Text playerNameText;
-    [SerializeField] private TMP_Text emojiText;
+    [SerializeField] private Image emojiImage;
     [SerializeField] private Image circleImage;
     [SerializeField] private GameObject revealedOverlay;
-    [SerializeField] private TMP_Text statusText;
+    [SerializeField] private Image checkImage;
 
     [Header("Texts")]
     [SerializeField] private string revealedText = "Visto";
@@ -23,20 +23,26 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
     {
         if (rowButton == null)
             rowButton = GetComponent<Button>();
+
+        if (revealedOverlay != null)
+            checkImage = revealedOverlay.GetComponent<Image>();
     }
 
-    public void Setup(string playerName, Color circleColor, string emoji, bool startsRevealed, Action onPressed)
+    public void Setup(string playerName, Color circleColor, Sprite emoji, bool startsRevealed, Action onPressed)
     {
         this.onPressed = onPressed;
 
         if (playerNameText != null)
             playerNameText.text = playerName;
 
-        if (emojiText != null)
-            emojiText.text = emoji;
+        if (emojiImage != null)
+            emojiImage.sprite = emoji;
 
         if (circleImage != null)
             circleImage.color = circleColor;
+
+        if (checkImage != null)
+            checkImage.color = circleColor;
 
         if (rowButton != null)
         {
@@ -56,9 +62,6 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
 
         if (revealedOverlay != null)
             revealedOverlay.SetActive(isRevealed);
-
-        if (statusText != null)
-            statusText.text = isRevealed ? revealedText : "";
     }
 
     private void HandlePressed()

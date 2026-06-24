@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform revealPlayersContent;
     [SerializeField] private RoleRevealPlayerRowUI revealPlayerRowPrefab;
     [SerializeField] private TMP_Text revealPlayersCounterText;
-    [SerializeField] private List<PlayerRevealVisualData> revealPlayerVisuals = new();
+    [SerializeField] private PlayerProfileData playerProfileData;
 
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
@@ -529,6 +529,7 @@ public class UIManager : MonoBehaviour
     {
         initialScreen.SetActive(false);
         setupScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
         revealScreen.SetActive(true);
         discussionScreen.SetActive(false);
         errorScreen.SetActive(false);
@@ -560,7 +561,10 @@ public class UIManager : MonoBehaviour
                 visualData.CircleColor,
                 visualData.Emoji,
                 gameRoundManager.HasPlayerRevealed(player),
-                () => SelectPlayerForReveal(player)
+                () =>
+                {
+                    SelectPlayerForReveal(player);
+                }
             );
 
             revealPlayerRows.Add(row);
@@ -594,8 +598,9 @@ public class UIManager : MonoBehaviour
 
     private PlayerRevealVisualData GetRevealVisualData(int playerIndex)
     {
-        if (revealPlayerVisuals != null && revealPlayerVisuals.Count > 0)
-            return revealPlayerVisuals[playerIndex % revealPlayerVisuals.Count];
+        if (playerProfileData != null && playerProfileData.revealPlayerVisuals != null
+            && playerProfileData.revealPlayerVisuals.Count > 0)
+            return playerProfileData.revealPlayerVisuals[playerIndex % playerProfileData.revealPlayerVisuals.Count];
 
         return PlayerRevealVisualData.Default;
     }
@@ -604,7 +609,7 @@ public class UIManager : MonoBehaviour
     {
         initialScreen.SetActive(false);
         setupScreen.SetActive(false);
-        revealScreen.SetActive(true);
+        revealScreen.SetActive(false);
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);
@@ -640,7 +645,14 @@ public class UIManager : MonoBehaviour
 
     private void ShowRoleHiddenState()
     {
+        initialScreen.SetActive(false);
+        setupScreen.SetActive(false);
         playerRevealSelectionScreen.SetActive(false);
+        revealScreen.SetActive(true);
+        discussionScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+        errorScreen.SetActive(false);
+
         roleHiddenScreen.SetActive(true);
         roleVisibleScreen.SetActive(false);
 
@@ -655,7 +667,13 @@ public class UIManager : MonoBehaviour
     private void ShowRoleVisibleState()
     {
         initialScreen.SetActive(false);
+        setupScreen.SetActive(false);
         playerRevealSelectionScreen.SetActive(false);
+        revealScreen.SetActive(true);
+        discussionScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+        errorScreen.SetActive(false);
+
         roleHiddenScreen.SetActive(false);
         roleVisibleScreen.SetActive(true);
 
@@ -698,17 +716,4 @@ public class UIManager : MonoBehaviour
         if (wordDescriptionPanel != null)
             wordDescriptionPanel.SetActive(false);
     }
-}
-
-[System.Serializable]
-public class PlayerRevealVisualData
-{
-    public Color CircleColor = new(1f, 0.25f, 0.25f, 1f);
-    public string Emoji = "🚗";
-
-    public static PlayerRevealVisualData Default => new()
-    {
-        CircleColor = new Color(1f, 0.25f, 0.25f, 1f),
-        Emoji = "🚗"
-    };
 }
