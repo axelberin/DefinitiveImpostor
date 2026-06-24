@@ -708,6 +708,7 @@ MonoBehaviour:
   revealPlayerRowPrefab: {fileID: 3984905250349847242, guid: 33def7aedda3ddb41a855433e3a3fc6c, type: 3}
   revealPlayersCounterText: {fileID: 2692101532447735008}
   playerProfileData: {fileID: 11400000, guid: bc3c58e7f17fc464297a2f13eedd1f56, type: 2}
+  backRevealSelectionButton: {fileID: 9077414580597941538}
   playerNameText: {fileID: 879154457569112368}
   playerCounterText: {fileID: 9120634137105156348}
   roleText: {fileID: 2575803957885006337}

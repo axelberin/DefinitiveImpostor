@@ -26,6 +26,9 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
 
         if (revealedOverlay != null)
             checkImage = revealedOverlay.GetComponent<Image>();
+
+        if (playerNameText != null)
+            playerNameText.raycastTarget = false;
     }
 
     public void Setup(string playerName, Color circleColor, Sprite emoji, bool startsRevealed, Action onPressed)

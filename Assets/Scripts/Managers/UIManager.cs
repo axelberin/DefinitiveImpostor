@@ -65,6 +65,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private RoleRevealPlayerRowUI revealPlayerRowPrefab;
     [SerializeField] private TMP_Text revealPlayersCounterText;
     [SerializeField] private PlayerProfileData playerProfileData;
+    [SerializeField] private Button backRevealSelectionButton;
 
     [Header("Reveal UI")]
     [SerializeField] private TMP_Text playerNameText;
@@ -111,6 +112,7 @@ public class UIManager : MonoBehaviour
         backImpostorSettingsButton.onClick.AddListener(ShowSetupScreen);
         backPlayerSettingsButton.onClick.AddListener(ShowSetupScreen);
         backCategorySettingsButton.onClick.AddListener(ShowSetupScreen);
+        backRevealSelectionButton.onClick.AddListener(BackFromRevealSelection);
 
         revealRoleButton.onClick.AddListener(RevealRoleButton);
         nextPlayerButton.onClick.AddListener(NextPlayerButton);
@@ -709,6 +711,16 @@ public class UIManager : MonoBehaviour
         }
 
         wordDescriptionPanel.SetActive(true);
+    }
+
+    private void BackFromRevealSelection()
+    {
+        roleHiddenScreen.SetActive(false);
+        roleVisibleScreen.SetActive(false);
+        revealScreen.SetActive(false);
+        playerRevealSelectionScreen.SetActive(false);
+
+        ShowSetupScreen();
     }
 
     private void HideWordDescription()
