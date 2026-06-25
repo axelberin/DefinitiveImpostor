@@ -96,6 +96,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text impostorsResultText;
     [SerializeField] private TMP_Text wordResultText;
     [SerializeField] private Button restartButton;
+    [SerializeField] private Button menuButton;
 
     [Header("Error UI")]
     [SerializeField] private TMP_Text errorText;
@@ -136,6 +137,7 @@ public class UIManager : MonoBehaviour
         deselectAllCategoriesButton.onClick.AddListener(DeselectAllCategories);
 
         restartButton.onClick.AddListener(ShowSetupScreen);
+        menuButton.onClick.AddListener(ShowInitialScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
 
         playerNameInput.onEndEdit.AddListener(AddPlayerFromInput);
@@ -406,8 +408,8 @@ public class UIManager : MonoBehaviour
                 impostorNames.Add(player.PlayerName);
         }
 
-        impostorsResultText.text = "Impostores:\n" + string.Join("\n", impostorNames);
-        wordResultText.text = "La palabra era:\n" + gameRoundManager.CurrentWordData.Word;
+        impostorsResultText.text = string.Join("\n", impostorNames);
+        wordResultText.text = gameRoundManager.CurrentWordData.Word;
     }
 
     public void RevealRoleButton()
