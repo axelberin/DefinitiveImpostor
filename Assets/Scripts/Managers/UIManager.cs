@@ -75,6 +75,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text roleText;
     [SerializeField] private TMP_Text wordText;
     [SerializeField] private TMP_Text hintText;
+    [SerializeField] private Image currentPlayerCircleImage;
+    [SerializeField] private Image currentPlayerIconImage;
     [SerializeField] private Button revealRoleButton;
     [SerializeField] private Button nextPlayerButton;
     [SerializeField] private Button rerollWordButton;
@@ -423,17 +425,31 @@ public class UIManager : MonoBehaviour
     {
         playerNameText.text = player.PlayerName;
         playerCounterText.text = $"Jugador {playerIndex + 1}/{gameRoundManager.Settings.Players.Count}";
+        UpdateCurrentPlayerRevealVisual(playerIndex);
         ShowRoleHiddenState();
     }
 
     private void HandleRoleRevealed(RoleRevealData revealData)
     {
+        bool isImpostor = revealData.Role == "Impostor";
+
         SetTextAndVisibility(categoryText, $"Categoría: {revealData.Category}");
-        SetTextAndVisibility(roleText, $"Rol: {revealData.Role}");
-        SetTextAndVisibility(wordText, revealData.HasWord ? $"Palabra: {revealData.Word}" : "");
+        SetTextAndVisibility(roleText, isImpostor ? $"{revealData.Role}" : "");
+        SetTextAndVisibility(wordText, revealData.HasWord && !isImpostor ? $"{revealData.Word}" : "");
         SetTextAndVisibility(hintText, revealData.HasHint ? $"Pista: {revealData.Hint}" : "");
 
         ShowRoleVisibleState();
+    }
+
+    private void UpdateCurrentPlayerRevealVisual(int playerIndex)
+    {
+        PlayerRevealVisualData visualData = GetRevealVisualData(playerIndex);
+
+        if (currentPlayerCircleImage != null)
+            currentPlayerCircleImage.color = visualData.CircleColor;
+
+        if (currentPlayerIconImage != null)
+            currentPlayerIconImage.sprite = visualData.Emoji;
     }
 
     private void HandleRoleHidden()
@@ -694,6 +710,7 @@ public class UIManager : MonoBehaviour
 
         rerollWordButton.gameObject.SetActive(isCivilian && rerollToggle.isOn);
         wordDescriptionButton.gameObject.SetActive(isCivilian);
+        roleText.color = isCivilian ? Color.white : Color.red;
 
         HideWordDescription();
     }
