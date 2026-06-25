@@ -866,6 +866,7 @@ MonoBehaviour:
   impostorsResultText: {fileID: 2263116923306725179}
   wordResultText: {fileID: 289727157309110379}
   restartButton: {fileID: 6836254672930793377}
+  menuButton: {fileID: 2480348423168335725}
   errorText: {fileID: 5309265327889433722}
   closeErrorButton: {fileID: 6999848853006515913}
 --- !u!1 &388659114086303600
