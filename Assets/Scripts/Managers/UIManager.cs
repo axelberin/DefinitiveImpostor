@@ -107,6 +107,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         initialButton.onClick.AddListener(ShowSetupScreen);
         startGameButton.onClick.AddListener(StartGameButton);
 
