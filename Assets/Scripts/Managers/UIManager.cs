@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
     [Header("Discussion UI")]
     [SerializeField] private TMP_Text discussionTitleText;
     [SerializeField] private Button revealResultsButton;
+    [SerializeField] private Image initialPlayerIcon;
 
     [Header("Results UI")]
     [SerializeField] private TMP_Text impostorsResultText;
@@ -668,7 +669,9 @@ public class UIManager : MonoBehaviour
         errorScreen.SetActive(false);
 
         var players = gameRoundManager.Settings.Players;
-        discussionTitleText.text = $"Empieza {players[UnityEngine.Random.Range(0, players.Count)].PlayerName}";
+        var randomPlayer = players[UnityEngine.Random.Range(0, players.Count)];
+        discussionTitleText.text = $"Jugador {randomPlayer.PlayerName} comienza la ronda";
+        initialPlayerIcon.sprite = GetRevealVisualData(players.IndexOf(randomPlayer)).Emoji;
         HideWordDescription();
     }
 
