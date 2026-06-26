@@ -13,9 +13,6 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
     [SerializeField] private GameObject revealedOverlay;
     [SerializeField] private Image checkImage;
 
-    [Header("Texts")]
-    [SerializeField] private string revealedText = "Visto";
-
     private Action onPressed;
     private bool isRevealed;
 
@@ -49,7 +46,7 @@ public class RoleRevealPlayerRowUI : MonoBehaviour
 
         if (rowButton != null)
         {
-            rowButton.onClick.RemoveListener(HandlePressed);
+            rowButton.onClick.RemoveAllListeners();
             rowButton.onClick.AddListener(HandlePressed);
         }
 
