@@ -136,8 +136,8 @@ public class UIManager : MonoBehaviour
         selectAllCategoriesButton.onClick.AddListener(SelectAllCategories);
         deselectAllCategoriesButton.onClick.AddListener(DeselectAllCategories);
 
-        restartButton.onClick.AddListener(ShowSetupScreen);
-        menuButton.onClick.AddListener(ShowInitialScreen);
+        restartButton.onClick.AddListener(StartGameButton);
+        menuButton.onClick.AddListener(ShowSetupScreen);
         closeErrorButton.onClick.AddListener(CloseErrorButton);
 
         playerNameInput.onEndEdit.AddListener(AddPlayerFromInput);
@@ -439,7 +439,7 @@ public class UIManager : MonoBehaviour
     {
         bool isImpostor = revealData.Role == "Impostor";
 
-        SetTextAndVisibility(categoryText, $"Categoría: {revealData.Category}");
+        SetTextAndVisibility(categoryText, revealData.HasHint && isImpostor ? "" : $"Categoría: {revealData.Category}");
         SetTextAndVisibility(roleText, isImpostor ? $"{revealData.Role}" : "");
         SetTextAndVisibility(wordText, revealData.HasWord && !isImpostor ? $"{revealData.Word}" : "");
         SetTextAndVisibility(hintText, revealData.HasHint ? $"Pista: {revealData.Hint}" : "");
