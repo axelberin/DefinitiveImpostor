@@ -14,129 +14,141 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categories:
   - CategoryName: Famosos argentinos
-    Description: "Sin descripci\xF3n"
-    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    CategoryImage: {fileID: 0}
+    Description: Celebridades de Argentina
+    CategoryColor: {r: 0.92549026, g: 0.28235295, b: 0.6, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
     CategoryType: 0
     Words:
     - Word: Messi
       Hints:
       - Pelota.
+      - 8
       Description: Lionel Messi es un futbolista argentino, considerado uno de los
         mejores jugadores de la historia.
     - Word: Maradona
       Hints:
-      - Diez.
+      - Doping
+      - Mujeriego
       Description: 
     - Word: "Lali Esp\xF3sito"
       Hints:
-      - Pop.
+      - Pop
+      - Anti Milei
       Description: 
     - Word: Tini Stoessel
       Hints:
-      - Disney.
+      - Disney
+      - Amante
       Description: 
     - Word: Duki
       Hints:
-      - Trap.
+      - Rockstar
+      - Tatuajes
       Description: 
-    - Word: Bizarrap
+    - Word: Carito Muller
       Hints:
-      - "Sesi\xF3n."
-      Description: 
+      - "Tr\xEDos"
+      - "Relaci\xF3n abierta"
+      Description: Influencer
     - Word: "Ricardo Dar\xEDn"
       Hints:
-      - Cine.
+      - Cine
+      - Empanadas
       Description: 
     - Word: Guillermo Francella
       Hints:
-      - Racing.
+      - Racing
+      - Edificio
       Description: 
     - Word: "Susana Gim\xE9nez"
       Hints:
-      - "Tel\xE9fono."
+      - "Tel\xE9fono"
+      - "C\xF3mica"
       Description: 
     - Word: Mirtha Legrand
       Hints:
-      - Almuerzo.
+      - Dinosaurio
+      - "Pol\xE9mica"
       Description: 
     - Word: "Charly Garc\xEDa"
       Hints:
-      - Piano.
+      - Piano
+      - Noveno piso
       Description: 
-    - Word: "Fito P\xE1ez"
+    - Word: China Suarez
       Hints:
-      - Rosario.
+      - Roba cunas
+      - Hombres
       Description: 
-    - Word: Gustavo Cerati
+    - Word: Pampita
       Hints:
-      - Soda.
+      - Perfecta
+      - Cornuda
       Description: 
     - Word: Abel Pintos
       Hints:
-      - Pelado.
+      - Pelado
+      - Gay
       Description: 
-    - Word: Nicki Nicole
+    - Word: Albere
       Hints:
-      - Petisa.
-      Description: 
+      - Villeros
+      - Embarazo
+      Description: Influencer
     - Word: Wanda Nara
       Hints:
-      - Show.
+      - Show
+      - Bananero
       Description: 
     - Word: "Moria Cas\xE1n"
       Hints:
-      - Rating.
+      - Rating
+      - Memes
       Description: 
-    - Word: Paulo Dybala
+    - Word: "Juli\xE1n \xC1lvares"
       Hints:
-      - Joya.
+      - "Campe\xF3n"
       Description: 
     - Word: "\xC1ngel Di Mar\xEDa"
       Hints:
-      - Pasta.
+      - Pasta
+      - "Narig\xF3n"
+      Description: 
+    - Word: Bananero
+      Hints:
+      - Semen
+      - Cerveza
       Description: 
     - Word: Ricardo Ford
       Hints:
-      - Rol Royce.
+      - Rol Royce
+      - Miami
       Description: 
   - CategoryName: Famosos globales
-    Description: "Sin descripci\xF3n"
-    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    CategoryImage: {fileID: 0}
+    Description: Celebridades globales
+    CategoryColor: {r: 0.46274513, g: 0.2392157, b: 0.34901962, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
     CategoryType: 0
     Words:
-    - Word: Taylor Swift
-      Hints:
-      - Eras.
-      Description: 
     - Word: Cristiano Ronaldo
       Hints:
       - Ego.
+      - Millonario
       Description: 
-    - Word: Dwayne Johnson
+    - Word: Mia Khalifa
       Hints:
-      - Piedra.
-      Description: 
-    - Word: "Beyonc\xE9"
-      Hints:
-      - Corona.
+      - Anteojos .
+      - Actriz
       Description: 
     - Word: Shakira
       Hints:
       - Caderas.
+      - Cornuda
       Description: 
     - Word: Bad Bunny
       Hints:
-      - Maldad.
-      Description: 
-    - Word: Ariana Grande
-      Hints:
-      - Agudo.
-      Description: 
-    - Word: Leonardo DiCaprio
-      Hints:
-      - Oscar.
+      - Malo
+      - Latino
       Description: 
     - Word: Tom Holland
       Hints:
@@ -150,21 +162,24 @@ MonoBehaviour:
       Hints:
       - Cohete.
       Description: 
-    - Word: Billie Eilish
+    - Word: Jacob Elordi
       Hints:
-      - Susurro.
+      - Besos
+      - Papucho
       Description: 
-    - Word: Rihanna
+    - Word: Rubius
       Hints:
-      - Fenty.
+      - Twich
+      - Gatos
       Description: 
     - Word: Justin Bieber
       Hints:
       - "Beb\xE9."
       Description: 
-    - Word: Drake
+    - Word: "Germ\xE1n Garmendia"
       Hints:
-      - "Canad\xE1."
+      - Saludo
+      - Chile
       Description: 
     - Word: Lady Gaga
       Hints:
@@ -191,82 +206,102 @@ MonoBehaviour:
     - Word: Argentina
       Hints:
       - Mate.
+      - Piola
       Description: 
     - Word: Brasil
       Hints:
       - Carnaval.
+      - Joda
       Description: 
     - Word: Chile
       Hints:
       - Cordillera.
+      - Pasillo
       Description: 
     - Word: Uruguay
       Hints:
       - Termo.
+      - Rebelde
       Description: 
     - Word: Paraguay
       Hints:
       - "Alba\xF1il."
+      - Idioma
       Description: 
     - Word: Bolivia
       Hints:
       - Altura.
+      - "Verduler\xEDa"
       Description: 
     - Word: "Per\xFA"
       Hints:
       - Ruinas.
+      - "Lim\xF3n"
       Description: 
     - Word: Colombia
       Hints:
       - Fafa.
+      - Acento
       Description: 
     - Word: "M\xE9xico"
       Hints:
       - Inseguro.
+      - Narcos
       Description: 
     - Word: Estados Unidos
       Hints:
       - Estrellas.
+      - Azul
       Description: 
     - Word: "Canad\xE1"
       Hints:
       - Maple.
+      - Hoja
       Description: 
     - Word: "Espa\xF1a"
       Hints:
       - Flamenco.
+      - Youtubers
       Description: 
     - Word: Francia
       Hints:
       - Torre.
+      - amor
       Description: 
     - Word: Italia
       Hints:
       - Pasta.
+      - Costa
       Description: 
     - Word: Alemania
       Hints:
       - Autos.
+      - Historia
       Description: 
     - Word: "Jap\xF3n"
       Hints:
       - Anime.
+      - Autos
       Description: 
     - Word: China
       Hints:
       - Muralla.
+      - Sucios
       Description: 
     - Word: Australia
       Hints:
       - Animales.
+      - "Ara\xF1as"
       Description: 
     - Word: Egipto
       Hints:
       - "Pir\xE1mide."
+      - Arena
       Description: 
     - Word: "Sud\xE1frica"
       Hints:
       - Safari.
+      - Negros
       Description: 
   - CategoryName: Comidas
     Description: "Gastronom\xEDa global"
@@ -284,7 +319,7 @@ MonoBehaviour:
       Description: 
     - Word: Empanada
       Hints:
-      - Repulgue.
+      - Salta
       Description: 
     - Word: Milanesa
       Hints:
@@ -292,7 +327,7 @@ MonoBehaviour:
       Description: 
     - Word: Asado
       Hints:
-      - Parrilla.
+      - Domingo
       Description: 
     - Word: Sushi
       Hints:
@@ -312,7 +347,7 @@ MonoBehaviour:
       Description: 
     - Word: "\xD1oquis"
       Hints:
-      - Papa.
+      - Relieve
       Description: 
     - Word: Helado
       Hints:
@@ -324,7 +359,7 @@ MonoBehaviour:
       Description: 
     - Word: Pancho
       Hints:
-      - Salchicha.
+      - Yanquee
       Description: 
     - Word: Lomito
       Hints:
@@ -332,7 +367,7 @@ MonoBehaviour:
       Description: 
     - Word: "Chorip\xE1n"
       Hints:
-      - Chorizo.
+      - Ruta
       Description: 
     - Word: Ensalada
       Hints:
@@ -362,7 +397,7 @@ MonoBehaviour:
     Words:
     - Word: Celular
       Hints:
-      - Pantalla.
+      - Vicio
       Description: 
     - Word: Computadora
       Hints:
@@ -370,11 +405,11 @@ MonoBehaviour:
       Description: 
     - Word: Teclado
       Hints:
-      - Teclas.
+      - Luces
       Description: 
     - Word: Mouse
       Hints:
-      - Cursor.
+      - Roedor
       Description: 
     - Word: Monitor
       Hints:
@@ -386,19 +421,19 @@ MonoBehaviour:
       Description: 
     - Word: Silla
       Hints:
-      - Sentarse.
+      - Trono
       Description: 
     - Word: Botella
       Hints:
-      - Agua.
+      - Gimnasio
       Description: 
     - Word: Vaso
       Hints:
-      - Bebida.
+      - Vidrio
       Description: 
     - Word: Plato
       Hints:
-      - Comida.
+      - Volador
       Description: 
     - Word: Cuchara
       Hints:
@@ -406,11 +441,11 @@ MonoBehaviour:
       Description: 
     - Word: Tenedor
       Hints:
-      - Puntas.
+      - Punta.
       Description: 
     - Word: Cuchillo
       Hints:
-      - Corte.
+      - Asesinato
       Description: 
     - Word: Mochila
       Hints:
@@ -418,7 +453,7 @@ MonoBehaviour:
       Description: 
     - Word: Libro
       Hints:
-      - "P\xE1ginas."
+      - Hobbie
       Description: 
     - Word: "L\xE1piz"
       Hints:
@@ -426,11 +461,11 @@ MonoBehaviour:
       Description: 
     - Word: Lapicera
       Hints:
-      - Tinta.
+      - Escuela
       Description: 
     - Word: Cuaderno
       Hints:
-      - Hojas.
+      - Escuela
       Description: 
     - Word: Auriculares
       Hints:
@@ -438,7 +473,7 @@ MonoBehaviour:
       Description: 
     - Word: Control remoto
       Hints:
-      - Botones.
+      - Sensor
       Description: 
     - Word: Televisor
       Hints:
@@ -450,7 +485,7 @@ MonoBehaviour:
       Description: 
     - Word: Cama
       Hints:
-      - "Sue\xF1o."
+      - Sexo
       Description: 
     - Word: Almohada
       Hints:
@@ -458,35 +493,35 @@ MonoBehaviour:
       Description: 
     - Word: Reloj
       Hints:
-      - Hora.
+      - Lujo.
       Description: 
     - Word: Billetera
       Hints:
-      - Plata.
+      - Robo
       Description: 
     - Word: Llaves
       Hints:
-      - Puerta.
+      - Perdida
       Description: 
     - Word: Paraguas
       Hints:
-      - Lluvia.
+      - Paraguay
       Description: 
     - Word: Zapatilla
       Hints:
-      - Cordones.
+      - Cable.
       Description: 
     - Word: Campera
       Hints:
-      - Abrigo.
+      - "Fr\xEDo."
       Description: 
     - Word: Gorra
       Hints:
-      - Visera.
+      - Ropa.
       Description: 
     - Word: Espejo
       Hints:
-      - Reflejo.
+      - Vestidor
       Description: 
     - Word: Cepillo
       Hints:
@@ -494,19 +529,19 @@ MonoBehaviour:
       Description: 
     - Word: Toalla
       Hints:
-      - Seco.
+      - Pileta
       Description: 
     - Word: "Jab\xF3n"
       Hints:
-      - Espuma.
+      - Limpio
       Description: 
     - Word: Shampoo
       Hints:
-      - Pelo.
+      - Ducha
       Description: 
     - Word: Ventilador
       Hints:
-      - Aire.
+      - Viento
       Description: 
     - Word: Heladera
       Hints:
@@ -514,7 +549,7 @@ MonoBehaviour:
       Description: 
     - Word: Microondas
       Hints:
-      - "R\xE1pido."
+      - Cocina
       Description: 
     - Word: Horno
       Hints:
@@ -531,10 +566,11 @@ MonoBehaviour:
     - Word: Tijera
       Hints:
       - Papel.
+      - Piedra
       Description: 
     - Word: Cinta
       Hints:
-      - Pegamento.
+      - "C\xEDrculo"
       Description: 
     - Word: Caja
       Hints:
@@ -542,7 +578,7 @@ MonoBehaviour:
       Description: 
     - Word: Bolsa
       Hints:
-      - Compras.
+      - Guardar
       Description: 
     - Word: Pelota
       Hints:
@@ -550,15 +586,16 @@ MonoBehaviour:
       Description: 
     - Word: Bicicleta
       Hints:
-      - Ruedas.
+      - Distancia
       Description: 
     - Word: Cargador
       Hints:
-      - "Bater\xEDa."
+      - "Energ\xEDa."
       Description: 
     - Word: Pendrive
       Hints:
       - Archivos.
+      - Enchufar
       Description: 
   - CategoryName: Videojuegos
     Description: "Personajes y t\xEDtulos"
@@ -569,84 +606,106 @@ MonoBehaviour:
     - Word: Minecraft
       Hints:
       - Bloques.
+      - Mundos
       Description: Videojuego de mundo abierto donde los jugadores exploran, construyen
         y sobreviven usando bloques.
     - Word: Fortnite
       Hints:
       - "Construcci\xF3n."
-      Description: 
+      Description: "Fortnite es un videojuego multijugador de acci\xF3n y supervivencia
+        conocido por su modo battle royale y construcci\xF3n."
     - Word: Roblox
       Hints:
-      - Mundos.
-      Description: 
+      - Variedad
+      Description: Roblox es una plataforma donde usuarios crean, comparten y juegan
+        experiencias interactivas.
     - Word: Among Us
       Hints:
       - Impostor.
-      Description: 
+      Description: "Among Us es un juego social de deducci\xF3n donde tripulantes
+        intentan descubrir impostores."
     - Word: GTA
       Hints:
       - Ciudad.
-      Description: 
+      - Armas
+      Description: "GTA es una saga de videojuegos de mundo abierto centrada en crimen,
+        conducci\xF3n y exploraci\xF3n urbana."
     - Word: The Sims
       Hints:
       - Vida.
-      Description: 
+      Description: "The Sims es una saga de simulaci\xF3n social donde se crean personajes,
+        casas y rutinas de vida."
     - Word: FIFA
       Hints:
       - Cancha.
-      Description: 
+      Description: "FIFA es una saga de videojuegos de f\xFAtbol con equipos, jugadores
+        y competiciones oficiales."
     - Word: Call of Duty
       Hints:
       - Guerra.
-      Description: 
+      Description: "Call of Duty es una saga de videojuegos de disparos en primera
+        persona con tem\xE1tica b\xE9lica y multijugador."
     - Word: Valorant
       Hints:
       - Agentes.
-      Description: 
+      - "T\xE1ctica"
+      Description: "Valorant es un shooter t\xE1ctico competitivo donde personajes
+        con habilidades luchan por objetivos."
     - Word: League of Legends
       Hints:
       - "L\xEDneas."
-      Description: 
+      Description: League of Legends es un MOBA competitivo donde equipos intentan
+        destruir la base rival.
     - Word: Counter Strike
       Hints:
       - Bomba.
-      Description: 
+      Description: "Counter-Strike es un shooter t\xE1ctico competitivo basado en
+        rondas entre terroristas y antiterroristas."
     - Word: Fall Guys
       Hints:
       - Carrera.
-      Description: 
+      Description: "Fall Guys es un juego multijugador de obst\xE1culos donde personajes
+        compiten en pruebas eliminatorias."
     - Word: Mario Kart
       Hints:
-      - Kart.
-      Description: 
+      - Italia
+      Description: Mario Kart es una saga de carreras arcade con personajes de Nintendo
+        y objetos especiales.
     - Word: Zelda
       Hints:
-      - Trifuerza.
-      Description: 
+      - "H\xE9roe"
+      Description: "Zelda es una saga de aventuras y acci\xF3n protagonizada principalmente
+        por Link en mundos de fantas\xEDa."
     - Word: "Pok\xE9mon"
       Hints:
       - Criaturas.
-      Description: 
+      Description: "Pok\xE9mon es una franquicia de videojuegos donde se capturan,
+        entrenan y combaten criaturas."
     - Word: Resident Evil
       Hints:
       - Zombies.
-      Description: 
+      Description: "Resident Evil es una saga de terror y acci\xF3n centrada en brotes,
+        monstruos y supervivencia."
     - Word: Silent Hill
       Hints:
       - Niebla.
-      Description: 
+      Description: "Silent Hill es una saga de terror psicol\xF3gico conocida por
+        su atm\xF3sfera opresiva y simbolismo."
     - Word: Elden Ring
       Hints:
       - Anillo.
-      Description: 
+      Description: "Elden Ring es un RPG de acci\xF3n en mundo abierto con combate
+        desafiante y fantas\xEDa oscura."
     - Word: God of War
       Hints:
       - Hacha.
-      Description: 
+      Description: "God of War es una saga de acci\xF3n protagonizada por Kratos,
+        con combates basados en mitolog\xEDas."
     - Word: The Last of Us
       Hints:
       - Infectados.
-      Description: 
+      Description: "The Last of Us es una saga de acci\xF3n narrativa ambientada
+        en un mundo postapocal\xEDptico con infectados."
   - CategoryName: Animales
     Description: Fauna del mundo
     CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
@@ -742,83 +801,106 @@ MonoBehaviour:
     - Word: Titanic
       Hints:
       - Barco.
-      Description: 
+      - Amor
+      Description: "Titanic es una pel\xEDcula dram\xE1tica y rom\xE1ntica sobre
+        el famoso naufragio del transatl\xE1ntico."
     - Word: Avatar
       Hints:
       - Azul.
-      Description: 
+      - "Conexi\xF3n"
+      Description: "Avatar es una pel\xEDcula de ciencia ficci\xF3n ambientada en
+        Pandora, un mundo habitado por los Na'vi."
     - Word: Toy Story
       Hints:
-      - Juguetes.
-      Description: 
+      - Suela
+      - Fiel
+      Description: "Toy Story es una pel\xEDcula animada sobre juguetes que cobran
+        vida cuando los humanos no los ven."
     - Word: Shrek
       Hints:
-      - Ogro.
-      Description: 
+      - Princesa
+      - Cuernos
+      Description: "Shrek es una pel\xEDcula animada que parodia los cuentos de hadas
+        con humor irreverente."
     - Word: Frozen
       Hints:
       - Hielo.
-      Description: 
+      - Frio
+      Description: "Frozen es una pel\xEDcula animada de Disney sobre dos hermanas,
+        magia de hielo y aceptaci\xF3n personal."
     - Word: Harry Potter
       Hints:
       - Varita.
-      Description: 
+      Description: "Harry Potter es una saga de fantas\xEDa sobre un joven mago y
+        su lucha contra fuerzas oscuras."
     - Word: "El Se\xF1or de los Anillos"
       Hints:
       - Anillo.
-      Description: 
+      Description: "El Se\xF1or de los Anillos es una saga fant\xE1stica sobre una
+        misi\xF3n para destruir un anillo poderoso."
     - Word: Star Wars
       Hints:
       - Galaxia.
-      Description: 
+      Description: "Star Wars es una saga de ciencia ficci\xF3n y aventura sobre
+        conflictos gal\xE1cticos y el poder de la Fuerza."
     - Word: Jurassic Park
       Hints:
       - Dinosaurio.
-      Description: 
-    - Word: Spider-Man
-      Hints:
-      - "Telara\xF1a."
-      Description: 
-    - Word: Batman
-      Hints:
-      - "Murci\xE9lago."
-      Description: 
+      Description: "Jurassic Park es una pel\xEDcula de aventura y ciencia ficci\xF3n
+        sobre dinosaurios recreados gen\xE9ticamente."
     - Word: Avengers
       Hints:
       - Equipo.
-      Description: 
-    - Word: Iron Man
-      Hints:
-      - Armadura.
-      Description: 
+      Description: "Avengers es una saga de superh\xE9roes donde varios personajes
+        se unen para enfrentar amenazas globales o c\xF3smicas."
     - Word: Coco
       Hints:
       - Recuerdo.
-      Description: 
+      Description: "Coco es una pel\xEDcula animada sobre familia, m\xFAsica y la
+        tradici\xF3n mexicana del D\xEDa de Muertos."
     - Word: Buscando a Nemo
       Hints:
       - "Oc\xE9ano."
-      Description: 
+      Description: "Buscando a Nemo es una pel\xEDcula animada sobre un pez payaso
+        que busca a su hijo en el oc\xE9ano."
     - Word: "R\xE1pidos y Furiosos"
       Hints:
       - Autos.
-      Description: 
+      Description: "R\xE1pidos y Furiosos es una saga de acci\xF3n centrada en carreras,
+        autos, robos y familia."
     - Word: Matrix
       Hints:
       - "C\xF3digo."
-      Description: 
+      Description: "Matrix es una pel\xEDcula de ciencia ficci\xF3n sobre una realidad
+        simulada y la rebeli\xF3n contra m\xE1quinas."
     - Word: "El Rey Le\xF3n"
       Hints:
       - Selva.
-      Description: 
+      Description: "El Rey Le\xF3n es una pel\xEDcula animada sobre un le\xF3n joven
+        que debe aceptar su lugar como rey."
     - Word: Intensamente
       Hints:
       - "Emoci\xF3n."
-      Description: 
+      Description: "Intensamente es una pel\xEDcula animada que representa las emociones
+        dentro de la mente de una ni\xF1a."
+    - Word: "Donde est\xE1n las rubias?"
+      Hints:
+      - Baile
+      - Negros
+      Description: "Comedia en la que dos agentes del FBI se hacen pasar por dos
+        j\xF3venes millonarias para resolver un caso y protegerlas de un posible
+        secuestro."
+    - Word: 50 sombras de Grey
+      Hints:
+      - Sexo
+      Description: "Pel\xEDcula rom\xE1ntica y dram\xE1tica centrada en la relaci\xF3n
+        entre Anastasia Steele y Christian Grey, un empresario misterioso con gustos
+        poco convencionales"
     - Word: Barbie
       Hints:
       - Rosa.
-      Description: 
+      Description: "Barbie es una pel\xEDcula que mezcla comedia y cr\xEDtica social
+        a partir del universo de la famosa mu\xF1eca."
   - CategoryName: Marcas
     Description: Empresas globales
     CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
@@ -828,83 +910,102 @@ MonoBehaviour:
     - Word: Nike
       Hints:
       - Zapatilla.
-      Description: 
+      Description: "Nike es una marca global de indumentaria, calzado y art\xEDculos
+        deportivos."
     - Word: Adidas
       Hints:
       - Rayas.
-      Description: 
+      Description: Adidas es una marca alemana de ropa, calzado y equipamiento deportivo.
     - Word: Apple
       Hints:
       - Manzana.
-      Description: 
+      Description: "Apple es una empresa tecnol\xF3gica conocida por sus dispositivos,
+        software y dise\xF1o integrado."
     - Word: Samsung
       Hints:
       - Pantalla.
-      Description: 
+      Description: "Samsung es una empresa surcoreana que fabrica celulares, televisores,
+        electrodom\xE9sticos y tecnolog\xEDa."
     - Word: Coca-Cola
       Hints:
       - Rojo.
-      Description: 
+      Description: "Coca-Cola es una marca de bebida gaseosa reconocida mundialmente
+        por su identidad roja y sabor caracter\xEDstico."
     - Word: Pepsi
       Hints:
       - Azul.
-      Description: 
+      Description: "Pepsi es una marca de bebida gaseosa cola y competidora hist\xF3rica
+        de Coca-Cola."
     - Word: McDonald's
       Hints:
       - Cajita.
-      Description: 
+      Description: "McDonald's es una cadena internacional de comida r\xE1pida famosa
+        por hamburguesas y papas fritas."
     - Word: Burger King
       Hints:
       - Corona.
-      Description: 
+      Description: "Burger King es una cadena internacional de comida r\xE1pida conocida
+        por sus hamburguesas a la parrilla."
     - Word: Netflix
       Hints:
       - Streaming.
-      Description: 
+      Description: "Netflix es una plataforma de streaming de pel\xEDculas, series
+        y documentales."
     - Word: Disney
       Hints:
       - "Rat\xF3n."
-      Description: 
+      Description: "Disney es una compa\xF1\xEDa de entretenimiento conocida por
+        animaci\xF3n, parques, pel\xEDculas y personajes ic\xF3nicos."
     - Word: Google
       Hints:
       - Buscar.
-      Description: 
+      Description: "Google es una empresa tecnol\xF3gica conocida por su buscador,
+        servicios digitales y productos de software."
     - Word: Microsoft
       Hints:
       - Ventana.
-      Description: 
+      Description: "Microsoft es una empresa tecnol\xF3gica conocida por Windows,
+        Office, Xbox y servicios en la nube."
     - Word: Amazon
       Hints:
       - Paquete.
-      Description: 
+      Description: "Amazon es una empresa de comercio electr\xF3nico, servicios en
+        la nube y entretenimiento digital."
     - Word: PlayStation
       Hints:
       - Control.
-      Description: 
+      Description: PlayStation es una marca de consolas y videojuegos desarrollada
+        por Sony.
     - Word: Xbox
       Hints:
       - Verde.
-      Description: 
+      Description: Xbox es una marca de consolas, videojuegos y servicios creada
+        por Microsoft.
     - Word: Nintendo
       Hints:
       - Bigote.
-      Description: 
+      Description: "Nintendo es una empresa japonesa de videojuegos conocida por
+        sus consolas y personajes ic\xF3nicos."
     - Word: Puma
       Hints:
       - Felino.
-      Description: 
+      Description: Puma es una marca alemana de indumentaria, calzado y accesorios
+        deportivos.
     - Word: Gucci
       Hints:
       - Lujo.
-      Description: 
+      Description: "Gucci es una marca italiana de moda de lujo conocida por ropa,
+        accesorios y dise\xF1o distintivo."
     - Word: Zara
       Hints:
       - Ropa.
-      Description: 
+      Description: "Zara es una marca espa\xF1ola de indumentaria conocida por moda
+        r\xE1pida y presencia internacional."
     - Word: Mercado Libre
       Hints:
       - Compra.
-      Description: 
+      Description: "Mercado Libre es una plataforma latinoamericana de comercio electr\xF3nico
+        y pagos digitales."
   - CategoryName: Profesiones
     Description: Oficios y carreras
     CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
@@ -1003,79 +1104,180 @@ MonoBehaviour:
       Description: 
     - Word: Batman
       Hints:
-      - Noche.
-      Description: 
+      - Animal
+      Description: "Spider-Man es un superh\xE9roe de Marvel con poderes ar\xE1cnidos,
+        agilidad y sentido de peligro."
     - Word: Superman
       Hints:
       - Volar.
-      Description: 
+      Description: "Batman es un h\xE9roe de DC que combate el crimen usando entrenamiento,
+        tecnolog\xEDa e inteligencia."
     - Word: Wonder Woman
       Hints:
       - "L\xE1tigo."
-      Description: 
+      Description: "Superman es un superh\xE9roe de DC con fuerza, vuelo y poderes
+        derivados del sol amarillo."
     - Word: Iron Man
       Hints:
       - Genio.
-      Description: 
+      Description: "Wonder Woman es una hero\xEDna de DC, princesa amazona y guerrera
+        con habilidades sobrehumanas."
     - Word: Captain America
       Hints:
       - Escudo.
-      Description: 
+      Description: "Iron Man es un h\xE9roe de Marvel que usa armaduras tecnol\xF3gicas
+        creadas por Tony Stark."
     - Word: Thor
       Hints:
-      - Martillo.
-      Description: 
+      - Dios
+      Description: "Captain America es un h\xE9roe de Marvel, s\xEDmbolo de justicia
+        y resultado de un experimento militar."
     - Word: Hulk
       Hints:
       - Verde.
-      Description: 
+      Description: "Thor es un h\xE9roe de Marvel inspirado en la mitolog\xEDa n\xF3rdica,
+        asociado al trueno y a un arma m\xE1gica."
     - Word: Black Widow
       Hints:
       - Insecto.
-      Description: 
+      Description: "Hulk es un h\xE9roe de Marvel que se transforma en una criatura
+        enorme y fuerte cuando se enfurece."
     - Word: Doctor Strange
       Hints:
       - Capa.
-      Description: 
+      Description: "Black Widow es una hero\xEDna de Marvel experta en espionaje,
+        combate y operaciones encubiertas."
     - Word: Black Panther
       Hints:
-      - Animal.
-      Description: 
+      - "Naci\xF3n"
+      Description: "Doctor Strange es un h\xE9roe de Marvel que utiliza artes m\xEDsticas
+        para proteger la realidad."
     - Word: Flash
       Hints:
       - Velocidad.
-      Description: 
+      Description: "Black Panther es un h\xE9roe de Marvel, rey de Wakanda y portador
+        de un traje de vibranium."
     - Word: Aquaman
       Hints:
       - Tridente.
-      Description: 
+      Description: "Flash es un h\xE9roe de DC con supervelocidad y conexi\xF3n con
+        la Speed Force."
     - Word: Wolverine
       Hints:
       - Garras.
-      Description: 
+      - Sexy
+      Description: "Aquaman es un h\xE9roe de DC, gobernante de Atlantis y capaz
+        de comunicarse con vida marina."
     - Word: Deadpool
       Hints:
       - Sarcasmo.
-      Description: 
+      Description: "Wolverine es un h\xE9roe de Marvel con regeneraci\xF3n, sentidos
+        agudos y garras de adamantium."
     - Word: Ant-Man
       Hints:
       - Chiquito.
-      Description: 
+      Description: "Deadpool es un antih\xE9roe de Marvel conocido por su humor,
+        regeneraci\xF3n y conciencia de estar en una ficci\xF3n."
     - Word: Captain Marvel
       Hints:
       - "Energ\xEDa."
-      Description: 
+      Description: "Ant-Man es un h\xE9roe de Marvel que puede reducir o aumentar
+        su tama\xF1o usando tecnolog\xEDa especial."
     - Word: Green Lantern
       Hints:
-      - Anillo.
-      Description: 
+      - "Intergal\xE1ctico"
+      Description: "Captain Marvel es una hero\xEDna de Marvel con fuerza, vuelo
+        y poderes de energ\xEDa c\xF3smica."
     - Word: Daredevil
       Hints:
       - Vista.
-      Description: 
+      Description: "Green Lantern es un h\xE9roe de DC que crea construcciones de
+        energ\xEDa usando un anillo de poder."
     - Word: Venom
       Hints:
       - Negro.
+      Description: "Daredevil es un h\xE9roe de Marvel con sentidos aumentados que
+        combate el crimen en Hell's Kitchen."
+  - CategoryName: Hot
+    Description: "Sin descripci\xF3n"
+    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    CategoryImage: {fileID: 0}
+    CategoryType: 0
+    Words:
+    - Word: Kamasutra
+      Hints:
+      - Pose
+      Description: "Venom es un personaje de Marvel formado por la uni\xF3n de un
+        hu\xE9sped humano y un simbionte alien\xEDgena."
+    - Word: Dildo
+      Hints:
+      - Grande
+      Description: 
+    - Word: Vibrador
+      Hints:
+      - Negro.
+      Description: 
+    - Word: "Mu\xF1eca inflable"
+      Hints:
+      - Hombres
+      Description: 
+    - Word: Porno
+      Hints:
+      - Gay
+      Description: 
+    - Word: Vagina
+      Hints:
+      - Olor
+      Description: 
+    - Word: Pene
+      Hints:
+      - Medida
+      Description: 
+    - Word: Ano
+      Hints:
+      - Placer
+      Description: 
+    - Word: Nude
+      Hints:
+      - Snapchat
+      Description: 
+    - Word: Tetas
+      Hints:
+      - Agarrar
+      Description: 
+    - Word: "Org\xEDa"
+      Hints:
+      - Amigos
+      Description: 
+    - Word: "Chup\xF3n"
+      Hints:
+      - Marca
+      Description: 
+  - CategoryName: Funable
+    Description: "Sin descripci\xF3n"
+    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    CategoryImage: {fileID: 0}
+    CategoryType: 0
+    Words:
+    - Word: Epstein
+      Hints:
+      - Nenes
+      Description: 
+    - Word: "Jud\xEDos"
+      Hints:
+      - Gorro
+      Description: 
+    - Word: Pedofilia
+      Hints:
+      - Iglesia
+      Description: 
+    - Word: Zoofilia
+      Hints:
+      - "Zool\xF3gico"
+      Description: 
+    - Word: Necrofilia
+      Hints:
+      - Morgue
       Description: 
   - CategoryName: Jugadores
     Description: Participantes de la partida
@@ -1128,6 +1330,14 @@ MonoBehaviour:
     Description: "Personajes de c\xF3mic y cine"
     CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
     CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
+  - CategoryName: Hot
+    Description: "Romance y pasi\xF3n..."
+    CategoryColor: {r: 0.81568635, g: 0.18823531, b: 0.078431375, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 70aa0976846d1e842b02f36fb5d31c88, type: 3}
+  - CategoryName: Funable
+    Description: Solo apto para personas con humor negro
+    CategoryColor: {r: 0, g: 0, b: 0, a: 1}
+    CategoryImage: {fileID: 21300000, guid: f6dd6522e5177f641a87ae21377c3cb9, type: 3}
   - CategoryName: Jugadores
     Description: Participantes de la partida
     CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
