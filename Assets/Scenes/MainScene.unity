@@ -365,6 +365,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordDatabase: {fileID: 11400000, guid: 9d33b024a3b0f094f8785d4d7793a38e, type: 2}
+  initialImpostorWeight: 1
+  recentImpostorWeight: 0.15
+  weightIncreasePerRound: 1
+  maximumImpostorWeight: 5
 --- !u!4 &581693305
 Transform:
   m_ObjectHideFlags: 0
