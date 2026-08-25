@@ -18,6 +18,12 @@ public class GameRoundManager : MonoBehaviour
     [Header("Database")]
     [SerializeField] private WordDatabase wordDatabase;
 
+    [Header("Impostor Selection")]
+    [SerializeField, Min(0.01f)] private float initialImpostorWeight = 1f;
+    [SerializeField, Min(0.01f)] private float recentImpostorWeight = 0.15f;
+    [SerializeField, Min(0f)] private float weightIncreasePerRound = 1f;
+    [SerializeField, Min(0.01f)] private float maximumImpostorWeight = 5f;
+
     public GameSettings Settings { get; private set; }
 
     public string CurrentCategory { get; private set; }
@@ -42,6 +48,7 @@ public class GameRoundManager : MonoBehaviour
     public event Action<string> OnError;
 
     private readonly Dictionary<PlayerData, string> impostorHints = new();
+    private readonly Dictionary<PlayerData, float> impostorSelectionWeights = new();
     private readonly List<string> availableHints = new();
     private readonly HashSet<PlayerData> revealedPlayers = new();
 
@@ -52,13 +59,13 @@ public class GameRoundManager : MonoBehaviour
 
         Settings = settings;
 
-        AssignRandomImpostors(Settings);
-
         CurrentWordData = GetRandomWordForRound(out string selectedCategory);
         CurrentCategory = selectedCategory;
 
         if (CurrentWordData == null)
             return false;
+
+        AssignWeightedImpostors(Settings);
 
         PrepareImpostorHints();
 
@@ -71,23 +78,76 @@ public class GameRoundManager : MonoBehaviour
         return true;
     }
 
-    private void AssignRandomImpostors(GameSettings settings)
+    private void AssignWeightedImpostors(GameSettings settings)
     {
         foreach (PlayerData player in settings.Players)
+        {
             player.IsImpostor = false;
 
-        int assigned = 0;
+            if (!impostorSelectionWeights.ContainsKey(player))
+                impostorSelectionWeights[player] = initialImpostorWeight;
+        }
 
-        while (assigned < settings.ImpostorCount)
+        RemoveInactivePlayersFromImpostorHistory(settings.Players);
+
+        List<PlayerData> candidates = new(settings.Players);
+        HashSet<PlayerData> selectedImpostors = new();
+
+        for (int i = 0; i < settings.ImpostorCount; i++)
         {
-            int randomIndex = UnityEngine.Random.Range(0, settings.Players.Count);
-            PlayerData randomPlayer = settings.Players[randomIndex];
+            PlayerData selectedPlayer = GetWeightedRandomPlayer(candidates);
 
-            if (randomPlayer.IsImpostor)
+            selectedPlayer.IsImpostor = true;
+            selectedImpostors.Add(selectedPlayer);
+            candidates.Remove(selectedPlayer);
+        }
+
+        foreach (PlayerData player in settings.Players)
+        {
+            if (selectedImpostors.Contains(player))
+            {
+                // Puede volver a salir, pero su probabilidad baja mucho en la ronda siguiente.
+                impostorSelectionWeights[player] = recentImpostorWeight;
                 continue;
+            }
 
-            randomPlayer.IsImpostor = true;
-            assigned++;
+            // Cuantas más rondas pase sin salir, más oportunidades tendrá en la próxima.
+            impostorSelectionWeights[player] = Mathf.Min(
+                impostorSelectionWeights[player] + weightIncreasePerRound,
+                Mathf.Max(maximumImpostorWeight, initialImpostorWeight)
+            );
+        }
+    }
+
+    private PlayerData GetWeightedRandomPlayer(List<PlayerData> candidates)
+    {
+        float totalWeight = 0f;
+
+        foreach (PlayerData player in candidates)
+            totalWeight += Mathf.Max(0.01f, impostorSelectionWeights[player]);
+
+        float randomValue = UnityEngine.Random.value * totalWeight;
+
+        foreach (PlayerData player in candidates)
+        {
+            randomValue -= Mathf.Max(0.01f, impostorSelectionWeights[player]);
+
+            if (randomValue <= 0f)
+                return player;
+        }
+
+        // Respaldo ante un posible error de precisión con floats.
+        return candidates[candidates.Count - 1];
+    }
+
+    private void RemoveInactivePlayersFromImpostorHistory(List<PlayerData> activePlayers)
+    {
+        List<PlayerData> trackedPlayers = new(impostorSelectionWeights.Keys);
+
+        foreach (PlayerData trackedPlayer in trackedPlayers)
+        {
+            if (!activePlayers.Contains(trackedPlayer))
+                impostorSelectionWeights.Remove(trackedPlayer);
         }
     }
 

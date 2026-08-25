@@ -355,7 +355,7 @@ public class WordDatabase : ScriptableObject
             W("Zoofilia", new[] { "Zoológico" }),
             W("Necrofilia", new[] { "Morgue" })
         ),
-        CreateCategory("Jugadores", CategoryType.PlayerNames)
+        CreateCategory("Jugadores de esta partida", CategoryType.PlayerNames)
         };
     }
 
