@@ -54,6 +54,10 @@ public class LanguageSelectorUI : MonoBehaviour
         if (label == null)
             return;
 
-        label.text = GameLocalization.CurrentLanguageCode.StartsWith("es") ? "EN" : "ES";
+        label.text = GameLocalization.CurrentLanguageCode.StartsWith(
+            "es",
+            System.StringComparison.OrdinalIgnoreCase)
+            ? "ES"
+            : "EN";
     }
 }
