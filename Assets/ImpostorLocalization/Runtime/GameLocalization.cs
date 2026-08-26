@@ -13,7 +13,7 @@ public static class GameLocalization
     public const string SpanishArgentina = "es-AR";
     public const string English = "en";
 
-    private const string LocalePreferenceKey = "game.locale";
+    private const string LegacyLocalePreferenceKey = "game.locale";
 
     private static bool initialized;
     private static bool initializing;
@@ -58,13 +58,20 @@ public static class GameLocalization
 
         SubscribeOnce();
 
-        string requestedCode = PlayerPrefs.HasKey(LocalePreferenceKey)
-            ? PlayerPrefs.GetString(LocalePreferenceKey, English)
-            : DetectDeviceLanguage();
+        string requestedCode;
+        if (!LocalSettingsStorage.TryGetLanguageCode(out requestedCode))
+        {
+            requestedCode = PlayerPrefs.HasKey(LegacyLocalePreferenceKey)
+                ? PlayerPrefs.GetString(LegacyLocalePreferenceKey, English)
+                : DetectDeviceLanguage();
+        }
 
         Locale locale = GetSupportedLocale(requestedCode) ?? GetSupportedLocale(English);
         if (locale != null && LocalizationSettings.SelectedLocale != locale)
             LocalizationSettings.SelectedLocale = locale;
+
+        if (locale != null)
+            PersistLanguage(locale.Identifier.Code);
 
         initialized = true;
         initializing = false;
@@ -80,11 +87,9 @@ public static class GameLocalization
             return false;
         }
 
-        PlayerPrefs.SetString(LocalePreferenceKey, locale.Identifier.Code);
-        PlayerPrefs.Save();
-
         if (LocalizationSettings.SelectedLocale == locale)
         {
+            PersistLanguage(locale.Identifier.Code);
             LanguageChanged?.Invoke();
             return true;
         }
@@ -150,8 +155,7 @@ public static class GameLocalization
     {
         if (locale != null)
         {
-            PlayerPrefs.SetString(LocalePreferenceKey, locale.Identifier.Code);
-            PlayerPrefs.Save();
+            PersistLanguage(locale.Identifier.Code);
         }
 
         LanguageChanged?.Invoke();
@@ -180,5 +184,21 @@ public static class GameLocalization
         return Application.systemLanguage == SystemLanguage.Spanish
             ? SpanishArgentina
             : English;
+    }
+
+    private static void PersistLanguage(string languageCode)
+    {
+        LocalSettingsStorage.SaveLanguageCode(languageCode);
+
+        // Keep the previous preference as a fallback and migrate existing installations safely.
+        if (!PlayerPrefs.HasKey(LegacyLocalePreferenceKey)
+            || !string.Equals(
+                PlayerPrefs.GetString(LegacyLocalePreferenceKey),
+                languageCode,
+                StringComparison.OrdinalIgnoreCase))
+        {
+            PlayerPrefs.SetString(LegacyLocalePreferenceKey, languageCode);
+            PlayerPrefs.Save();
+        }
     }
 }

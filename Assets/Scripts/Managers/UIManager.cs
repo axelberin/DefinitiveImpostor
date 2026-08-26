@@ -108,6 +108,7 @@ public class UIManager : MonoBehaviour
 
     private PlayerData discussionStartingPlayer;
     private GameRoundManager.ErrorData? lastError;
+    private bool persistenceReady;
 
     private void Awake()
     {
@@ -145,6 +146,8 @@ public class UIManager : MonoBehaviour
         playerNameInput.onEndEdit.AddListener(AddPlayerFromInput);
         addPlayerButton.onClick.AddListener(AddPlayerFromButton);
         playerNameInput.onValueChanged.AddListener(UpdateAddPlayerButtonState);
+        hintsToggle?.onValueChanged.AddListener(HandleConfigurationToggleChanged);
+        rerollToggle?.onValueChanged.AddListener(HandleConfigurationToggleChanged);
         UpdateAddPlayerButtonState(playerNameInput.text);
 
         UpdateNoPlayersConteiner();
@@ -181,7 +184,19 @@ public class UIManager : MonoBehaviour
         yield return GameLocalization.Initialize();
         PrewarmScreens();
         BuildCategoryToggles();
+        LoadSavedConfiguration();
         ShowInitialScreen();
+    }
+
+    private void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+            SaveCurrentConfiguration();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveCurrentConfiguration();
     }
 
     private void PrewarmScreens()
@@ -335,6 +350,7 @@ public class UIManager : MonoBehaviour
             deselectAllCategoriesButton.interactable = selectedCount > 0;
 
         UpdateStartGameButtonState();
+        SaveCurrentConfiguration();
     }
 
     private void SelectAllCategories()
@@ -382,6 +398,92 @@ public class UIManager : MonoBehaviour
 
         impostorCountText.text = impostorCount.ToString();
         UpdateStartGameButtonState();
+        SaveCurrentConfiguration();
+    }
+
+    private void HandleConfigurationToggleChanged(bool _)
+    {
+        SaveCurrentConfiguration();
+    }
+
+    private void LoadSavedConfiguration()
+    {
+        if (LocalSettingsStorage.TryGetGameConfiguration(out LocalGameConfigurationData savedConfiguration))
+            ApplySavedConfiguration(savedConfiguration);
+
+        persistenceReady = true;
+        SaveCurrentConfiguration();
+    }
+
+    private void ApplySavedConfiguration(LocalGameConfigurationData savedConfiguration)
+    {
+        foreach (PlayerRowUI row in playerRows)
+        {
+            if (row != null)
+                Destroy(row.gameObject);
+        }
+
+        players.Clear();
+        playerRows.Clear();
+
+        if (savedConfiguration.PlayerNames != null)
+        {
+            foreach (string savedPlayerName in savedConfiguration.PlayerNames)
+            {
+                if (!string.IsNullOrWhiteSpace(savedPlayerName))
+                    AddPlayer(savedPlayerName.Trim());
+            }
+        }
+
+        if (hintsToggle != null)
+            hintsToggle.SetIsOnWithoutNotify(savedConfiguration.HintsEnabled);
+
+        if (rerollToggle != null)
+            rerollToggle.SetIsOnWithoutNotify(savedConfiguration.RerollEnabled);
+
+        HashSet<string> enabledCategoryIds = new(
+            savedConfiguration.EnabledCategoryIds ?? new List<string>());
+        HashSet<string> knownCategoryIds = new(
+            savedConfiguration.KnownCategoryIds ?? new List<string>());
+
+        foreach (CategoryToggleUI toggleUI in categoryToggles)
+        {
+            bool isNewCategory = !knownCategoryIds.Contains(toggleUI.CategoryId);
+            bool isSelected = isNewCategory || enabledCategoryIds.Contains(toggleUI.CategoryId);
+            toggleUI.SetSelected(isSelected, false);
+        }
+
+        impostorCount = savedConfiguration.ImpostorCount;
+        UpdatePlayersUI();
+        UpdateCategoriesUI();
+    }
+
+    private void SaveCurrentConfiguration()
+    {
+        if (!persistenceReady)
+            return;
+
+        LocalGameConfigurationData configuration = new()
+        {
+            HintsEnabled = hintsToggle != null && hintsToggle.isOn,
+            RerollEnabled = rerollToggle != null && rerollToggle.isOn,
+            ImpostorCount = impostorCount,
+            EnabledCategoryIds = GetEnabledCategories()
+        };
+
+        foreach (PlayerData player in players)
+        {
+            if (player != null && !string.IsNullOrWhiteSpace(player.PlayerName))
+                configuration.PlayerNames.Add(player.PlayerName);
+        }
+
+        foreach (CategoryToggleUI toggleUI in categoryToggles)
+        {
+            if (!string.IsNullOrWhiteSpace(toggleUI.CategoryId))
+                configuration.KnownCategoryIds.Add(toggleUI.CategoryId);
+        }
+
+        LocalSettingsStorage.SaveGameConfiguration(configuration);
     }
 
     public void StartGameButton()
