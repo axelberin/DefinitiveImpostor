@@ -1,0 +1,15 @@
+﻿CategoryId,Type,NameKey,SubtitleKey,Name_es-AR,Subtitle_es-AR,Name_en,Subtitle_en
+argentine_celebrities,Normal,category.argentine_celebrities.name,category.argentine_celebrities.subtitle,Famosos argentinos,Celebridades de Argentina,Argentine Celebrities,Celebrities from Argentina
+global_celebrities,Normal,category.global_celebrities.name,category.global_celebrities.subtitle,Famosos globales,Celebridades de todo el mundo,Global Celebrities,Celebrities from around the world
+countries,Normal,category.countries.name,category.countries.subtitle,Países,Naciones del mundo,Countries,Nations from around the world
+foods,Normal,category.foods.name,category.foods.subtitle,Comidas,Gastronomía local y global,Food,Local and global dishes
+objects,Normal,category.objects.name,category.objects.subtitle,Objetos,Cosas de todos los días,Objects,Everyday things
+video_games,Normal,category.video_games.name,category.video_games.subtitle,Videojuegos,Títulos y sagas,Video Games,Games and franchises
+animals,Normal,category.animals.name,category.animals.subtitle,Animales,Fauna del mundo,Animals,Wildlife from around the world
+movies,Normal,category.movies.name,category.movies.subtitle,Películas,Cine para todos los gustos,Movies,Movies for every taste
+brands,Normal,category.brands.name,category.brands.subtitle,Marcas,Empresas y productos globales,Brands,Global companies and products
+professions,Normal,category.professions.name,category.professions.subtitle,Profesiones,Oficios y carreras,Professions,Jobs and careers
+superheroes,Normal,category.superheroes.name,category.superheroes.subtitle,Superhéroes,Personajes de cómic y cine,Superheroes,Comic-book and movie characters
+hot,Normal,category.hot.name,category.hot.subtitle,Hot,"Sexo, deseo y cero vergüenza",Hot,"Sex, desire, and zero shame"
+dark_humor,Normal,category.dark_humor.name,category.dark_humor.subtitle,Funable,Solo para gente con humor negro,Cancel Me,Dark humor with absolutely no safety net
+current_players,PlayerNames,category.current_players.name,category.current_players.subtitle,Jugadores de esta partida,Participantes de esta partida,Players in This Game,People in this game

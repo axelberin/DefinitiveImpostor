@@ -2,17 +2,43 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerRole
+{
+    Civilian,
+    Impostor
+}
+
 public class GameRoundManager : MonoBehaviour
 {
-    public struct RoleRevealData
+    public readonly struct RoleRevealData
     {
-        public string Category;
-        public string Role;
-        public string Word;
-        public string Hint;
+        public readonly string CategoryId;
+        public readonly PlayerRole Role;
+        public readonly WordData Word;
+        public readonly HintData Hint;
 
-        public bool HasWord => !string.IsNullOrWhiteSpace(Word);
-        public bool HasHint => !string.IsNullOrWhiteSpace(Hint);
+        public RoleRevealData(string categoryId, PlayerRole role, WordData word, HintData hint)
+        {
+            CategoryId = categoryId;
+            Role = role;
+            Word = word;
+            Hint = hint;
+        }
+
+        public bool HasWord => Word != null;
+        public bool HasHint => Hint != null;
+    }
+
+    public readonly struct ErrorData
+    {
+        public readonly string Key;
+        public readonly object[] Arguments;
+
+        public ErrorData(string key, object[] arguments)
+        {
+            Key = key;
+            Arguments = arguments;
+        }
     }
 
     [Header("Database")]
@@ -25,18 +51,16 @@ public class GameRoundManager : MonoBehaviour
     [SerializeField, Min(0.01f)] private float maximumImpostorWeight = 5f;
 
     public GameSettings Settings { get; private set; }
-
-    public string CurrentCategory { get; private set; }
+    public string CurrentCategoryId { get; private set; }
     public WordData CurrentWordData { get; private set; }
 
     public int CurrentPlayerIndex { get; private set; } = -1;
     public PlayerData CurrentPlayer => HasCurrentPlayer ? Settings.Players[CurrentPlayerIndex] : null;
-
     public bool IsRoundStarted { get; private set; }
     public bool IsRevealFinished { get; private set; }
     public bool IsRoleVisible { get; private set; }
-    public bool HasCurrentPlayer => Settings != null && Settings.Players != null && CurrentPlayerIndex >= 0 && CurrentPlayerIndex < Settings.Players.Count;
-
+    public bool HasCurrentPlayer => Settings != null && Settings.Players != null
+        && CurrentPlayerIndex >= 0 && CurrentPlayerIndex < Settings.Players.Count;
     public int RevealedPlayerCount => revealedPlayers.Count;
 
     public event Action<PlayerData, int> OnPlayerChanged;
@@ -45,11 +69,11 @@ public class GameRoundManager : MonoBehaviour
     public event Action OnPlayerRevealCompleted;
     public event Action OnRevealReset;
     public event Action OnRevealFinished;
-    public event Action<string> OnError;
+    public event Action<ErrorData> OnError;
 
-    private readonly Dictionary<PlayerData, string> impostorHints = new();
+    private readonly Dictionary<PlayerData, HintData> impostorHints = new();
     private readonly Dictionary<PlayerData, float> impostorSelectionWeights = new();
-    private readonly List<string> availableHints = new();
+    private readonly List<HintData> availableHints = new();
     private readonly HashSet<PlayerData> revealedPlayers = new();
 
     public bool StartRound(GameSettings settings)
@@ -58,15 +82,13 @@ public class GameRoundManager : MonoBehaviour
             return false;
 
         Settings = settings;
-
-        CurrentWordData = GetRandomWordForRound(out string selectedCategory);
-        CurrentCategory = selectedCategory;
+        CurrentWordData = GetRandomWordForRound(out string selectedCategoryId);
+        CurrentCategoryId = selectedCategoryId;
 
         if (CurrentWordData == null)
             return false;
 
         AssignWeightedImpostors(Settings);
-
         PrepareImpostorHints();
 
         CurrentPlayerIndex = -1;
@@ -74,102 +96,24 @@ public class GameRoundManager : MonoBehaviour
         IsRoundStarted = true;
         IsRevealFinished = false;
         IsRoleVisible = false;
-
         return true;
-    }
-
-    private void AssignWeightedImpostors(GameSettings settings)
-    {
-        foreach (PlayerData player in settings.Players)
-        {
-            player.IsImpostor = false;
-
-            if (!impostorSelectionWeights.ContainsKey(player))
-                impostorSelectionWeights[player] = initialImpostorWeight;
-        }
-
-        RemoveInactivePlayersFromImpostorHistory(settings.Players);
-
-        List<PlayerData> candidates = new(settings.Players);
-        HashSet<PlayerData> selectedImpostors = new();
-
-        for (int i = 0; i < settings.ImpostorCount; i++)
-        {
-            PlayerData selectedPlayer = GetWeightedRandomPlayer(candidates);
-
-            selectedPlayer.IsImpostor = true;
-            selectedImpostors.Add(selectedPlayer);
-            candidates.Remove(selectedPlayer);
-        }
-
-        foreach (PlayerData player in settings.Players)
-        {
-            if (selectedImpostors.Contains(player))
-            {
-                // Puede volver a salir, pero su probabilidad baja mucho en la ronda siguiente.
-                impostorSelectionWeights[player] = recentImpostorWeight;
-                continue;
-            }
-
-            // Cuantas más rondas pase sin salir, más oportunidades tendrá en la próxima.
-            impostorSelectionWeights[player] = Mathf.Min(
-                impostorSelectionWeights[player] + weightIncreasePerRound,
-                Mathf.Max(maximumImpostorWeight, initialImpostorWeight)
-            );
-        }
-    }
-
-    private PlayerData GetWeightedRandomPlayer(List<PlayerData> candidates)
-    {
-        float totalWeight = 0f;
-
-        foreach (PlayerData player in candidates)
-            totalWeight += Mathf.Max(0.01f, impostorSelectionWeights[player]);
-
-        float randomValue = UnityEngine.Random.value * totalWeight;
-
-        foreach (PlayerData player in candidates)
-        {
-            randomValue -= Mathf.Max(0.01f, impostorSelectionWeights[player]);
-
-            if (randomValue <= 0f)
-                return player;
-        }
-
-        // Respaldo ante un posible error de precisión con floats.
-        return candidates[candidates.Count - 1];
-    }
-
-    private void RemoveInactivePlayersFromImpostorHistory(List<PlayerData> activePlayers)
-    {
-        List<PlayerData> trackedPlayers = new(impostorSelectionWeights.Keys);
-
-        foreach (PlayerData trackedPlayer in trackedPlayers)
-        {
-            if (!activePlayers.Contains(trackedPlayer))
-                impostorSelectionWeights.Remove(trackedPlayer);
-        }
     }
 
     public bool SelectPlayerForReveal(PlayerData player)
     {
-        if (!IsRoundValid())
-            return false;
-
-        if (IsRevealFinished)
+        if (!IsRoundValid() || IsRevealFinished)
             return false;
 
         if (player == null)
         {
-            SendError("El jugador seleccionado no es válido.");
+            SendError("ui.error.invalid_player");
             return false;
         }
 
         int playerIndex = Settings.Players.IndexOf(player);
-
         if (playerIndex < 0)
         {
-            SendError("El jugador seleccionado no pertenece a esta partida.");
+            SendError("ui.error.player_not_in_game");
             return false;
         }
 
@@ -178,7 +122,6 @@ public class GameRoundManager : MonoBehaviour
 
         CurrentPlayerIndex = playerIndex;
         IsRoleVisible = false;
-
         OnPlayerChanged?.Invoke(player, playerIndex);
         return true;
     }
@@ -190,7 +133,7 @@ public class GameRoundManager : MonoBehaviour
 
         if (playerIndex < 0 || playerIndex >= Settings.Players.Count)
         {
-            SendError("El índice del jugador seleccionado no es válido.");
+            SendError("ui.error.invalid_player_index");
             return false;
         }
 
@@ -204,16 +147,16 @@ public class GameRoundManager : MonoBehaviour
 
     public void RevealCurrentPlayerRole()
     {
-        if (!IsCurrentPlayerValid())
-            return;
-
-        if (IsRevealFinished)
+        if (!IsCurrentPlayerValid() || IsRevealFinished)
             return;
 
         IsRoleVisible = true;
+        OnRoleRevealed?.Invoke(GetRevealDataForPlayer(CurrentPlayer));
+    }
 
-        RoleRevealData revealData = GetRevealDataForPlayer(CurrentPlayer);
-        OnRoleRevealed?.Invoke(revealData);
+    public RoleRevealData GetCurrentRevealData()
+    {
+        return HasCurrentPlayer ? GetRevealDataForPlayer(CurrentPlayer) : default;
     }
 
     public void HideCurrentPlayerRole()
@@ -227,207 +170,164 @@ public class GameRoundManager : MonoBehaviour
 
     public void CompleteCurrentPlayerReveal()
     {
-        if (!IsCurrentPlayerValid())
+        if (!IsCurrentPlayerValid() || !IsRoleVisible)
             return;
 
-        if (!IsRoleVisible)
-            return;
-
-        PlayerData completedPlayer = CurrentPlayer;
-        revealedPlayers.Add(completedPlayer);
-
+        revealedPlayers.Add(CurrentPlayer);
         CurrentPlayerIndex = -1;
         IsRoleVisible = false;
 
         if (revealedPlayers.Count >= Settings.Players.Count)
         {
-            FinishRevealPhase();
+            IsRevealFinished = true;
+            OnRevealFinished?.Invoke();
             return;
         }
 
         OnPlayerRevealCompleted?.Invoke();
     }
 
-    // Lo dejo para no romper botones o referencias viejas del Inspector.
+    // Compatibility for buttons that may still reference the old method.
     public void GoToNextPlayer()
     {
         CompleteCurrentPlayerReveal();
     }
 
-    private void FinishRevealPhase()
-    {
-        IsRevealFinished = true;
-        IsRoleVisible = false;
-        CurrentPlayerIndex = -1;
-
-        OnRevealFinished?.Invoke();
-    }
-
-    private RoleRevealData GetRevealDataForPlayer(PlayerData player)
-    {
-        RoleRevealData data = new()
-        {
-            Category = CurrentCategory,
-            Role = player.IsImpostor ? "Impostor" : "Civil",
-            Word = player.IsImpostor ? "" : CurrentWordData.Word,
-            Hint = ""
-        };
-
-        if (player.IsImpostor && Settings.HintsEnabled && impostorHints.TryGetValue(player, out string hint))
-        {
-            data.Hint = hint;
-        }
-
-        return data;
-    }
-
-    private bool CanStartRound(GameSettings settings)
-    {
-        if (wordDatabase == null)
-        {
-            SendError("Falta asignar WordDatabase en el inspector.");
-            return false;
-        }
-
-        if (settings == null)
-        {
-            SendError("GameSettings es null.");
-            return false;
-        }
-
-        if (settings.Players == null || settings.Players.Count < 3)
-        {
-            SendError("Necesitás al menos 3 jugadores.");
-            return false;
-        }
-
-        if (settings.EnabledCategories == null || settings.EnabledCategories.Count == 0)
-        {
-            SendError("Tenés que habilitar al menos una categoría.");
-            return false;
-        }
-
-        if (settings.ImpostorCount <= 0)
-        {
-            SendError("Tenés que elegir al menos 1 impostor.");
-            return false;
-        }
-
-        if (settings.ImpostorCount >= settings.Players.Count)
-        {
-            SendError("La cantidad de impostores tiene que ser menor a la cantidad de jugadores.");
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool IsRoundValid()
-    {
-        if (!IsRoundStarted)
-        {
-            SendError("La partida todavía no empezó.");
-            return false;
-        }
-
-        if (Settings == null || Settings.Players == null)
-        {
-            SendError("La configuración de partida no es válida.");
-            return false;
-        }
-
-        if (CurrentWordData == null)
-        {
-            SendError("No hay palabra seleccionada.");
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool IsCurrentPlayerValid()
-    {
-        if (!IsRoundValid())
-            return false;
-
-        if (!HasCurrentPlayer)
-        {
-            SendError("No hay ningún jugador seleccionado para revelar.");
-            return false;
-        }
-
-        return true;
-    }
-
     public void RerollCurrentWord()
     {
-        if (!IsCurrentPlayerValid())
+        if (!IsCurrentPlayerValid() || !IsRoleVisible || CurrentPlayer.IsImpostor)
             return;
 
-        if (!IsRoleVisible)
-            return;
-
-        if (CurrentPlayer.IsImpostor)
-            return;
-
-        WordData newWordData = GetRandomWordForRound(out string selectedCategory);
-
-        if (newWordData == null)
+        WordData newWord = GetRandomWordForRound(out string selectedCategoryId);
+        if (newWord == null)
         {
-            SendError("No se pudo rollear una nueva palabra.");
+            SendError("ui.error.reroll_failed");
             return;
         }
 
-        CurrentWordData = newWordData;
-        CurrentCategory = selectedCategory;
-
+        CurrentWordData = newWord;
+        CurrentCategoryId = selectedCategoryId;
         PrepareImpostorHints();
 
         CurrentPlayerIndex = -1;
         revealedPlayers.Clear();
         IsRevealFinished = false;
         IsRoleVisible = false;
-
         OnRevealReset?.Invoke();
     }
 
-    private WordData GetRandomWordForRound(out string selectedCategory)
+    private void AssignWeightedImpostors(GameSettings settings)
     {
-        selectedCategory = Settings.EnabledCategories[
+        foreach (PlayerData player in settings.Players)
+        {
+            player.IsImpostor = false;
+            if (!impostorSelectionWeights.ContainsKey(player))
+                impostorSelectionWeights[player] = initialImpostorWeight;
+        }
+
+        RemoveInactivePlayersFromImpostorHistory(settings.Players);
+
+        List<PlayerData> candidates = new(settings.Players);
+        HashSet<PlayerData> selectedImpostors = new();
+
+        for (int i = 0; i < settings.ImpostorCount; i++)
+        {
+            PlayerData selected = GetWeightedRandomPlayer(candidates);
+            selected.IsImpostor = true;
+            selectedImpostors.Add(selected);
+            candidates.Remove(selected);
+        }
+
+        foreach (PlayerData player in settings.Players)
+        {
+            impostorSelectionWeights[player] = selectedImpostors.Contains(player)
+                ? recentImpostorWeight
+                : Mathf.Min(impostorSelectionWeights[player] + weightIncreasePerRound,
+                    Mathf.Max(maximumImpostorWeight, initialImpostorWeight));
+        }
+    }
+
+    private PlayerData GetWeightedRandomPlayer(List<PlayerData> candidates)
+    {
+        float totalWeight = 0f;
+        foreach (PlayerData player in candidates)
+            totalWeight += Mathf.Max(0.01f, impostorSelectionWeights[player]);
+
+        float randomValue = UnityEngine.Random.value * totalWeight;
+        foreach (PlayerData player in candidates)
+        {
+            randomValue -= Mathf.Max(0.01f, impostorSelectionWeights[player]);
+            if (randomValue <= 0f)
+                return player;
+        }
+
+        return candidates[candidates.Count - 1];
+    }
+
+    private void RemoveInactivePlayersFromImpostorHistory(List<PlayerData> activePlayers)
+    {
+        List<PlayerData> trackedPlayers = new(impostorSelectionWeights.Keys);
+        foreach (PlayerData tracked in trackedPlayers)
+        {
+            if (!activePlayers.Contains(tracked))
+                impostorSelectionWeights.Remove(tracked);
+        }
+    }
+
+    private RoleRevealData GetRevealDataForPlayer(PlayerData player)
+    {
+        PlayerRole role = player.IsImpostor ? PlayerRole.Impostor : PlayerRole.Civilian;
+        WordData word = player.IsImpostor ? null : CurrentWordData;
+        HintData hint = null;
+
+        if (player.IsImpostor && Settings.HintsEnabled)
+            impostorHints.TryGetValue(player, out hint);
+
+        return new RoleRevealData(CurrentCategoryId, role, word, hint);
+    }
+
+    private WordData GetRandomWordForRound(out string selectedCategoryId)
+    {
+        selectedCategoryId = Settings.EnabledCategories[
             UnityEngine.Random.Range(0, Settings.EnabledCategories.Count)];
 
-        WordCategory category = wordDatabase.GetCategory(selectedCategory);
-
+        WordCategory category = wordDatabase.GetCategory(selectedCategoryId);
         if (category == null)
         {
-            SendError($"No existe la categoría: {selectedCategory}");
+            SendError("ui.error.category_missing",
+                GameLocalization.Args("category", selectedCategoryId));
             return null;
         }
 
         if (category.CategoryType == CategoryType.PlayerNames)
-        {
             return CreatePlayerNameWord(Settings);
-        }
 
-        return wordDatabase.GetRandomWordFromEnabledCategories(
-            new List<string> { selectedCategory },
-            out _
-        );
+        WordData word = wordDatabase.GetRandomWordFromEnabledCategories(
+            new[] { selectedCategoryId }, out _);
+
+        if (word == null)
+            SendError("ui.error.no_available_words");
+
+        return word;
     }
 
-    private WordData CreatePlayerNameWord(GameSettings settings)
+    private static WordData CreatePlayerNameWord(GameSettings settings)
     {
-        PlayerData randomPlayer =
-            settings.Players[UnityEngine.Random.Range(0, settings.Players.Count)];
-
+        PlayerData randomPlayer = settings.Players[UnityEngine.Random.Range(0, settings.Players.Count)];
         return new WordData
         {
-            Word = randomPlayer.PlayerName,
-            Hints = new()
+            WordId = "runtime.current_player",
+            RuntimeWord = randomPlayer.PlayerName,
+            DescriptionKey = "content.dynamic.player_description",
+            DescriptionArguments = new object[] { GameLocalization.Args("player", randomPlayer.PlayerName) },
+            Hints = new List<HintData>
             {
-                "Jugador",
-            },
-            Description = $"{randomPlayer.PlayerName} es un jugador de esta partida."
+                new()
+                {
+                    HintId = "runtime.current_player.hint",
+                    TextKey = "content.dynamic.player_hint"
+                }
+            }
         };
     }
 
@@ -436,23 +336,22 @@ public class GameRoundManager : MonoBehaviour
         impostorHints.Clear();
         availableHints.Clear();
 
-        if (CurrentWordData == null || CurrentWordData.Hints == null)
+        if (CurrentWordData?.Hints == null)
             return;
 
-        List<string> allHints = new();
-
-        foreach (string hint in CurrentWordData.Hints)
+        List<HintData> allHints = new();
+        foreach (HintData hint in CurrentWordData.Hints)
         {
-            if (!string.IsNullOrWhiteSpace(hint))
+            if (hint != null && (!string.IsNullOrWhiteSpace(hint.TextKey)
+                || !string.IsNullOrWhiteSpace(hint.RuntimeText)))
+            {
                 allHints.Add(hint);
+            }
         }
-
-        if (allHints.Count == 0)
-            return;
 
         foreach (PlayerData player in Settings.Players)
         {
-            if (!player.IsImpostor)
+            if (!player.IsImpostor || allHints.Count == 0)
                 continue;
 
             if (availableHints.Count == 0)
@@ -464,9 +363,55 @@ public class GameRoundManager : MonoBehaviour
         }
     }
 
-    private void SendError(string message)
+    private bool CanStartRound(GameSettings settings)
     {
-        Debug.LogError(message);
-        OnError?.Invoke(message);
+        if (wordDatabase == null)
+            return Fail("ui.error.word_database_missing");
+        if (settings == null)
+            return Fail("ui.error.settings_null");
+        if (settings.Players == null || settings.Players.Count < 3)
+            return Fail("ui.error.minimum_players");
+        if (settings.EnabledCategories == null || settings.EnabledCategories.Count == 0)
+            return Fail("ui.error.no_categories");
+        if (settings.ImpostorCount <= 0)
+            return Fail("ui.error.minimum_impostors");
+        if (settings.ImpostorCount >= settings.Players.Count)
+            return Fail("ui.error.too_many_impostors");
+
+        return true;
+    }
+
+    private bool IsRoundValid()
+    {
+        if (!IsRoundStarted)
+            return Fail("ui.error.round_not_started");
+        if (Settings?.Players == null)
+            return Fail("ui.error.invalid_settings");
+        if (CurrentWordData == null)
+            return Fail("ui.error.no_word");
+
+        return true;
+    }
+
+    private bool IsCurrentPlayerValid()
+    {
+        if (!IsRoundValid())
+            return false;
+        if (!HasCurrentPlayer)
+            return Fail("ui.error.no_player_selected");
+
+        return true;
+    }
+
+    private bool Fail(string key, params object[] arguments)
+    {
+        SendError(key, arguments);
+        return false;
+    }
+
+    private void SendError(string key, params object[] arguments)
+    {
+        Debug.LogError($"Localization error key: {key}");
+        OnError?.Invoke(new ErrorData(key, arguments));
     }
 }

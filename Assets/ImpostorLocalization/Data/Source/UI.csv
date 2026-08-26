@@ -1,0 +1,80 @@
+﻿Key,Context,IsSmartString,es-AR,en
+ui.brand.title,Marca principal del juego,false,IMPOSTOR DEFINITIVO,THE ULTIMATE IMPOSTOR
+ui.initial.play,Botón de la pantalla inicial,false,JUGAR,PLAY
+ui.setup.title,Título del menú de configuración,false,Configurá tu partida,Set Up Your Game
+ui.setup.subtitle,Subtítulo del menú de configuración,false,Configuración,Settings
+ui.setup.impostors,Acceso a configuración de impostores,false,Configurar Impostores,Set Up Impostors
+ui.setup.impostors.subtitle,Resumen de configuración de impostores,false,Cantidad de impostores,Number of impostors
+ui.setup.players,Acceso a configuración de jugadores,false,Configurar Jugadores,Set Up Players
+ui.setup.players.subtitle,Resumen de configuración de jugadores,false,Añadir nombres de jugadores,Add player names
+ui.setup.categories,Acceso a selección de categorías,false,Seleccionar Categorías,Select Categories
+ui.setup.categories.subtitle,Resumen de categorías,false,Configuraciones de palabras,Word settings
+ui.setup.start,Botón que inicia la partida,false,¡Iniciar partida!,Start Game!
+ui.common.back_menu,Botón para volver al menú,false,Volver al Menú,Back to Menu
+ui.common.back,Botón para volver a la pantalla anterior,false,Volver,Back
+ui.common.clear,Botón para desmarcar todas las opciones,false,Limpiar,Clear
+ui.common.all,Botón para seleccionar todas las opciones,false,Todo,All
+ui.common.description,Botón o título de descripción,false,Descripción,Description
+ui.impostors.title,Título de configuración de impostores,false,Impostor,Impostor
+ui.impostors.subtitle,Subtítulo de configuración de impostores,false,Ajustá las reglas del Impostor,Tweak the Impostor rules
+ui.impostors.count_label,Etiqueta de cantidad de impostores,false,Número de impostores,Number of impostors
+ui.impostors.count_help,Ayuda de cantidad de impostores,false,Cuántos impostores habrá en la partida,How many impostors will be in the game
+ui.impostors.hints_label,Etiqueta del interruptor de pistas,false,Pista para impostores,Hints for impostors
+ui.impostors.hints_help,Ayuda del interruptor de pistas,false,Los impostores recibirán pistas,Impostors will receive hints
+ui.players.title,Título de configuración de jugadores,false,Jugadores,Players
+ui.players.subtitle,Subtítulo de configuración de jugadores,false,Añadir nombres de jugadores,Add player names
+ui.players.list_label,Etiqueta de la lista de jugadores,false,Jugadores,Players
+ui.players.name_placeholder,Placeholder del campo de nombre,false,Nombre...,Name...
+ui.players.empty_title,Título cuando no hay jugadores,false,No hay jugadores aún,No players yet
+ui.players.empty_help,Ayuda cuando no hay jugadores,false,Agregá al menos 3 jugadores para comenzar,Add at least 3 players to start
+ui.players.reroll_label,Etiqueta de cambio de palabra,false,Cambiar palabra,Change word
+ui.players.reroll_help,Ayuda de cambio de palabra,false,Los civiles pueden cambiar la palabra,Civilians can change the word
+ui.categories.title,Título de selección de categorías,false,Categorías,Categories
+ui.categories.subtitle,Subtítulo de selección de categorías,false,Configuraciones de palabras,Word settings
+ui.categories.list_label,Etiqueta de lista de categorías,false,Categorías,Categories
+ui.categories.selected_count,Cantidad de categorías seleccionadas,true,{count} seleccionadas,{count} selected
+ui.reveal_selection.title,Título de selección del jugador a revelar,false,¡A JUGAR!,LET'S PLAY!
+ui.reveal_selection.subtitle,Instrucción de selección del jugador,false,"Tocá tu nombre para revelar tu palabra,
+después pasá el dispositivo al siguiente jugador.","Tap your name to reveal your word,
+then pass the device to the next player."
+ui.reveal_selection.counter,Contador de jugadores revelados,true,{revealed}/{total} revelados,{revealed}/{total} revealed
+ui.reveal.hidden_title,Instrucción para revelar el rol,false,Toca para revelar,Tap to reveal
+ui.reveal.privacy,Advertencia de privacidad al revelar,false,Que nadie más vea la pantalla,Make sure nobody else sees the screen
+ui.reveal.player_counter,Contador del jugador actual,true,Jugador {current}/{total},Player {current}/{total}
+ui.reveal.category,Categoría revelada,true,Categoría: {category},Category: {category}
+ui.reveal.role.impostor,Rol del jugador impostor,false,Impostor,Impostor
+ui.reveal.hint,Pista revelada al impostor,true,Pista: {hint},Hint: {hint}
+ui.reveal.next,Botón para pasar al siguiente jugador,false,Siguiente jugador,Next player
+ui.reveal.reroll,Botón para cambiar la palabra,false,Cambiar palabra,Change word
+ui.description.no_word,Mensaje si no existe una palabra actual,false,No hay una palabra cargada.,No word is currently loaded.
+ui.description.missing,Respaldo si una palabra no tiene descripción,true,{word}: todavía no tiene una descripción cargada.,{word} does not have a description yet.
+ui.discussion.title,Título de la pantalla de debate,false,Debate,Discussion
+ui.discussion.start,Título que indica quién comienza la ronda,true,Jugador {player} comienza la ronda,{player} starts the round
+ui.discussion.initial_player_label,Etiqueta del jugador que inicia,false,Jugador Inicial,Starting Player
+ui.discussion.instructions_title,Título de instrucciones del debate,false,¿Quién es el Impostor?,Who Is the Impostor?
+ui.discussion.instructions,Texto de ayuda del debate,false,"Hagan preguntas, acusen sin pruebas y descubran quién está mintiendo. Cuando estén listos, revelen el resultado.","Ask questions, make reckless accusations, and figure out who is lying. Reveal the result when you are ready."
+ui.discussion.reveal_results,Botón para mostrar los resultados,false,Revelar resultado,Reveal Result
+ui.results.title,Título de la pantalla de resultados,false,Revelación,Reveal
+ui.results.impostors_label,Etiqueta de los impostores del resultado,false,Impostores:,Impostors:
+ui.results.word_label,Etiqueta de la palabra del resultado,false,Palabra secreta:,Secret word:
+ui.results.restart,Botón para jugar otra vez,false,Jugar de nuevo,Play Again
+ui.results.menu,Botón para volver al menú,false,Volver al Menú,Back to Menu
+ui.error.close,Botón para cerrar un error,false,Cerrar,Close
+ui.error.word_database_missing,Error: falta WordDatabase,false,Falta asignar WordDatabase en el Inspector.,WordDatabase is not assigned in the Inspector.
+ui.error.settings_null,Error: GameSettings nulo,false,La configuración de la partida no existe.,The game settings are missing.
+ui.error.minimum_players,Error: faltan jugadores,false,Necesitás al menos 3 jugadores.,You need at least 3 players.
+ui.error.no_categories,Error: no hay categorías habilitadas,false,Tenés que habilitar al menos una categoría.,Enable at least one category.
+ui.error.minimum_impostors,Error: faltan impostores,false,Tenés que elegir al menos 1 impostor.,Choose at least 1 impostor.
+ui.error.too_many_impostors,Error: hay demasiados impostores,false,La cantidad de impostores tiene que ser menor a la cantidad de jugadores.,There must be fewer impostors than players.
+ui.error.round_not_started,Error: la ronda no empezó,false,La partida todavía no empezó.,The game has not started yet.
+ui.error.invalid_settings,Error: configuración inválida,false,La configuración de la partida no es válida.,The game settings are invalid.
+ui.error.no_word,Error: no hay palabra seleccionada,false,No hay una palabra seleccionada.,No word is selected.
+ui.error.no_player_selected,Error: no hay jugador para revelar,false,No hay ningún jugador seleccionado para revelar.,No player is selected for reveal.
+ui.error.invalid_player,Error: jugador inválido,false,El jugador seleccionado no es válido.,The selected player is invalid.
+ui.error.player_not_in_game,Error: jugador ajeno a la partida,false,El jugador seleccionado no pertenece a esta partida.,The selected player is not part of this game.
+ui.error.invalid_player_index,Error: índice de jugador inválido,false,El índice del jugador seleccionado no es válido.,The selected player index is invalid.
+ui.error.category_missing,Error: categoría inexistente,true,No existe la categoría: {category},Category does not exist: {category}
+ui.error.reroll_failed,Error: no se pudo cambiar la palabra,false,No se pudo elegir una nueva palabra.,Could not choose a new word.
+ui.error.no_available_words,Error: categorías sin palabras,false,No hay categorías habilitadas con palabras.,No enabled category contains any words.
+content.dynamic.player_hint,Pista para la categoría de jugadores actuales,false,Jugador,Player
+content.dynamic.player_description,Descripción de palabra dinámica para un jugador,true,{player} es un jugador de esta partida.,{player} is a player in this game.

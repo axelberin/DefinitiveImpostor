@@ -15,33 +15,43 @@ public class CategoryToggleUI : MonoBehaviour
     [SerializeField] private Image checkImage;
     [SerializeField] private Toggle toggle;
 
-    public string CategoryName { get; private set; }
-    public bool IsOn => toggle.isOn;
+    private WordCategory category;
+
+    public string CategoryId => category != null ? category.CategoryId : string.Empty;
+    public bool IsOn => toggle != null && toggle.isOn;
 
     private void Awake()
     {
-        categoryNameText.raycastTarget = false;
-        categoryDescriptionText.raycastTarget = false;
+        if (categoryNameText != null)
+            categoryNameText.raycastTarget = false;
+        if (categoryDescriptionText != null)
+            categoryDescriptionText.raycastTarget = false;
 
-        toggle.onValueChanged.AddListener(_ =>
-        {
-            RefreshVisualState(toggle.isOn);
-            OnValueChanged?.Invoke();
-        });
+        toggle?.onValueChanged.AddListener(HandleToggleValueChanged);
     }
 
-    public void Setup(WordCategory category)
+    private void OnEnable()
     {
-        CategoryName = category.CategoryName;
+        GameLocalization.LanguageChanged += RefreshLocalizedText;
+    }
 
-        categoryNameText.text = category.CategoryName;
+    private void OnDisable()
+    {
+        GameLocalization.LanguageChanged -= RefreshLocalizedText;
+    }
 
-        if (categoryDescriptionText != null)
-            categoryDescriptionText.text = category.Description;
+    private void OnDestroy()
+    {
+        toggle?.onValueChanged.RemoveListener(HandleToggleValueChanged);
+    }
+
+    public void Setup(WordCategory value)
+    {
+        category = value;
+        RefreshLocalizedText();
 
         if (backgroundImage != null)
             backgroundImage.color = category.CategoryColor;
-
         if (checkImage != null)
             checkImage.color = category.CategoryColor;
 
@@ -65,6 +75,23 @@ public class CategoryToggleUI : MonoBehaviour
             toggle.SetIsOnWithoutNotify(isSelected);
 
         RefreshVisualState(toggle.isOn);
+    }
+
+    public void RefreshLocalizedText()
+    {
+        if (category == null)
+            return;
+
+        if (categoryNameText != null)
+            categoryNameText.text = category.GetLocalizedName();
+        if (categoryDescriptionText != null)
+            categoryDescriptionText.text = category.GetLocalizedSubtitle();
+    }
+
+    private void HandleToggleValueChanged(bool value)
+    {
+        RefreshVisualState(value);
+        OnValueChanged?.Invoke();
     }
 
     private void RefreshVisualState(bool active)

@@ -1,18 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class WordCategory
 {
-    public string CategoryName;
+    public string CategoryId;
+    public string NameKey;
+    public string SubtitleKey;
+    public CategoryType CategoryType;
+    public List<WordData> Words = new();
 
-    [TextArea]
-    [HideInInspector] public string Description;
     [HideInInspector] public Color CategoryColor = Color.white;
     [HideInInspector] public Sprite CategoryImage;
 
-    public CategoryType CategoryType;
-    public List<WordData> Words = new();
+    public string GetLocalizedName() => GameLocalization.GetContent(NameKey);
+    public string GetLocalizedSubtitle() => GameLocalization.GetContent(SubtitleKey);
 }
 
 public enum CategoryType

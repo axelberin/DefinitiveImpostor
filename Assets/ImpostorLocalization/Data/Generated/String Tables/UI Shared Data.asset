@@ -1,0 +1,328 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 36e59828db3d5a94d8974c3ce6d45faa
+  m_Entries:
+  - m_Id: 5454767173632
+    m_Key: ui.brand.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950848
+    m_Key: ui.initial.play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950849
+    m_Key: ui.setup.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950850
+    m_Key: ui.setup.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950851
+    m_Key: ui.setup.impostors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950852
+    m_Key: ui.setup.impostors.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950853
+    m_Key: ui.setup.players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950854
+    m_Key: ui.setup.players.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950855
+    m_Key: ui.setup.categories
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950856
+    m_Key: ui.setup.categories.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950857
+    m_Key: ui.setup.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950858
+    m_Key: ui.common.back_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950859
+    m_Key: ui.common.back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950860
+    m_Key: ui.common.clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950861
+    m_Key: ui.common.all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950862
+    m_Key: ui.common.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950863
+    m_Key: ui.impostors.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950864
+    m_Key: ui.impostors.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950865
+    m_Key: ui.impostors.count_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950866
+    m_Key: ui.impostors.count_help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950867
+    m_Key: ui.impostors.hints_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950868
+    m_Key: ui.impostors.hints_help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950869
+    m_Key: ui.players.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950870
+    m_Key: ui.players.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950871
+    m_Key: ui.players.list_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950872
+    m_Key: ui.players.name_placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950873
+    m_Key: ui.players.empty_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950874
+    m_Key: ui.players.empty_help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950875
+    m_Key: ui.players.reroll_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950876
+    m_Key: ui.players.reroll_help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950877
+    m_Key: ui.categories.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950878
+    m_Key: ui.categories.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950879
+    m_Key: ui.categories.list_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950880
+    m_Key: ui.categories.selected_count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950881
+    m_Key: ui.reveal_selection.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950882
+    m_Key: ui.reveal_selection.subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950883
+    m_Key: ui.reveal_selection.counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950884
+    m_Key: ui.reveal.hidden_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950885
+    m_Key: ui.reveal.privacy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950886
+    m_Key: ui.reveal.player_counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950887
+    m_Key: ui.reveal.category
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950888
+    m_Key: ui.reveal.role.impostor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950889
+    m_Key: ui.reveal.hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950890
+    m_Key: ui.reveal.next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950891
+    m_Key: ui.reveal.reroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950892
+    m_Key: ui.description.no_word
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950893
+    m_Key: ui.description.missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950894
+    m_Key: ui.discussion.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950895
+    m_Key: ui.discussion.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950896
+    m_Key: ui.discussion.initial_player_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950897
+    m_Key: ui.discussion.instructions_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950898
+    m_Key: ui.discussion.instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950899
+    m_Key: ui.discussion.reveal_results
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950900
+    m_Key: ui.results.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950901
+    m_Key: ui.results.impostors_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950902
+    m_Key: ui.results.word_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950903
+    m_Key: ui.results.restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950904
+    m_Key: ui.results.menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950905
+    m_Key: ui.error.close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950906
+    m_Key: ui.error.word_database_missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950907
+    m_Key: ui.error.settings_null
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950908
+    m_Key: ui.error.minimum_players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950909
+    m_Key: ui.error.no_categories
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950910
+    m_Key: ui.error.minimum_impostors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950911
+    m_Key: ui.error.too_many_impostors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950912
+    m_Key: ui.error.round_not_started
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950913
+    m_Key: ui.error.invalid_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950914
+    m_Key: ui.error.no_word
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950915
+    m_Key: ui.error.no_player_selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950916
+    m_Key: ui.error.invalid_player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950917
+    m_Key: ui.error.player_not_in_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950918
+    m_Key: ui.error.invalid_player_index
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950919
+    m_Key: ui.error.category_missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950920
+    m_Key: ui.error.reroll_failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5454783950921
+    m_Key: ui.error.no_available_words
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8581773504040927521
+  references:
+    version: 2
+    RefIds:
+    - rid: 8581773504040927521
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1787701295000

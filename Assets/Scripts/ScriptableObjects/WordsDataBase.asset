@@ -13,1332 +13,1850 @@ MonoBehaviour:
   m_Name: WordsDataBase
   m_EditorClassIdentifier: 
   categories:
-  - CategoryName: Famosos argentinos
-    Description: Celebridades de Argentina
+  - CategoryId: argentine_celebrities
+    NameKey: category.argentine_celebrities.name
+    SubtitleKey: category.argentine_celebrities.subtitle
+    CategoryType: 0
+    Words:
+    - WordId: argentine_celebrities.messi
+      WordKey: word.argentine_celebrities.messi.name
+      DescriptionKey: word.argentine_celebrities.messi.description
+      Hints:
+      - HintId: argentine_celebrities.messi.hint.01
+        TextKey: hint.argentine_celebrities.messi.hint.01
+      - HintId: argentine_celebrities.messi.hint.02
+        TextKey: hint.argentine_celebrities.messi.hint.02
+    - WordId: argentine_celebrities.maradona
+      WordKey: word.argentine_celebrities.maradona.name
+      DescriptionKey: word.argentine_celebrities.maradona.description
+      Hints:
+      - HintId: argentine_celebrities.maradona.hint.01
+        TextKey: hint.argentine_celebrities.maradona.hint.01
+      - HintId: argentine_celebrities.maradona.hint.02
+        TextKey: hint.argentine_celebrities.maradona.hint.02
+    - WordId: argentine_celebrities.lali_esposito
+      WordKey: word.argentine_celebrities.lali_esposito.name
+      DescriptionKey: word.argentine_celebrities.lali_esposito.description
+      Hints:
+      - HintId: argentine_celebrities.lali_esposito.hint.01
+        TextKey: hint.argentine_celebrities.lali_esposito.hint.01
+      - HintId: argentine_celebrities.lali_esposito.hint.02
+        TextKey: hint.argentine_celebrities.lali_esposito.hint.02
+    - WordId: argentine_celebrities.davo
+      WordKey: word.argentine_celebrities.davo.name
+      DescriptionKey: word.argentine_celebrities.davo.description
+      Hints:
+      - HintId: argentine_celebrities.davo.hint.01
+        TextKey: hint.argentine_celebrities.davo.hint.01
+      - HintId: argentine_celebrities.davo.hint.02
+        TextKey: hint.argentine_celebrities.davo.hint.02
+    - WordId: argentine_celebrities.duki
+      WordKey: word.argentine_celebrities.duki.name
+      DescriptionKey: word.argentine_celebrities.duki.description
+      Hints:
+      - HintId: argentine_celebrities.duki.hint.01
+        TextKey: hint.argentine_celebrities.duki.hint.01
+      - HintId: argentine_celebrities.duki.hint.02
+        TextKey: hint.argentine_celebrities.duki.hint.02
+    - WordId: argentine_celebrities.carito_muller
+      WordKey: word.argentine_celebrities.carito_muller.name
+      DescriptionKey: word.argentine_celebrities.carito_muller.description
+      Hints:
+      - HintId: argentine_celebrities.carito_muller.hint.01
+        TextKey: hint.argentine_celebrities.carito_muller.hint.01
+      - HintId: argentine_celebrities.carito_muller.hint.02
+        TextKey: hint.argentine_celebrities.carito_muller.hint.02
+    - WordId: argentine_celebrities.ricardo_darin
+      WordKey: word.argentine_celebrities.ricardo_darin.name
+      DescriptionKey: word.argentine_celebrities.ricardo_darin.description
+      Hints:
+      - HintId: argentine_celebrities.ricardo_darin.hint.01
+        TextKey: hint.argentine_celebrities.ricardo_darin.hint.01
+      - HintId: argentine_celebrities.ricardo_darin.hint.02
+        TextKey: hint.argentine_celebrities.ricardo_darin.hint.02
+    - WordId: argentine_celebrities.guillermo_francella
+      WordKey: word.argentine_celebrities.guillermo_francella.name
+      DescriptionKey: word.argentine_celebrities.guillermo_francella.description
+      Hints:
+      - HintId: argentine_celebrities.guillermo_francella.hint.01
+        TextKey: hint.argentine_celebrities.guillermo_francella.hint.01
+      - HintId: argentine_celebrities.guillermo_francella.hint.02
+        TextKey: hint.argentine_celebrities.guillermo_francella.hint.02
+    - WordId: argentine_celebrities.susana_gimenez
+      WordKey: word.argentine_celebrities.susana_gimenez.name
+      DescriptionKey: word.argentine_celebrities.susana_gimenez.description
+      Hints:
+      - HintId: argentine_celebrities.susana_gimenez.hint.01
+        TextKey: hint.argentine_celebrities.susana_gimenez.hint.01
+      - HintId: argentine_celebrities.susana_gimenez.hint.02
+        TextKey: hint.argentine_celebrities.susana_gimenez.hint.02
+    - WordId: argentine_celebrities.mirtha_legrand
+      WordKey: word.argentine_celebrities.mirtha_legrand.name
+      DescriptionKey: word.argentine_celebrities.mirtha_legrand.description
+      Hints:
+      - HintId: argentine_celebrities.mirtha_legrand.hint.01
+        TextKey: hint.argentine_celebrities.mirtha_legrand.hint.01
+      - HintId: argentine_celebrities.mirtha_legrand.hint.02
+        TextKey: hint.argentine_celebrities.mirtha_legrand.hint.02
+    - WordId: argentine_celebrities.trini_nucera
+      WordKey: word.argentine_celebrities.trini_nucera.name
+      DescriptionKey: word.argentine_celebrities.trini_nucera.description
+      Hints:
+      - HintId: argentine_celebrities.trini_nucera.hint.01
+        TextKey: hint.argentine_celebrities.trini_nucera.hint.01
+      - HintId: argentine_celebrities.trini_nucera.hint.02
+        TextKey: hint.argentine_celebrities.trini_nucera.hint.02
+    - WordId: argentine_celebrities.china_suarez
+      WordKey: word.argentine_celebrities.china_suarez.name
+      DescriptionKey: word.argentine_celebrities.china_suarez.description
+      Hints:
+      - HintId: argentine_celebrities.china_suarez.hint.01
+        TextKey: hint.argentine_celebrities.china_suarez.hint.01
+      - HintId: argentine_celebrities.china_suarez.hint.02
+        TextKey: hint.argentine_celebrities.china_suarez.hint.02
+    - WordId: argentine_celebrities.pampita
+      WordKey: word.argentine_celebrities.pampita.name
+      DescriptionKey: word.argentine_celebrities.pampita.description
+      Hints:
+      - HintId: argentine_celebrities.pampita.hint.01
+        TextKey: hint.argentine_celebrities.pampita.hint.01
+      - HintId: argentine_celebrities.pampita.hint.02
+        TextKey: hint.argentine_celebrities.pampita.hint.02
+    - WordId: argentine_celebrities.martin_cirio
+      WordKey: word.argentine_celebrities.martin_cirio.name
+      DescriptionKey: word.argentine_celebrities.martin_cirio.description
+      Hints:
+      - HintId: argentine_celebrities.martin_cirio.hint.01
+        TextKey: hint.argentine_celebrities.martin_cirio.hint.01
+      - HintId: argentine_celebrities.martin_cirio.hint.02
+        TextKey: hint.argentine_celebrities.martin_cirio.hint.02
+    - WordId: argentine_celebrities.albere
+      WordKey: word.argentine_celebrities.albere.name
+      DescriptionKey: word.argentine_celebrities.albere.description
+      Hints:
+      - HintId: argentine_celebrities.albere.hint.01
+        TextKey: hint.argentine_celebrities.albere.hint.01
+      - HintId: argentine_celebrities.albere.hint.02
+        TextKey: hint.argentine_celebrities.albere.hint.02
+    - WordId: argentine_celebrities.wanda_nara
+      WordKey: word.argentine_celebrities.wanda_nara.name
+      DescriptionKey: word.argentine_celebrities.wanda_nara.description
+      Hints:
+      - HintId: argentine_celebrities.wanda_nara.hint.01
+        TextKey: hint.argentine_celebrities.wanda_nara.hint.01
+      - HintId: argentine_celebrities.wanda_nara.hint.02
+        TextKey: hint.argentine_celebrities.wanda_nara.hint.02
+    - WordId: argentine_celebrities.moria_casan
+      WordKey: word.argentine_celebrities.moria_casan.name
+      DescriptionKey: word.argentine_celebrities.moria_casan.description
+      Hints:
+      - HintId: argentine_celebrities.moria_casan.hint.01
+        TextKey: hint.argentine_celebrities.moria_casan.hint.01
+      - HintId: argentine_celebrities.moria_casan.hint.02
+        TextKey: hint.argentine_celebrities.moria_casan.hint.02
+    - WordId: argentine_celebrities.julian_alvarez
+      WordKey: word.argentine_celebrities.julian_alvarez.name
+      DescriptionKey: word.argentine_celebrities.julian_alvarez.description
+      Hints:
+      - HintId: argentine_celebrities.julian_alvarez.hint.01
+        TextKey: hint.argentine_celebrities.julian_alvarez.hint.01
+    - WordId: argentine_celebrities.angel_di_maria
+      WordKey: word.argentine_celebrities.angel_di_maria.name
+      DescriptionKey: word.argentine_celebrities.angel_di_maria.description
+      Hints:
+      - HintId: argentine_celebrities.angel_di_maria.hint.01
+        TextKey: hint.argentine_celebrities.angel_di_maria.hint.01
+      - HintId: argentine_celebrities.angel_di_maria.hint.02
+        TextKey: hint.argentine_celebrities.angel_di_maria.hint.02
+    - WordId: argentine_celebrities.bananero
+      WordKey: word.argentine_celebrities.bananero.name
+      DescriptionKey: word.argentine_celebrities.bananero.description
+      Hints:
+      - HintId: argentine_celebrities.bananero.hint.01
+        TextKey: hint.argentine_celebrities.bananero.hint.01
+      - HintId: argentine_celebrities.bananero.hint.02
+        TextKey: hint.argentine_celebrities.bananero.hint.02
+    - WordId: argentine_celebrities.ricardo_fort
+      WordKey: word.argentine_celebrities.ricardo_fort.name
+      DescriptionKey: word.argentine_celebrities.ricardo_fort.description
+      Hints:
+      - HintId: argentine_celebrities.ricardo_fort.hint.01
+        TextKey: hint.argentine_celebrities.ricardo_fort.hint.01
+      - HintId: argentine_celebrities.ricardo_fort.hint.02
+        TextKey: hint.argentine_celebrities.ricardo_fort.hint.02
     CategoryColor: {r: 0.92549026, g: 0.28235295, b: 0.6, a: 1}
     CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryId: global_celebrities
+    NameKey: category.global_celebrities.name
+    SubtitleKey: category.global_celebrities.subtitle
     CategoryType: 0
     Words:
-    - Word: Messi
+    - WordId: global_celebrities.cristiano_ronaldo
+      WordKey: word.global_celebrities.cristiano_ronaldo.name
+      DescriptionKey: word.global_celebrities.cristiano_ronaldo.description
       Hints:
-      - Pelota.
-      - 8
-      Description: Lionel Messi es un futbolista argentino, considerado uno de los
-        mejores jugadores de la historia.
-    - Word: Maradona
+      - HintId: global_celebrities.cristiano_ronaldo.hint.01
+        TextKey: hint.global_celebrities.cristiano_ronaldo.hint.01
+      - HintId: global_celebrities.cristiano_ronaldo.hint.02
+        TextKey: hint.global_celebrities.cristiano_ronaldo.hint.02
+    - WordId: global_celebrities.mia_khalifa
+      WordKey: word.global_celebrities.mia_khalifa.name
+      DescriptionKey: word.global_celebrities.mia_khalifa.description
       Hints:
-      - Doping
-      - Mujeriego
-      Description: 
-    - Word: "Lali Esp\xF3sito"
+      - HintId: global_celebrities.mia_khalifa.hint.01
+        TextKey: hint.global_celebrities.mia_khalifa.hint.01
+      - HintId: global_celebrities.mia_khalifa.hint.02
+        TextKey: hint.global_celebrities.mia_khalifa.hint.02
+    - WordId: global_celebrities.shakira
+      WordKey: word.global_celebrities.shakira.name
+      DescriptionKey: word.global_celebrities.shakira.description
       Hints:
-      - Pop
-      - Anti Milei
-      Description: 
-    - Word: Tini Stoessel
+      - HintId: global_celebrities.shakira.hint.01
+        TextKey: hint.global_celebrities.shakira.hint.01
+      - HintId: global_celebrities.shakira.hint.02
+        TextKey: hint.global_celebrities.shakira.hint.02
+    - WordId: global_celebrities.bad_bunny
+      WordKey: word.global_celebrities.bad_bunny.name
+      DescriptionKey: word.global_celebrities.bad_bunny.description
       Hints:
-      - Disney
-      - Amante
-      Description: 
-    - Word: Duki
+      - HintId: global_celebrities.bad_bunny.hint.01
+        TextKey: hint.global_celebrities.bad_bunny.hint.01
+      - HintId: global_celebrities.bad_bunny.hint.02
+        TextKey: hint.global_celebrities.bad_bunny.hint.02
+    - WordId: global_celebrities.tom_holland
+      WordKey: word.global_celebrities.tom_holland.name
+      DescriptionKey: word.global_celebrities.tom_holland.description
       Hints:
-      - Rockstar
-      - Tatuajes
-      Description: 
-    - Word: Carito Muller
+      - HintId: global_celebrities.tom_holland.hint.01
+        TextKey: hint.global_celebrities.tom_holland.hint.01
+    - WordId: global_celebrities.ibai
+      WordKey: word.global_celebrities.ibai.name
+      DescriptionKey: word.global_celebrities.ibai.description
       Hints:
-      - "Tr\xEDos"
-      - "Relaci\xF3n abierta"
-      Description: Influencer
-    - Word: "Ricardo Dar\xEDn"
+      - HintId: global_celebrities.ibai.hint.01
+        TextKey: hint.global_celebrities.ibai.hint.01
+      - HintId: global_celebrities.ibai.hint.02
+        TextKey: hint.global_celebrities.ibai.hint.02
+    - WordId: global_celebrities.elon_musk
+      WordKey: word.global_celebrities.elon_musk.name
+      DescriptionKey: word.global_celebrities.elon_musk.description
       Hints:
-      - Cine
-      - Empanadas
-      Description: 
-    - Word: Guillermo Francella
+      - HintId: global_celebrities.elon_musk.hint.01
+        TextKey: hint.global_celebrities.elon_musk.hint.01
+    - WordId: global_celebrities.jacob_elordi
+      WordKey: word.global_celebrities.jacob_elordi.name
+      DescriptionKey: word.global_celebrities.jacob_elordi.description
       Hints:
-      - Racing
-      - Edificio
-      Description: 
-    - Word: "Susana Gim\xE9nez"
+      - HintId: global_celebrities.jacob_elordi.hint.01
+        TextKey: hint.global_celebrities.jacob_elordi.hint.01
+      - HintId: global_celebrities.jacob_elordi.hint.02
+        TextKey: hint.global_celebrities.jacob_elordi.hint.02
+    - WordId: global_celebrities.rubius
+      WordKey: word.global_celebrities.rubius.name
+      DescriptionKey: word.global_celebrities.rubius.description
       Hints:
-      - "Tel\xE9fono"
-      - "C\xF3mica"
-      Description: 
-    - Word: Mirtha Legrand
+      - HintId: global_celebrities.rubius.hint.01
+        TextKey: hint.global_celebrities.rubius.hint.01
+      - HintId: global_celebrities.rubius.hint.02
+        TextKey: hint.global_celebrities.rubius.hint.02
+    - WordId: global_celebrities.justin_bieber
+      WordKey: word.global_celebrities.justin_bieber.name
+      DescriptionKey: word.global_celebrities.justin_bieber.description
       Hints:
-      - Dinosaurio
-      - "Pol\xE9mica"
-      Description: 
-    - Word: "Charly Garc\xEDa"
+      - HintId: global_celebrities.justin_bieber.hint.01
+        TextKey: hint.global_celebrities.justin_bieber.hint.01
+    - WordId: global_celebrities.german_garmendia
+      WordKey: word.global_celebrities.german_garmendia.name
+      DescriptionKey: word.global_celebrities.german_garmendia.description
       Hints:
-      - Piano
-      - Noveno piso
-      Description: 
-    - Word: China Suarez
+      - HintId: global_celebrities.german_garmendia.hint.01
+        TextKey: hint.global_celebrities.german_garmendia.hint.01
+      - HintId: global_celebrities.german_garmendia.hint.02
+        TextKey: hint.global_celebrities.german_garmendia.hint.02
+    - WordId: global_celebrities.lady_gaga
+      WordKey: word.global_celebrities.lady_gaga.name
+      DescriptionKey: word.global_celebrities.lady_gaga.description
       Hints:
-      - Roba cunas
-      - Hombres
-      Description: 
-    - Word: Pampita
+      - HintId: global_celebrities.lady_gaga.hint.01
+        TextKey: hint.global_celebrities.lady_gaga.hint.01
+    - WordId: global_celebrities.brad_pitt
+      WordKey: word.global_celebrities.brad_pitt.name
+      DescriptionKey: word.global_celebrities.brad_pitt.description
       Hints:
-      - Perfecta
-      - Cornuda
-      Description: 
-    - Word: Abel Pintos
+      - HintId: global_celebrities.brad_pitt.hint.01
+        TextKey: hint.global_celebrities.brad_pitt.hint.01
+    - WordId: global_celebrities.mrbeast
+      WordKey: word.global_celebrities.mrbeast.name
+      DescriptionKey: word.global_celebrities.mrbeast.description
       Hints:
-      - Pelado
-      - Gay
-      Description: 
-    - Word: Albere
+      - HintId: global_celebrities.mrbeast.hint.01
+        TextKey: hint.global_celebrities.mrbeast.hint.01
+    - WordId: global_celebrities.ed_sheeran
+      WordKey: word.global_celebrities.ed_sheeran.name
+      DescriptionKey: word.global_celebrities.ed_sheeran.description
       Hints:
-      - Villeros
-      - Embarazo
-      Description: Influencer
-    - Word: Wanda Nara
-      Hints:
-      - Show
-      - Bananero
-      Description: 
-    - Word: "Moria Cas\xE1n"
-      Hints:
-      - Rating
-      - Memes
-      Description: 
-    - Word: "Juli\xE1n \xC1lvares"
-      Hints:
-      - "Campe\xF3n"
-      Description: 
-    - Word: "\xC1ngel Di Mar\xEDa"
-      Hints:
-      - Pasta
-      - "Narig\xF3n"
-      Description: 
-    - Word: Bananero
-      Hints:
-      - Semen
-      - Cerveza
-      Description: 
-    - Word: Ricardo Ford
-      Hints:
-      - Rol Royce
-      - Miami
-      Description: 
-  - CategoryName: Famosos globales
-    Description: Celebridades globales
+      - HintId: global_celebrities.ed_sheeran.hint.01
+        TextKey: hint.global_celebrities.ed_sheeran.hint.01
     CategoryColor: {r: 0.46274513, g: 0.2392157, b: 0.34901962, a: 1}
     CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryId: countries
+    NameKey: category.countries.name
+    SubtitleKey: category.countries.subtitle
     CategoryType: 0
     Words:
-    - Word: Cristiano Ronaldo
+    - WordId: countries.argentina
+      WordKey: word.countries.argentina.name
+      DescriptionKey: word.countries.argentina.description
       Hints:
-      - Ego.
-      - Millonario
-      Description: 
-    - Word: Mia Khalifa
+      - HintId: countries.argentina.hint.01
+        TextKey: hint.countries.argentina.hint.01
+      - HintId: countries.argentina.hint.02
+        TextKey: hint.countries.argentina.hint.02
+    - WordId: countries.brasil
+      WordKey: word.countries.brasil.name
+      DescriptionKey: word.countries.brasil.description
       Hints:
-      - Anteojos .
-      - Actriz
-      Description: 
-    - Word: Shakira
+      - HintId: countries.brasil.hint.01
+        TextKey: hint.countries.brasil.hint.01
+      - HintId: countries.brasil.hint.02
+        TextKey: hint.countries.brasil.hint.02
+    - WordId: countries.chile
+      WordKey: word.countries.chile.name
+      DescriptionKey: word.countries.chile.description
       Hints:
-      - Caderas.
-      - Cornuda
-      Description: 
-    - Word: Bad Bunny
+      - HintId: countries.chile.hint.01
+        TextKey: hint.countries.chile.hint.01
+      - HintId: countries.chile.hint.02
+        TextKey: hint.countries.chile.hint.02
+    - WordId: countries.uruguay
+      WordKey: word.countries.uruguay.name
+      DescriptionKey: word.countries.uruguay.description
       Hints:
-      - Malo
-      - Latino
-      Description: 
-    - Word: Tom Holland
+      - HintId: countries.uruguay.hint.01
+        TextKey: hint.countries.uruguay.hint.01
+      - HintId: countries.uruguay.hint.02
+        TextKey: hint.countries.uruguay.hint.02
+    - WordId: countries.paraguay
+      WordKey: word.countries.paraguay.name
+      DescriptionKey: word.countries.paraguay.description
       Hints:
-      - "Ara\xF1a."
-      Description: 
-    - Word: Kim Kardashian
+      - HintId: countries.paraguay.hint.01
+        TextKey: hint.countries.paraguay.hint.01
+      - HintId: countries.paraguay.hint.02
+        TextKey: hint.countries.paraguay.hint.02
+    - WordId: countries.bolivia
+      WordKey: word.countries.bolivia.name
+      DescriptionKey: word.countries.bolivia.description
       Hints:
-      - Reality.
-      Description: 
-    - Word: Elon Musk
+      - HintId: countries.bolivia.hint.01
+        TextKey: hint.countries.bolivia.hint.01
+      - HintId: countries.bolivia.hint.02
+        TextKey: hint.countries.bolivia.hint.02
+    - WordId: countries.peru
+      WordKey: word.countries.peru.name
+      DescriptionKey: word.countries.peru.description
       Hints:
-      - Cohete.
-      Description: 
-    - Word: Jacob Elordi
+      - HintId: countries.peru.hint.01
+        TextKey: hint.countries.peru.hint.01
+      - HintId: countries.peru.hint.02
+        TextKey: hint.countries.peru.hint.02
+    - WordId: countries.colombia
+      WordKey: word.countries.colombia.name
+      DescriptionKey: word.countries.colombia.description
       Hints:
-      - Besos
-      - Papucho
-      Description: 
-    - Word: Rubius
+      - HintId: countries.colombia.hint.01
+        TextKey: hint.countries.colombia.hint.01
+      - HintId: countries.colombia.hint.02
+        TextKey: hint.countries.colombia.hint.02
+    - WordId: countries.mexico
+      WordKey: word.countries.mexico.name
+      DescriptionKey: word.countries.mexico.description
       Hints:
-      - Twich
-      - Gatos
-      Description: 
-    - Word: Justin Bieber
+      - HintId: countries.mexico.hint.01
+        TextKey: hint.countries.mexico.hint.01
+      - HintId: countries.mexico.hint.02
+        TextKey: hint.countries.mexico.hint.02
+    - WordId: countries.estados_unidos
+      WordKey: word.countries.estados_unidos.name
+      DescriptionKey: word.countries.estados_unidos.description
       Hints:
-      - "Beb\xE9."
-      Description: 
-    - Word: "Germ\xE1n Garmendia"
+      - HintId: countries.estados_unidos.hint.01
+        TextKey: hint.countries.estados_unidos.hint.01
+      - HintId: countries.estados_unidos.hint.02
+        TextKey: hint.countries.estados_unidos.hint.02
+    - WordId: countries.canada
+      WordKey: word.countries.canada.name
+      DescriptionKey: word.countries.canada.description
       Hints:
-      - Saludo
-      - Chile
-      Description: 
-    - Word: Lady Gaga
+      - HintId: countries.canada.hint.01
+        TextKey: hint.countries.canada.hint.01
+      - HintId: countries.canada.hint.02
+        TextKey: hint.countries.canada.hint.02
+    - WordId: countries.espana
+      WordKey: word.countries.espana.name
+      DescriptionKey: word.countries.espana.description
       Hints:
-      - Ropa.
-      Description: 
-    - Word: Brad Pitt
+      - HintId: countries.espana.hint.01
+        TextKey: hint.countries.espana.hint.01
+      - HintId: countries.espana.hint.02
+        TextKey: hint.countries.espana.hint.02
+    - WordId: countries.francia
+      WordKey: word.countries.francia.name
+      DescriptionKey: word.countries.francia.description
       Hints:
-      - Facha.
-      Description: 
-    - Word: Angelina Jolie
+      - HintId: countries.francia.hint.01
+        TextKey: hint.countries.francia.hint.01
+      - HintId: countries.francia.hint.02
+        TextKey: hint.countries.francia.hint.02
+    - WordId: countries.italia
+      WordKey: word.countries.italia.name
+      DescriptionKey: word.countries.italia.description
       Hints:
-      - Juego.
-      Description: 
-    - Word: Ed Sheeran
+      - HintId: countries.italia.hint.01
+        TextKey: hint.countries.italia.hint.01
+      - HintId: countries.italia.hint.02
+        TextKey: hint.countries.italia.hint.02
+    - WordId: countries.alemania
+      WordKey: word.countries.alemania.name
+      DescriptionKey: word.countries.alemania.description
       Hints:
-      - Colorado.
-      Description: 
-  - CategoryName: "Pa\xEDses"
-    Description: Naciones del mundo
+      - HintId: countries.alemania.hint.01
+        TextKey: hint.countries.alemania.hint.01
+      - HintId: countries.alemania.hint.02
+        TextKey: hint.countries.alemania.hint.02
+    - WordId: countries.japon
+      WordKey: word.countries.japon.name
+      DescriptionKey: word.countries.japon.description
+      Hints:
+      - HintId: countries.japon.hint.01
+        TextKey: hint.countries.japon.hint.01
+      - HintId: countries.japon.hint.02
+        TextKey: hint.countries.japon.hint.02
+    - WordId: countries.china
+      WordKey: word.countries.china.name
+      DescriptionKey: word.countries.china.description
+      Hints:
+      - HintId: countries.china.hint.01
+        TextKey: hint.countries.china.hint.01
+      - HintId: countries.china.hint.02
+        TextKey: hint.countries.china.hint.02
+    - WordId: countries.australia
+      WordKey: word.countries.australia.name
+      DescriptionKey: word.countries.australia.description
+      Hints:
+      - HintId: countries.australia.hint.01
+        TextKey: hint.countries.australia.hint.01
+      - HintId: countries.australia.hint.02
+        TextKey: hint.countries.australia.hint.02
+    - WordId: countries.egipto
+      WordKey: word.countries.egipto.name
+      DescriptionKey: word.countries.egipto.description
+      Hints:
+      - HintId: countries.egipto.hint.01
+        TextKey: hint.countries.egipto.hint.01
+      - HintId: countries.egipto.hint.02
+        TextKey: hint.countries.egipto.hint.02
+    - WordId: countries.sudafrica
+      WordKey: word.countries.sudafrica.name
+      DescriptionKey: word.countries.sudafrica.description
+      Hints:
+      - HintId: countries.sudafrica.hint.01
+        TextKey: hint.countries.sudafrica.hint.01
+      - HintId: countries.sudafrica.hint.02
+        TextKey: hint.countries.sudafrica.hint.02
     CategoryColor: {r: 0.9176471, g: 0.7019608, b: 0.03137255, a: 1}
     CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryId: foods
+    NameKey: category.foods.name
+    SubtitleKey: category.foods.subtitle
     CategoryType: 0
     Words:
-    - Word: Argentina
+    - WordId: foods.pizza
+      WordKey: word.foods.pizza.name
+      DescriptionKey: word.foods.pizza.description
       Hints:
-      - Mate.
-      - Piola
-      Description: 
-    - Word: Brasil
+      - HintId: foods.pizza.hint.01
+        TextKey: hint.foods.pizza.hint.01
+    - WordId: foods.hamburguesa
+      WordKey: word.foods.hamburguesa.name
+      DescriptionKey: word.foods.hamburguesa.description
       Hints:
-      - Carnaval.
-      - Joda
-      Description: 
-    - Word: Chile
+      - HintId: foods.hamburguesa.hint.01
+        TextKey: hint.foods.hamburguesa.hint.01
+    - WordId: foods.empanada
+      WordKey: word.foods.empanada.name
+      DescriptionKey: word.foods.empanada.description
       Hints:
-      - Cordillera.
-      - Pasillo
-      Description: 
-    - Word: Uruguay
+      - HintId: foods.empanada.hint.01
+        TextKey: hint.foods.empanada.hint.01
+    - WordId: foods.milanesa
+      WordKey: word.foods.milanesa.name
+      DescriptionKey: word.foods.milanesa.description
       Hints:
-      - Termo.
-      - Rebelde
-      Description: 
-    - Word: Paraguay
+      - HintId: foods.milanesa.hint.01
+        TextKey: hint.foods.milanesa.hint.01
+    - WordId: foods.asado
+      WordKey: word.foods.asado.name
+      DescriptionKey: word.foods.asado.description
       Hints:
-      - "Alba\xF1il."
-      - Idioma
-      Description: 
-    - Word: Bolivia
+      - HintId: foods.asado.hint.01
+        TextKey: hint.foods.asado.hint.01
+    - WordId: foods.sushi
+      WordKey: word.foods.sushi.name
+      DescriptionKey: word.foods.sushi.description
       Hints:
-      - Altura.
-      - "Verduler\xEDa"
-      Description: 
-    - Word: "Per\xFA"
+      - HintId: foods.sushi.hint.01
+        TextKey: hint.foods.sushi.hint.01
+    - WordId: foods.taco
+      WordKey: word.foods.taco.name
+      DescriptionKey: word.foods.taco.description
       Hints:
-      - Ruinas.
-      - "Lim\xF3n"
-      Description: 
-    - Word: Colombia
+      - HintId: foods.taco.hint.01
+        TextKey: hint.foods.taco.hint.01
+    - WordId: foods.pasta
+      WordKey: word.foods.pasta.name
+      DescriptionKey: word.foods.pasta.description
       Hints:
-      - Fafa.
-      - Acento
-      Description: 
-    - Word: "M\xE9xico"
+      - HintId: foods.pasta.hint.01
+        TextKey: hint.foods.pasta.hint.01
+    - WordId: foods.ravioles
+      WordKey: word.foods.ravioles.name
+      DescriptionKey: word.foods.ravioles.description
       Hints:
-      - Inseguro.
-      - Narcos
-      Description: 
-    - Word: Estados Unidos
+      - HintId: foods.ravioles.hint.01
+        TextKey: hint.foods.ravioles.hint.01
+    - WordId: foods.noquis
+      WordKey: word.foods.noquis.name
+      DescriptionKey: word.foods.noquis.description
       Hints:
-      - Estrellas.
-      - Azul
-      Description: 
-    - Word: "Canad\xE1"
+      - HintId: foods.noquis.hint.01
+        TextKey: hint.foods.noquis.hint.01
+    - WordId: foods.helado
+      WordKey: word.foods.helado.name
+      DescriptionKey: word.foods.helado.description
       Hints:
-      - Maple.
-      - Hoja
-      Description: 
-    - Word: "Espa\xF1a"
+      - HintId: foods.helado.hint.01
+        TextKey: hint.foods.helado.hint.01
+    - WordId: foods.torta
+      WordKey: word.foods.torta.name
+      DescriptionKey: word.foods.torta.description
       Hints:
-      - Flamenco.
-      - Youtubers
-      Description: 
-    - Word: Francia
+      - HintId: foods.torta.hint.01
+        TextKey: hint.foods.torta.hint.01
+    - WordId: foods.pancho
+      WordKey: word.foods.pancho.name
+      DescriptionKey: word.foods.pancho.description
       Hints:
-      - Torre.
-      - amor
-      Description: 
-    - Word: Italia
+      - HintId: foods.pancho.hint.01
+        TextKey: hint.foods.pancho.hint.01
+    - WordId: foods.lomito
+      WordKey: word.foods.lomito.name
+      DescriptionKey: word.foods.lomito.description
       Hints:
-      - Pasta.
-      - Costa
-      Description: 
-    - Word: Alemania
+      - HintId: foods.lomito.hint.01
+        TextKey: hint.foods.lomito.hint.01
+    - WordId: foods.choripan
+      WordKey: word.foods.choripan.name
+      DescriptionKey: word.foods.choripan.description
       Hints:
-      - Autos.
-      - Historia
-      Description: 
-    - Word: "Jap\xF3n"
+      - HintId: foods.choripan.hint.01
+        TextKey: hint.foods.choripan.hint.01
+    - WordId: foods.ensalada
+      WordKey: word.foods.ensalada.name
+      DescriptionKey: word.foods.ensalada.description
       Hints:
-      - Anime.
-      - Autos
-      Description: 
-    - Word: China
+      - HintId: foods.ensalada.hint.01
+        TextKey: hint.foods.ensalada.hint.01
+    - WordId: foods.pollo_frito
+      WordKey: word.foods.pollo_frito.name
+      DescriptionKey: word.foods.pollo_frito.description
       Hints:
-      - Muralla.
-      - Sucios
-      Description: 
-    - Word: Australia
+      - HintId: foods.pollo_frito.hint.01
+        TextKey: hint.foods.pollo_frito.hint.01
+    - WordId: foods.papas_fritas
+      WordKey: word.foods.papas_fritas.name
+      DescriptionKey: word.foods.papas_fritas.description
       Hints:
-      - Animales.
-      - "Ara\xF1as"
-      Description: 
-    - Word: Egipto
+      - HintId: foods.papas_fritas.hint.01
+        TextKey: hint.foods.papas_fritas.hint.01
+    - WordId: foods.arroz
+      WordKey: word.foods.arroz.name
+      DescriptionKey: word.foods.arroz.description
       Hints:
-      - "Pir\xE1mide."
-      - Arena
-      Description: 
-    - Word: "Sud\xE1frica"
+      - HintId: foods.arroz.hint.01
+        TextKey: hint.foods.arroz.hint.01
+    - WordId: foods.lasana
+      WordKey: word.foods.lasana.name
+      DescriptionKey: word.foods.lasana.description
       Hints:
-      - Safari.
-      - Negros
-      Description: 
-  - CategoryName: Comidas
-    Description: "Gastronom\xEDa global"
+      - HintId: foods.lasana.hint.01
+        TextKey: hint.foods.lasana.hint.01
     CategoryColor: {r: 0.97647065, g: 0.45098042, b: 0.08627451, a: 1}
     CategoryImage: {fileID: 21300000, guid: 42fe27d3c86ed8f48b1a4e6534140fe0, type: 3}
+  - CategoryId: objects
+    NameKey: category.objects.name
+    SubtitleKey: category.objects.subtitle
     CategoryType: 0
     Words:
-    - Word: Pizza
+    - WordId: objects.celular
+      WordKey: word.objects.celular.name
+      DescriptionKey: word.objects.celular.description
       Hints:
-      - Queso.
-      Description: 
-    - Word: Hamburguesa
+      - HintId: objects.celular.hint.01
+        TextKey: hint.objects.celular.hint.01
+    - WordId: objects.computadora
+      WordKey: word.objects.computadora.name
+      DescriptionKey: word.objects.computadora.description
       Hints:
-      - Pan.
-      Description: 
-    - Word: Empanada
+      - HintId: objects.computadora.hint.01
+        TextKey: hint.objects.computadora.hint.01
+    - WordId: objects.teclado
+      WordKey: word.objects.teclado.name
+      DescriptionKey: word.objects.teclado.description
       Hints:
-      - Salta
-      Description: 
-    - Word: Milanesa
+      - HintId: objects.teclado.hint.01
+        TextKey: hint.objects.teclado.hint.01
+    - WordId: objects.mouse
+      WordKey: word.objects.mouse.name
+      DescriptionKey: word.objects.mouse.description
       Hints:
-      - Empanado.
-      Description: 
-    - Word: Asado
+      - HintId: objects.mouse.hint.01
+        TextKey: hint.objects.mouse.hint.01
+    - WordId: objects.monitor
+      WordKey: word.objects.monitor.name
+      DescriptionKey: word.objects.monitor.description
       Hints:
-      - Domingo
-      Description: 
-    - Word: Sushi
+      - HintId: objects.monitor.hint.01
+        TextKey: hint.objects.monitor.hint.01
+    - WordId: objects.mesa
+      WordKey: word.objects.mesa.name
+      DescriptionKey: word.objects.mesa.description
       Hints:
-      - Arroz.
-      Description: 
-    - Word: Taco
+      - HintId: objects.mesa.hint.01
+        TextKey: hint.objects.mesa.hint.01
+    - WordId: objects.silla
+      WordKey: word.objects.silla.name
+      DescriptionKey: word.objects.silla.description
       Hints:
-      - Tortilla.
-      Description: 
-    - Word: Pasta
+      - HintId: objects.silla.hint.01
+        TextKey: hint.objects.silla.hint.01
+    - WordId: objects.botella
+      WordKey: word.objects.botella.name
+      DescriptionKey: word.objects.botella.description
       Hints:
-      - Salsa.
-      Description: 
-    - Word: Ravioles
+      - HintId: objects.botella.hint.01
+        TextKey: hint.objects.botella.hint.01
+    - WordId: objects.vaso
+      WordKey: word.objects.vaso.name
+      DescriptionKey: word.objects.vaso.description
       Hints:
-      - Relleno.
-      Description: 
-    - Word: "\xD1oquis"
+      - HintId: objects.vaso.hint.01
+        TextKey: hint.objects.vaso.hint.01
+    - WordId: objects.plato
+      WordKey: word.objects.plato.name
+      DescriptionKey: word.objects.plato.description
       Hints:
-      - Relieve
-      Description: 
-    - Word: Helado
+      - HintId: objects.plato.hint.01
+        TextKey: hint.objects.plato.hint.01
+    - WordId: objects.cuchara
+      WordKey: word.objects.cuchara.name
+      DescriptionKey: word.objects.cuchara.description
       Hints:
-      - "Fr\xEDo."
-      Description: 
-    - Word: Torta
+      - HintId: objects.cuchara.hint.01
+        TextKey: hint.objects.cuchara.hint.01
+    - WordId: objects.tenedor
+      WordKey: word.objects.tenedor.name
+      DescriptionKey: word.objects.tenedor.description
       Hints:
-      - Vela.
-      Description: 
-    - Word: Pancho
+      - HintId: objects.tenedor.hint.01
+        TextKey: hint.objects.tenedor.hint.01
+    - WordId: objects.cuchillo
+      WordKey: word.objects.cuchillo.name
+      DescriptionKey: word.objects.cuchillo.description
       Hints:
-      - Yanquee
-      Description: 
-    - Word: Lomito
+      - HintId: objects.cuchillo.hint.01
+        TextKey: hint.objects.cuchillo.hint.01
+    - WordId: objects.mochila
+      WordKey: word.objects.mochila.name
+      DescriptionKey: word.objects.mochila.description
       Hints:
-      - "S\xE1ndwich."
-      Description: 
-    - Word: "Chorip\xE1n"
+      - HintId: objects.mochila.hint.01
+        TextKey: hint.objects.mochila.hint.01
+    - WordId: objects.libro
+      WordKey: word.objects.libro.name
+      DescriptionKey: word.objects.libro.description
       Hints:
-      - Ruta
-      Description: 
-    - Word: Ensalada
+      - HintId: objects.libro.hint.01
+        TextKey: hint.objects.libro.hint.01
+    - WordId: objects.lapiz
+      WordKey: word.objects.lapiz.name
+      DescriptionKey: word.objects.lapiz.description
       Hints:
-      - Verde.
-      Description: 
-    - Word: Pollo frito
+      - HintId: objects.lapiz.hint.01
+        TextKey: hint.objects.lapiz.hint.01
+    - WordId: objects.lapicera
+      WordKey: word.objects.lapicera.name
+      DescriptionKey: word.objects.lapicera.description
       Hints:
-      - Crocante.
-      Description: 
-    - Word: Papas fritas
+      - HintId: objects.lapicera.hint.01
+        TextKey: hint.objects.lapicera.hint.01
+    - WordId: objects.cuaderno
+      WordKey: word.objects.cuaderno.name
+      DescriptionKey: word.objects.cuaderno.description
       Hints:
-      - "Bast\xF3n."
-      Description: 
-    - Word: Arroz
+      - HintId: objects.cuaderno.hint.01
+        TextKey: hint.objects.cuaderno.hint.01
+    - WordId: objects.auriculares
+      WordKey: word.objects.auriculares.name
+      DescriptionKey: word.objects.auriculares.description
       Hints:
-      - Grano.
-      Description: 
-    - Word: Lasagna
+      - HintId: objects.auriculares.hint.01
+        TextKey: hint.objects.auriculares.hint.01
+    - WordId: objects.control_remoto
+      WordKey: word.objects.control_remoto.name
+      DescriptionKey: word.objects.control_remoto.description
       Hints:
-      - Capas.
-      Description: 
-  - CategoryName: Objetos
-    Description: Objetos
+      - HintId: objects.control_remoto.hint.01
+        TextKey: hint.objects.control_remoto.hint.01
+    - WordId: objects.televisor
+      WordKey: word.objects.televisor.name
+      DescriptionKey: word.objects.televisor.description
+      Hints:
+      - HintId: objects.televisor.hint.01
+        TextKey: hint.objects.televisor.hint.01
+    - WordId: objects.lampara
+      WordKey: word.objects.lampara.name
+      DescriptionKey: word.objects.lampara.description
+      Hints:
+      - HintId: objects.lampara.hint.01
+        TextKey: hint.objects.lampara.hint.01
+    - WordId: objects.cama
+      WordKey: word.objects.cama.name
+      DescriptionKey: word.objects.cama.description
+      Hints:
+      - HintId: objects.cama.hint.01
+        TextKey: hint.objects.cama.hint.01
+    - WordId: objects.almohada
+      WordKey: word.objects.almohada.name
+      DescriptionKey: word.objects.almohada.description
+      Hints:
+      - HintId: objects.almohada.hint.01
+        TextKey: hint.objects.almohada.hint.01
+    - WordId: objects.reloj
+      WordKey: word.objects.reloj.name
+      DescriptionKey: word.objects.reloj.description
+      Hints:
+      - HintId: objects.reloj.hint.01
+        TextKey: hint.objects.reloj.hint.01
+    - WordId: objects.billetera
+      WordKey: word.objects.billetera.name
+      DescriptionKey: word.objects.billetera.description
+      Hints:
+      - HintId: objects.billetera.hint.01
+        TextKey: hint.objects.billetera.hint.01
+    - WordId: objects.llaves
+      WordKey: word.objects.llaves.name
+      DescriptionKey: word.objects.llaves.description
+      Hints:
+      - HintId: objects.llaves.hint.01
+        TextKey: hint.objects.llaves.hint.01
+    - WordId: objects.paraguas
+      WordKey: word.objects.paraguas.name
+      DescriptionKey: word.objects.paraguas.description
+      Hints:
+      - HintId: objects.paraguas.hint.01
+        TextKey: hint.objects.paraguas.hint.01
+    - WordId: objects.zapatilla
+      WordKey: word.objects.zapatilla.name
+      DescriptionKey: word.objects.zapatilla.description
+      Hints:
+      - HintId: objects.zapatilla.hint.01
+        TextKey: hint.objects.zapatilla.hint.01
+    - WordId: objects.campera
+      WordKey: word.objects.campera.name
+      DescriptionKey: word.objects.campera.description
+      Hints:
+      - HintId: objects.campera.hint.01
+        TextKey: hint.objects.campera.hint.01
+    - WordId: objects.gorra
+      WordKey: word.objects.gorra.name
+      DescriptionKey: word.objects.gorra.description
+      Hints:
+      - HintId: objects.gorra.hint.01
+        TextKey: hint.objects.gorra.hint.01
+    - WordId: objects.espejo
+      WordKey: word.objects.espejo.name
+      DescriptionKey: word.objects.espejo.description
+      Hints:
+      - HintId: objects.espejo.hint.01
+        TextKey: hint.objects.espejo.hint.01
+    - WordId: objects.cepillo
+      WordKey: word.objects.cepillo.name
+      DescriptionKey: word.objects.cepillo.description
+      Hints:
+      - HintId: objects.cepillo.hint.01
+        TextKey: hint.objects.cepillo.hint.01
+    - WordId: objects.toalla
+      WordKey: word.objects.toalla.name
+      DescriptionKey: word.objects.toalla.description
+      Hints:
+      - HintId: objects.toalla.hint.01
+        TextKey: hint.objects.toalla.hint.01
+    - WordId: objects.jabon
+      WordKey: word.objects.jabon.name
+      DescriptionKey: word.objects.jabon.description
+      Hints:
+      - HintId: objects.jabon.hint.01
+        TextKey: hint.objects.jabon.hint.01
+    - WordId: objects.shampoo
+      WordKey: word.objects.shampoo.name
+      DescriptionKey: word.objects.shampoo.description
+      Hints:
+      - HintId: objects.shampoo.hint.01
+        TextKey: hint.objects.shampoo.hint.01
+    - WordId: objects.ventilador
+      WordKey: word.objects.ventilador.name
+      DescriptionKey: word.objects.ventilador.description
+      Hints:
+      - HintId: objects.ventilador.hint.01
+        TextKey: hint.objects.ventilador.hint.01
+    - WordId: objects.heladera
+      WordKey: word.objects.heladera.name
+      DescriptionKey: word.objects.heladera.description
+      Hints:
+      - HintId: objects.heladera.hint.01
+        TextKey: hint.objects.heladera.hint.01
+    - WordId: objects.microondas
+      WordKey: word.objects.microondas.name
+      DescriptionKey: word.objects.microondas.description
+      Hints:
+      - HintId: objects.microondas.hint.01
+        TextKey: hint.objects.microondas.hint.01
+    - WordId: objects.horno
+      WordKey: word.objects.horno.name
+      DescriptionKey: word.objects.horno.description
+      Hints:
+      - HintId: objects.horno.hint.01
+        TextKey: hint.objects.horno.hint.01
+    - WordId: objects.sarten
+      WordKey: word.objects.sarten.name
+      DescriptionKey: word.objects.sarten.description
+      Hints:
+      - HintId: objects.sarten.hint.01
+        TextKey: hint.objects.sarten.hint.01
+    - WordId: objects.olla
+      WordKey: word.objects.olla.name
+      DescriptionKey: word.objects.olla.description
+      Hints:
+      - HintId: objects.olla.hint.01
+        TextKey: hint.objects.olla.hint.01
+    - WordId: objects.tijera
+      WordKey: word.objects.tijera.name
+      DescriptionKey: word.objects.tijera.description
+      Hints:
+      - HintId: objects.tijera.hint.01
+        TextKey: hint.objects.tijera.hint.01
+      - HintId: objects.tijera.hint.02
+        TextKey: hint.objects.tijera.hint.02
+    - WordId: objects.cinta
+      WordKey: word.objects.cinta.name
+      DescriptionKey: word.objects.cinta.description
+      Hints:
+      - HintId: objects.cinta.hint.01
+        TextKey: hint.objects.cinta.hint.01
+    - WordId: objects.caja
+      WordKey: word.objects.caja.name
+      DescriptionKey: word.objects.caja.description
+      Hints:
+      - HintId: objects.caja.hint.01
+        TextKey: hint.objects.caja.hint.01
+    - WordId: objects.bolsa
+      WordKey: word.objects.bolsa.name
+      DescriptionKey: word.objects.bolsa.description
+      Hints:
+      - HintId: objects.bolsa.hint.01
+        TextKey: hint.objects.bolsa.hint.01
+    - WordId: objects.pelota
+      WordKey: word.objects.pelota.name
+      DescriptionKey: word.objects.pelota.description
+      Hints:
+      - HintId: objects.pelota.hint.01
+        TextKey: hint.objects.pelota.hint.01
+    - WordId: objects.bicicleta
+      WordKey: word.objects.bicicleta.name
+      DescriptionKey: word.objects.bicicleta.description
+      Hints:
+      - HintId: objects.bicicleta.hint.01
+        TextKey: hint.objects.bicicleta.hint.01
+    - WordId: objects.cargador
+      WordKey: word.objects.cargador.name
+      DescriptionKey: word.objects.cargador.description
+      Hints:
+      - HintId: objects.cargador.hint.01
+        TextKey: hint.objects.cargador.hint.01
+    - WordId: objects.pendrive
+      WordKey: word.objects.pendrive.name
+      DescriptionKey: word.objects.pendrive.description
+      Hints:
+      - HintId: objects.pendrive.hint.01
+        TextKey: hint.objects.pendrive.hint.01
+      - HintId: objects.pendrive.hint.02
+        TextKey: hint.objects.pendrive.hint.02
     CategoryColor: {r: 0.5529412, g: 0.34117648, b: 0.16078432, a: 1}
     CategoryImage: {fileID: 21300000, guid: 4912e7ea4ae37484fa35aadde3fb53b3, type: 3}
+  - CategoryId: video_games
+    NameKey: category.video_games.name
+    SubtitleKey: category.video_games.subtitle
     CategoryType: 0
     Words:
-    - Word: Celular
+    - WordId: video_games.minecraft
+      WordKey: word.video_games.minecraft.name
+      DescriptionKey: word.video_games.minecraft.description
       Hints:
-      - Vicio
-      Description: 
-    - Word: Computadora
+      - HintId: video_games.minecraft.hint.01
+        TextKey: hint.video_games.minecraft.hint.01
+      - HintId: video_games.minecraft.hint.02
+        TextKey: hint.video_games.minecraft.hint.02
+    - WordId: video_games.fortnite
+      WordKey: word.video_games.fortnite.name
+      DescriptionKey: word.video_games.fortnite.description
       Hints:
-      - Trabajo.
-      Description: 
-    - Word: Teclado
+      - HintId: video_games.fortnite.hint.01
+        TextKey: hint.video_games.fortnite.hint.01
+    - WordId: video_games.roblox
+      WordKey: word.video_games.roblox.name
+      DescriptionKey: word.video_games.roblox.description
       Hints:
-      - Luces
-      Description: 
-    - Word: Mouse
+      - HintId: video_games.roblox.hint.01
+        TextKey: hint.video_games.roblox.hint.01
+    - WordId: video_games.among_us
+      WordKey: word.video_games.among_us.name
+      DescriptionKey: word.video_games.among_us.description
       Hints:
-      - Roedor
-      Description: 
-    - Word: Monitor
+      - HintId: video_games.among_us.hint.01
+        TextKey: hint.video_games.among_us.hint.01
+    - WordId: video_games.gta
+      WordKey: word.video_games.gta.name
+      DescriptionKey: word.video_games.gta.description
       Hints:
-      - Imagen.
-      Description: 
-    - Word: Mesa
+      - HintId: video_games.gta.hint.01
+        TextKey: hint.video_games.gta.hint.01
+      - HintId: video_games.gta.hint.02
+        TextKey: hint.video_games.gta.hint.02
+    - WordId: video_games.the_sims
+      WordKey: word.video_games.the_sims.name
+      DescriptionKey: word.video_games.the_sims.description
       Hints:
-      - Apoyo.
-      Description: 
-    - Word: Silla
+      - HintId: video_games.the_sims.hint.01
+        TextKey: hint.video_games.the_sims.hint.01
+    - WordId: video_games.fifa
+      WordKey: word.video_games.fifa.name
+      DescriptionKey: word.video_games.fifa.description
       Hints:
-      - Trono
-      Description: 
-    - Word: Botella
+      - HintId: video_games.fifa.hint.01
+        TextKey: hint.video_games.fifa.hint.01
+    - WordId: video_games.call_of_duty
+      WordKey: word.video_games.call_of_duty.name
+      DescriptionKey: word.video_games.call_of_duty.description
       Hints:
-      - Gimnasio
-      Description: 
-    - Word: Vaso
+      - HintId: video_games.call_of_duty.hint.01
+        TextKey: hint.video_games.call_of_duty.hint.01
+    - WordId: video_games.valorant
+      WordKey: word.video_games.valorant.name
+      DescriptionKey: word.video_games.valorant.description
       Hints:
-      - Vidrio
-      Description: 
-    - Word: Plato
+      - HintId: video_games.valorant.hint.01
+        TextKey: hint.video_games.valorant.hint.01
+      - HintId: video_games.valorant.hint.02
+        TextKey: hint.video_games.valorant.hint.02
+    - WordId: video_games.league_of_legends
+      WordKey: word.video_games.league_of_legends.name
+      DescriptionKey: word.video_games.league_of_legends.description
       Hints:
-      - Volador
-      Description: 
-    - Word: Cuchara
+      - HintId: video_games.league_of_legends.hint.01
+        TextKey: hint.video_games.league_of_legends.hint.01
+    - WordId: video_games.counter_strike
+      WordKey: word.video_games.counter_strike.name
+      DescriptionKey: word.video_games.counter_strike.description
       Hints:
-      - Sopa.
-      Description: 
-    - Word: Tenedor
+      - HintId: video_games.counter_strike.hint.01
+        TextKey: hint.video_games.counter_strike.hint.01
+    - WordId: video_games.fall_guys
+      WordKey: word.video_games.fall_guys.name
+      DescriptionKey: word.video_games.fall_guys.description
       Hints:
-      - Punta.
-      Description: 
-    - Word: Cuchillo
+      - HintId: video_games.fall_guys.hint.01
+        TextKey: hint.video_games.fall_guys.hint.01
+    - WordId: video_games.mario_kart
+      WordKey: word.video_games.mario_kart.name
+      DescriptionKey: word.video_games.mario_kart.description
       Hints:
-      - Asesinato
-      Description: 
-    - Word: Mochila
+      - HintId: video_games.mario_kart.hint.01
+        TextKey: hint.video_games.mario_kart.hint.01
+    - WordId: video_games.zelda
+      WordKey: word.video_games.zelda.name
+      DescriptionKey: word.video_games.zelda.description
       Hints:
-      - Espalda.
-      Description: 
-    - Word: Libro
+      - HintId: video_games.zelda.hint.01
+        TextKey: hint.video_games.zelda.hint.01
+    - WordId: video_games.pokemon
+      WordKey: word.video_games.pokemon.name
+      DescriptionKey: word.video_games.pokemon.description
       Hints:
-      - Hobbie
-      Description: 
-    - Word: "L\xE1piz"
+      - HintId: video_games.pokemon.hint.01
+        TextKey: hint.video_games.pokemon.hint.01
+    - WordId: video_games.resident_evil
+      WordKey: word.video_games.resident_evil.name
+      DescriptionKey: word.video_games.resident_evil.description
       Hints:
-      - Grafito.
-      Description: 
-    - Word: Lapicera
+      - HintId: video_games.resident_evil.hint.01
+        TextKey: hint.video_games.resident_evil.hint.01
+    - WordId: video_games.silent_hill
+      WordKey: word.video_games.silent_hill.name
+      DescriptionKey: word.video_games.silent_hill.description
       Hints:
-      - Escuela
-      Description: 
-    - Word: Cuaderno
+      - HintId: video_games.silent_hill.hint.01
+        TextKey: hint.video_games.silent_hill.hint.01
+    - WordId: video_games.elden_ring
+      WordKey: word.video_games.elden_ring.name
+      DescriptionKey: word.video_games.elden_ring.description
       Hints:
-      - Escuela
-      Description: 
-    - Word: Auriculares
+      - HintId: video_games.elden_ring.hint.01
+        TextKey: hint.video_games.elden_ring.hint.01
+    - WordId: video_games.god_of_war
+      WordKey: word.video_games.god_of_war.name
+      DescriptionKey: word.video_games.god_of_war.description
       Hints:
-      - Sonido.
-      Description: 
-    - Word: Control remoto
+      - HintId: video_games.god_of_war.hint.01
+        TextKey: hint.video_games.god_of_war.hint.01
+    - WordId: video_games.the_last_of_us
+      WordKey: word.video_games.the_last_of_us.name
+      DescriptionKey: word.video_games.the_last_of_us.description
       Hints:
-      - Sensor
-      Description: 
-    - Word: Televisor
-      Hints:
-      - Series.
-      Description: 
-    - Word: "L\xE1mpara"
-      Hints:
-      - Luz.
-      Description: 
-    - Word: Cama
-      Hints:
-      - Sexo
-      Description: 
-    - Word: Almohada
-      Hints:
-      - Cabeza.
-      Description: 
-    - Word: Reloj
-      Hints:
-      - Lujo.
-      Description: 
-    - Word: Billetera
-      Hints:
-      - Robo
-      Description: 
-    - Word: Llaves
-      Hints:
-      - Perdida
-      Description: 
-    - Word: Paraguas
-      Hints:
-      - Paraguay
-      Description: 
-    - Word: Zapatilla
-      Hints:
-      - Cable.
-      Description: 
-    - Word: Campera
-      Hints:
-      - "Fr\xEDo."
-      Description: 
-    - Word: Gorra
-      Hints:
-      - Ropa.
-      Description: 
-    - Word: Espejo
-      Hints:
-      - Vestidor
-      Description: 
-    - Word: Cepillo
-      Hints:
-      - Cerdas.
-      Description: 
-    - Word: Toalla
-      Hints:
-      - Pileta
-      Description: 
-    - Word: "Jab\xF3n"
-      Hints:
-      - Limpio
-      Description: 
-    - Word: Shampoo
-      Hints:
-      - Ducha
-      Description: 
-    - Word: Ventilador
-      Hints:
-      - Viento
-      Description: 
-    - Word: Heladera
-      Hints:
-      - "Fr\xEDo."
-      Description: 
-    - Word: Microondas
-      Hints:
-      - Cocina
-      Description: 
-    - Word: Horno
-      Hints:
-      - Calor.
-      Description: 
-    - Word: "Sart\xE9n"
-      Hints:
-      - Fuego.
-      Description: 
-    - Word: Olla
-      Hints:
-      - Agua.
-      Description: 
-    - Word: Tijera
-      Hints:
-      - Papel.
-      - Piedra
-      Description: 
-    - Word: Cinta
-      Hints:
-      - "C\xEDrculo"
-      Description: 
-    - Word: Caja
-      Hints:
-      - Guardar.
-      Description: 
-    - Word: Bolsa
-      Hints:
-      - Guardar
-      Description: 
-    - Word: Pelota
-      Hints:
-      - Juego.
-      Description: 
-    - Word: Bicicleta
-      Hints:
-      - Distancia
-      Description: 
-    - Word: Cargador
-      Hints:
-      - "Energ\xEDa."
-      Description: 
-    - Word: Pendrive
-      Hints:
-      - Archivos.
-      - Enchufar
-      Description: 
-  - CategoryName: Videojuegos
-    Description: "Personajes y t\xEDtulos"
+      - HintId: video_games.the_last_of_us.hint.01
+        TextKey: hint.video_games.the_last_of_us.hint.01
     CategoryColor: {r: 0.023529414, g: 0.7137255, b: 0.8313726, a: 1}
     CategoryImage: {fileID: 21300000, guid: a09d3525dd1951f45a7c7a4ae541a983, type: 3}
+  - CategoryId: animals
+    NameKey: category.animals.name
+    SubtitleKey: category.animals.subtitle
     CategoryType: 0
     Words:
-    - Word: Minecraft
+    - WordId: animals.perro
+      WordKey: word.animals.perro.name
+      DescriptionKey: word.animals.perro.description
       Hints:
-      - Bloques.
-      - Mundos
-      Description: Videojuego de mundo abierto donde los jugadores exploran, construyen
-        y sobreviven usando bloques.
-    - Word: Fortnite
+      - HintId: animals.perro.hint.01
+        TextKey: hint.animals.perro.hint.01
+    - WordId: animals.gato
+      WordKey: word.animals.gato.name
+      DescriptionKey: word.animals.gato.description
       Hints:
-      - "Construcci\xF3n."
-      Description: "Fortnite es un videojuego multijugador de acci\xF3n y supervivencia
-        conocido por su modo battle royale y construcci\xF3n."
-    - Word: Roblox
+      - HintId: animals.gato.hint.01
+        TextKey: hint.animals.gato.hint.01
+    - WordId: animals.leon
+      WordKey: word.animals.leon.name
+      DescriptionKey: word.animals.leon.description
       Hints:
-      - Variedad
-      Description: Roblox es una plataforma donde usuarios crean, comparten y juegan
-        experiencias interactivas.
-    - Word: Among Us
+      - HintId: animals.leon.hint.01
+        TextKey: hint.animals.leon.hint.01
+    - WordId: animals.tigre
+      WordKey: word.animals.tigre.name
+      DescriptionKey: word.animals.tigre.description
       Hints:
-      - Impostor.
-      Description: "Among Us es un juego social de deducci\xF3n donde tripulantes
-        intentan descubrir impostores."
-    - Word: GTA
+      - HintId: animals.tigre.hint.01
+        TextKey: hint.animals.tigre.hint.01
+    - WordId: animals.elefante
+      WordKey: word.animals.elefante.name
+      DescriptionKey: word.animals.elefante.description
       Hints:
-      - Ciudad.
-      - Armas
-      Description: "GTA es una saga de videojuegos de mundo abierto centrada en crimen,
-        conducci\xF3n y exploraci\xF3n urbana."
-    - Word: The Sims
+      - HintId: animals.elefante.hint.01
+        TextKey: hint.animals.elefante.hint.01
+    - WordId: animals.jirafa
+      WordKey: word.animals.jirafa.name
+      DescriptionKey: word.animals.jirafa.description
       Hints:
-      - Vida.
-      Description: "The Sims es una saga de simulaci\xF3n social donde se crean personajes,
-        casas y rutinas de vida."
-    - Word: FIFA
+      - HintId: animals.jirafa.hint.01
+        TextKey: hint.animals.jirafa.hint.01
+    - WordId: animals.mono
+      WordKey: word.animals.mono.name
+      DescriptionKey: word.animals.mono.description
       Hints:
-      - Cancha.
-      Description: "FIFA es una saga de videojuegos de f\xFAtbol con equipos, jugadores
-        y competiciones oficiales."
-    - Word: Call of Duty
+      - HintId: animals.mono.hint.01
+        TextKey: hint.animals.mono.hint.01
+    - WordId: animals.caballo
+      WordKey: word.animals.caballo.name
+      DescriptionKey: word.animals.caballo.description
       Hints:
-      - Guerra.
-      Description: "Call of Duty es una saga de videojuegos de disparos en primera
-        persona con tem\xE1tica b\xE9lica y multijugador."
-    - Word: Valorant
+      - HintId: animals.caballo.hint.01
+        TextKey: hint.animals.caballo.hint.01
+    - WordId: animals.vaca
+      WordKey: word.animals.vaca.name
+      DescriptionKey: word.animals.vaca.description
       Hints:
-      - Agentes.
-      - "T\xE1ctica"
-      Description: "Valorant es un shooter t\xE1ctico competitivo donde personajes
-        con habilidades luchan por objetivos."
-    - Word: League of Legends
+      - HintId: animals.vaca.hint.01
+        TextKey: hint.animals.vaca.hint.01
+    - WordId: animals.cerdo
+      WordKey: word.animals.cerdo.name
+      DescriptionKey: word.animals.cerdo.description
       Hints:
-      - "L\xEDneas."
-      Description: League of Legends es un MOBA competitivo donde equipos intentan
-        destruir la base rival.
-    - Word: Counter Strike
+      - HintId: animals.cerdo.hint.01
+        TextKey: hint.animals.cerdo.hint.01
+    - WordId: animals.gallina
+      WordKey: word.animals.gallina.name
+      DescriptionKey: word.animals.gallina.description
       Hints:
-      - Bomba.
-      Description: "Counter-Strike es un shooter t\xE1ctico competitivo basado en
-        rondas entre terroristas y antiterroristas."
-    - Word: Fall Guys
+      - HintId: animals.gallina.hint.01
+        TextKey: hint.animals.gallina.hint.01
+    - WordId: animals.pato
+      WordKey: word.animals.pato.name
+      DescriptionKey: word.animals.pato.description
       Hints:
-      - Carrera.
-      Description: "Fall Guys es un juego multijugador de obst\xE1culos donde personajes
-        compiten en pruebas eliminatorias."
-    - Word: Mario Kart
+      - HintId: animals.pato.hint.01
+        TextKey: hint.animals.pato.hint.01
+    - WordId: animals.conejo
+      WordKey: word.animals.conejo.name
+      DescriptionKey: word.animals.conejo.description
       Hints:
-      - Italia
-      Description: Mario Kart es una saga de carreras arcade con personajes de Nintendo
-        y objetos especiales.
-    - Word: Zelda
+      - HintId: animals.conejo.hint.01
+        TextKey: hint.animals.conejo.hint.01
+    - WordId: animals.oso
+      WordKey: word.animals.oso.name
+      DescriptionKey: word.animals.oso.description
       Hints:
-      - "H\xE9roe"
-      Description: "Zelda es una saga de aventuras y acci\xF3n protagonizada principalmente
-        por Link en mundos de fantas\xEDa."
-    - Word: "Pok\xE9mon"
+      - HintId: animals.oso.hint.01
+        TextKey: hint.animals.oso.hint.01
+    - WordId: animals.lobo
+      WordKey: word.animals.lobo.name
+      DescriptionKey: word.animals.lobo.description
       Hints:
-      - Criaturas.
-      Description: "Pok\xE9mon es una franquicia de videojuegos donde se capturan,
-        entrenan y combaten criaturas."
-    - Word: Resident Evil
+      - HintId: animals.lobo.hint.01
+        TextKey: hint.animals.lobo.hint.01
+    - WordId: animals.zorro
+      WordKey: word.animals.zorro.name
+      DescriptionKey: word.animals.zorro.description
       Hints:
-      - Zombies.
-      Description: "Resident Evil es una saga de terror y acci\xF3n centrada en brotes,
-        monstruos y supervivencia."
-    - Word: Silent Hill
+      - HintId: animals.zorro.hint.01
+        TextKey: hint.animals.zorro.hint.01
+    - WordId: animals.delfin
+      WordKey: word.animals.delfin.name
+      DescriptionKey: word.animals.delfin.description
       Hints:
-      - Niebla.
-      Description: "Silent Hill es una saga de terror psicol\xF3gico conocida por
-        su atm\xF3sfera opresiva y simbolismo."
-    - Word: Elden Ring
+      - HintId: animals.delfin.hint.01
+        TextKey: hint.animals.delfin.hint.01
+    - WordId: animals.tiburon
+      WordKey: word.animals.tiburon.name
+      DescriptionKey: word.animals.tiburon.description
       Hints:
-      - Anillo.
-      Description: "Elden Ring es un RPG de acci\xF3n en mundo abierto con combate
-        desafiante y fantas\xEDa oscura."
-    - Word: God of War
+      - HintId: animals.tiburon.hint.01
+        TextKey: hint.animals.tiburon.hint.01
+    - WordId: animals.pinguino
+      WordKey: word.animals.pinguino.name
+      DescriptionKey: word.animals.pinguino.description
       Hints:
-      - Hacha.
-      Description: "God of War es una saga de acci\xF3n protagonizada por Kratos,
-        con combates basados en mitolog\xEDas."
-    - Word: The Last of Us
+      - HintId: animals.pinguino.hint.01
+        TextKey: hint.animals.pinguino.hint.01
+    - WordId: animals.cocodrilo
+      WordKey: word.animals.cocodrilo.name
+      DescriptionKey: word.animals.cocodrilo.description
       Hints:
-      - Infectados.
-      Description: "The Last of Us es una saga de acci\xF3n narrativa ambientada
-        en un mundo postapocal\xEDptico con infectados."
-  - CategoryName: Animales
-    Description: Fauna del mundo
+      - HintId: animals.cocodrilo.hint.01
+        TextKey: hint.animals.cocodrilo.hint.01
     CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
     CategoryImage: {fileID: 21300000, guid: 1ac1e909073a80e47a63387c64b494a9, type: 3}
+  - CategoryId: movies
+    NameKey: category.movies.name
+    SubtitleKey: category.movies.subtitle
     CategoryType: 0
     Words:
-    - Word: Perro
+    - WordId: movies.titanic
+      WordKey: word.movies.titanic.name
+      DescriptionKey: word.movies.titanic.description
       Hints:
-      - Ladrido.
-      Description: 
-    - Word: Gato
+      - HintId: movies.titanic.hint.01
+        TextKey: hint.movies.titanic.hint.01
+      - HintId: movies.titanic.hint.02
+        TextKey: hint.movies.titanic.hint.02
+    - WordId: movies.avatar
+      WordKey: word.movies.avatar.name
+      DescriptionKey: word.movies.avatar.description
       Hints:
-      - Maullido.
-      Description: 
-    - Word: "Le\xF3n"
+      - HintId: movies.avatar.hint.01
+        TextKey: hint.movies.avatar.hint.01
+      - HintId: movies.avatar.hint.02
+        TextKey: hint.movies.avatar.hint.02
+    - WordId: movies.toy_story
+      WordKey: word.movies.toy_story.name
+      DescriptionKey: word.movies.toy_story.description
       Hints:
-      - Melena.
-      Description: 
-    - Word: Tigre
+      - HintId: movies.toy_story.hint.01
+        TextKey: hint.movies.toy_story.hint.01
+      - HintId: movies.toy_story.hint.02
+        TextKey: hint.movies.toy_story.hint.02
+    - WordId: movies.shrek
+      WordKey: word.movies.shrek.name
+      DescriptionKey: word.movies.shrek.description
       Hints:
-      - Rayas.
-      Description: 
-    - Word: Elefante
+      - HintId: movies.shrek.hint.01
+        TextKey: hint.movies.shrek.hint.01
+      - HintId: movies.shrek.hint.02
+        TextKey: hint.movies.shrek.hint.02
+    - WordId: movies.frozen_una_aventura_congelada
+      WordKey: word.movies.frozen_una_aventura_congelada.name
+      DescriptionKey: word.movies.frozen_una_aventura_congelada.description
       Hints:
-      - Trompa.
-      Description: 
-    - Word: Jirafa
+      - HintId: movies.frozen_una_aventura_congelada.hint.01
+        TextKey: hint.movies.frozen_una_aventura_congelada.hint.01
+      - HintId: movies.frozen_una_aventura_congelada.hint.02
+        TextKey: hint.movies.frozen_una_aventura_congelada.hint.02
+    - WordId: movies.harry_potter
+      WordKey: word.movies.harry_potter.name
+      DescriptionKey: word.movies.harry_potter.description
       Hints:
-      - Cuello.
-      Description: 
-    - Word: Mono
+      - HintId: movies.harry_potter.hint.01
+        TextKey: hint.movies.harry_potter.hint.01
+    - WordId: movies.el_senor_de_los_anillos
+      WordKey: word.movies.el_senor_de_los_anillos.name
+      DescriptionKey: word.movies.el_senor_de_los_anillos.description
       Hints:
-      - Banana.
-      Description: 
-    - Word: Caballo
+      - HintId: movies.el_senor_de_los_anillos.hint.01
+        TextKey: hint.movies.el_senor_de_los_anillos.hint.01
+    - WordId: movies.star_wars
+      WordKey: word.movies.star_wars.name
+      DescriptionKey: word.movies.star_wars.description
       Hints:
-      - Galope.
-      Description: 
-    - Word: Vaca
+      - HintId: movies.star_wars.hint.01
+        TextKey: hint.movies.star_wars.hint.01
+    - WordId: movies.jurassic_park
+      WordKey: word.movies.jurassic_park.name
+      DescriptionKey: word.movies.jurassic_park.description
       Hints:
-      - Leche.
-      Description: 
-    - Word: Cerdo
+      - HintId: movies.jurassic_park.hint.01
+        TextKey: hint.movies.jurassic_park.hint.01
+    - WordId: movies.avengers
+      WordKey: word.movies.avengers.name
+      DescriptionKey: word.movies.avengers.description
       Hints:
-      - Granja.
-      Description: 
-    - Word: Gallina
+      - HintId: movies.avengers.hint.01
+        TextKey: hint.movies.avengers.hint.01
+    - WordId: movies.coco
+      WordKey: word.movies.coco.name
+      DescriptionKey: word.movies.coco.description
       Hints:
-      - Huevos.
-      Description: 
-    - Word: Pato
+      - HintId: movies.coco.hint.01
+        TextKey: hint.movies.coco.hint.01
+    - WordId: movies.buscando_a_nemo
+      WordKey: word.movies.buscando_a_nemo.name
+      DescriptionKey: word.movies.buscando_a_nemo.description
       Hints:
-      - Cuac.
-      Description: 
-    - Word: Conejo
+      - HintId: movies.buscando_a_nemo.hint.01
+        TextKey: hint.movies.buscando_a_nemo.hint.01
+    - WordId: movies.rapidos_y_furiosos
+      WordKey: word.movies.rapidos_y_furiosos.name
+      DescriptionKey: word.movies.rapidos_y_furiosos.description
       Hints:
-      - Orejas.
-      Description: 
-    - Word: Oso
+      - HintId: movies.rapidos_y_furiosos.hint.01
+        TextKey: hint.movies.rapidos_y_furiosos.hint.01
+    - WordId: movies.matrix
+      WordKey: word.movies.matrix.name
+      DescriptionKey: word.movies.matrix.description
       Hints:
-      - Miel.
-      Description: 
-    - Word: Lobo
+      - HintId: movies.matrix.hint.01
+        TextKey: hint.movies.matrix.hint.01
+    - WordId: movies.el_rey_leon
+      WordKey: word.movies.el_rey_leon.name
+      DescriptionKey: word.movies.el_rey_leon.description
       Hints:
-      - Manada.
-      Description: 
-    - Word: Zorro
+      - HintId: movies.el_rey_leon.hint.01
+        TextKey: hint.movies.el_rey_leon.hint.01
+    - WordId: movies.intensa_mente
+      WordKey: word.movies.intensa_mente.name
+      DescriptionKey: word.movies.intensa_mente.description
       Hints:
-      - Astuto.
-      Description: 
-    - Word: "Delf\xEDn"
+      - HintId: movies.intensa_mente.hint.01
+        TextKey: hint.movies.intensa_mente.hint.01
+    - WordId: movies.y_donde_estan_las_rubias
+      WordKey: word.movies.y_donde_estan_las_rubias.name
+      DescriptionKey: word.movies.y_donde_estan_las_rubias.description
       Hints:
-      - Salto.
-      Description: 
-    - Word: "Tibur\xF3n"
+      - HintId: movies.y_donde_estan_las_rubias.hint.01
+        TextKey: hint.movies.y_donde_estan_las_rubias.hint.01
+      - HintId: movies.y_donde_estan_las_rubias.hint.02
+        TextKey: hint.movies.y_donde_estan_las_rubias.hint.02
+    - WordId: movies.cincuenta_sombras_de_grey
+      WordKey: word.movies.cincuenta_sombras_de_grey.name
+      DescriptionKey: word.movies.cincuenta_sombras_de_grey.description
       Hints:
-      - Dientes.
-      Description: 
-    - Word: "Ping\xFCino"
+      - HintId: movies.cincuenta_sombras_de_grey.hint.01
+        TextKey: hint.movies.cincuenta_sombras_de_grey.hint.01
+    - WordId: movies.barbie
+      WordKey: word.movies.barbie.name
+      DescriptionKey: word.movies.barbie.description
       Hints:
-      - Hielo.
-      Description: 
-    - Word: Cocodrilo
-      Hints:
-      - "Mand\xEDbula."
-      Description: 
-  - CategoryName: "Pel\xEDculas"
-    Description: Cine y series
+      - HintId: movies.barbie.hint.01
+        TextKey: hint.movies.barbie.hint.01
     CategoryColor: {r: 0.23137257, g: 0.50980395, b: 0.96470594, a: 1}
     CategoryImage: {fileID: 21300000, guid: 9a6e1a042db724646b8802e0adc1ac33, type: 3}
+  - CategoryId: brands
+    NameKey: category.brands.name
+    SubtitleKey: category.brands.subtitle
     CategoryType: 0
     Words:
-    - Word: Titanic
+    - WordId: brands.nike
+      WordKey: word.brands.nike.name
+      DescriptionKey: word.brands.nike.description
       Hints:
-      - Barco.
-      - Amor
-      Description: "Titanic es una pel\xEDcula dram\xE1tica y rom\xE1ntica sobre
-        el famoso naufragio del transatl\xE1ntico."
-    - Word: Avatar
+      - HintId: brands.nike.hint.01
+        TextKey: hint.brands.nike.hint.01
+    - WordId: brands.adidas
+      WordKey: word.brands.adidas.name
+      DescriptionKey: word.brands.adidas.description
       Hints:
-      - Azul.
-      - "Conexi\xF3n"
-      Description: "Avatar es una pel\xEDcula de ciencia ficci\xF3n ambientada en
-        Pandora, un mundo habitado por los Na'vi."
-    - Word: Toy Story
+      - HintId: brands.adidas.hint.01
+        TextKey: hint.brands.adidas.hint.01
+    - WordId: brands.apple
+      WordKey: word.brands.apple.name
+      DescriptionKey: word.brands.apple.description
       Hints:
-      - Suela
-      - Fiel
-      Description: "Toy Story es una pel\xEDcula animada sobre juguetes que cobran
-        vida cuando los humanos no los ven."
-    - Word: Shrek
+      - HintId: brands.apple.hint.01
+        TextKey: hint.brands.apple.hint.01
+    - WordId: brands.samsung
+      WordKey: word.brands.samsung.name
+      DescriptionKey: word.brands.samsung.description
       Hints:
-      - Princesa
-      - Cuernos
-      Description: "Shrek es una pel\xEDcula animada que parodia los cuentos de hadas
-        con humor irreverente."
-    - Word: Frozen
+      - HintId: brands.samsung.hint.01
+        TextKey: hint.brands.samsung.hint.01
+    - WordId: brands.coca_cola
+      WordKey: word.brands.coca_cola.name
+      DescriptionKey: word.brands.coca_cola.description
       Hints:
-      - Hielo.
-      - Frio
-      Description: "Frozen es una pel\xEDcula animada de Disney sobre dos hermanas,
-        magia de hielo y aceptaci\xF3n personal."
-    - Word: Harry Potter
+      - HintId: brands.coca_cola.hint.01
+        TextKey: hint.brands.coca_cola.hint.01
+    - WordId: brands.pepsi
+      WordKey: word.brands.pepsi.name
+      DescriptionKey: word.brands.pepsi.description
       Hints:
-      - Varita.
-      Description: "Harry Potter es una saga de fantas\xEDa sobre un joven mago y
-        su lucha contra fuerzas oscuras."
-    - Word: "El Se\xF1or de los Anillos"
+      - HintId: brands.pepsi.hint.01
+        TextKey: hint.brands.pepsi.hint.01
+    - WordId: brands.mcdonald_s
+      WordKey: word.brands.mcdonald_s.name
+      DescriptionKey: word.brands.mcdonald_s.description
       Hints:
-      - Anillo.
-      Description: "El Se\xF1or de los Anillos es una saga fant\xE1stica sobre una
-        misi\xF3n para destruir un anillo poderoso."
-    - Word: Star Wars
+      - HintId: brands.mcdonald_s.hint.01
+        TextKey: hint.brands.mcdonald_s.hint.01
+    - WordId: brands.burger_king
+      WordKey: word.brands.burger_king.name
+      DescriptionKey: word.brands.burger_king.description
       Hints:
-      - Galaxia.
-      Description: "Star Wars es una saga de ciencia ficci\xF3n y aventura sobre
-        conflictos gal\xE1cticos y el poder de la Fuerza."
-    - Word: Jurassic Park
+      - HintId: brands.burger_king.hint.01
+        TextKey: hint.brands.burger_king.hint.01
+    - WordId: brands.netflix
+      WordKey: word.brands.netflix.name
+      DescriptionKey: word.brands.netflix.description
       Hints:
-      - Dinosaurio.
-      Description: "Jurassic Park es una pel\xEDcula de aventura y ciencia ficci\xF3n
-        sobre dinosaurios recreados gen\xE9ticamente."
-    - Word: Avengers
+      - HintId: brands.netflix.hint.01
+        TextKey: hint.brands.netflix.hint.01
+    - WordId: brands.disney
+      WordKey: word.brands.disney.name
+      DescriptionKey: word.brands.disney.description
       Hints:
-      - Equipo.
-      Description: "Avengers es una saga de superh\xE9roes donde varios personajes
-        se unen para enfrentar amenazas globales o c\xF3smicas."
-    - Word: Coco
+      - HintId: brands.disney.hint.01
+        TextKey: hint.brands.disney.hint.01
+    - WordId: brands.google
+      WordKey: word.brands.google.name
+      DescriptionKey: word.brands.google.description
       Hints:
-      - Recuerdo.
-      Description: "Coco es una pel\xEDcula animada sobre familia, m\xFAsica y la
-        tradici\xF3n mexicana del D\xEDa de Muertos."
-    - Word: Buscando a Nemo
+      - HintId: brands.google.hint.01
+        TextKey: hint.brands.google.hint.01
+    - WordId: brands.microsoft
+      WordKey: word.brands.microsoft.name
+      DescriptionKey: word.brands.microsoft.description
       Hints:
-      - "Oc\xE9ano."
-      Description: "Buscando a Nemo es una pel\xEDcula animada sobre un pez payaso
-        que busca a su hijo en el oc\xE9ano."
-    - Word: "R\xE1pidos y Furiosos"
+      - HintId: brands.microsoft.hint.01
+        TextKey: hint.brands.microsoft.hint.01
+    - WordId: brands.amazon
+      WordKey: word.brands.amazon.name
+      DescriptionKey: word.brands.amazon.description
       Hints:
-      - Autos.
-      Description: "R\xE1pidos y Furiosos es una saga de acci\xF3n centrada en carreras,
-        autos, robos y familia."
-    - Word: Matrix
+      - HintId: brands.amazon.hint.01
+        TextKey: hint.brands.amazon.hint.01
+    - WordId: brands.playstation
+      WordKey: word.brands.playstation.name
+      DescriptionKey: word.brands.playstation.description
       Hints:
-      - "C\xF3digo."
-      Description: "Matrix es una pel\xEDcula de ciencia ficci\xF3n sobre una realidad
-        simulada y la rebeli\xF3n contra m\xE1quinas."
-    - Word: "El Rey Le\xF3n"
+      - HintId: brands.playstation.hint.01
+        TextKey: hint.brands.playstation.hint.01
+    - WordId: brands.xbox
+      WordKey: word.brands.xbox.name
+      DescriptionKey: word.brands.xbox.description
       Hints:
-      - Selva.
-      Description: "El Rey Le\xF3n es una pel\xEDcula animada sobre un le\xF3n joven
-        que debe aceptar su lugar como rey."
-    - Word: Intensamente
+      - HintId: brands.xbox.hint.01
+        TextKey: hint.brands.xbox.hint.01
+    - WordId: brands.nintendo
+      WordKey: word.brands.nintendo.name
+      DescriptionKey: word.brands.nintendo.description
       Hints:
-      - "Emoci\xF3n."
-      Description: "Intensamente es una pel\xEDcula animada que representa las emociones
-        dentro de la mente de una ni\xF1a."
-    - Word: "Donde est\xE1n las rubias?"
+      - HintId: brands.nintendo.hint.01
+        TextKey: hint.brands.nintendo.hint.01
+    - WordId: brands.puma
+      WordKey: word.brands.puma.name
+      DescriptionKey: word.brands.puma.description
       Hints:
-      - Baile
-      - Negros
-      Description: "Comedia en la que dos agentes del FBI se hacen pasar por dos
-        j\xF3venes millonarias para resolver un caso y protegerlas de un posible
-        secuestro."
-    - Word: 50 sombras de Grey
+      - HintId: brands.puma.hint.01
+        TextKey: hint.brands.puma.hint.01
+    - WordId: brands.gucci
+      WordKey: word.brands.gucci.name
+      DescriptionKey: word.brands.gucci.description
       Hints:
-      - Sexo
-      Description: "Pel\xEDcula rom\xE1ntica y dram\xE1tica centrada en la relaci\xF3n
-        entre Anastasia Steele y Christian Grey, un empresario misterioso con gustos
-        poco convencionales"
-    - Word: Barbie
+      - HintId: brands.gucci.hint.01
+        TextKey: hint.brands.gucci.hint.01
+    - WordId: brands.zara
+      WordKey: word.brands.zara.name
+      DescriptionKey: word.brands.zara.description
       Hints:
-      - Rosa.
-      Description: "Barbie es una pel\xEDcula que mezcla comedia y cr\xEDtica social
-        a partir del universo de la famosa mu\xF1eca."
-  - CategoryName: Marcas
-    Description: Empresas globales
+      - HintId: brands.zara.hint.01
+        TextKey: hint.brands.zara.hint.01
+    - WordId: brands.mercado_libre
+      WordKey: word.brands.mercado_libre.name
+      DescriptionKey: word.brands.mercado_libre.description
+      Hints:
+      - HintId: brands.mercado_libre.hint.01
+        TextKey: hint.brands.mercado_libre.hint.01
     CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
     CategoryImage: {fileID: 21300000, guid: 692b951fffc046144b386477375126aa, type: 3}
+  - CategoryId: professions
+    NameKey: category.professions.name
+    SubtitleKey: category.professions.subtitle
     CategoryType: 0
     Words:
-    - Word: Nike
+    - WordId: professions.medico
+      WordKey: word.professions.medico.name
+      DescriptionKey: word.professions.medico.description
       Hints:
-      - Zapatilla.
-      Description: "Nike es una marca global de indumentaria, calzado y art\xEDculos
-        deportivos."
-    - Word: Adidas
+      - HintId: professions.medico.hint.01
+        TextKey: hint.professions.medico.hint.01
+    - WordId: professions.abogado
+      WordKey: word.professions.abogado.name
+      DescriptionKey: word.professions.abogado.description
       Hints:
-      - Rayas.
-      Description: Adidas es una marca alemana de ropa, calzado y equipamiento deportivo.
-    - Word: Apple
+      - HintId: professions.abogado.hint.01
+        TextKey: hint.professions.abogado.hint.01
+    - WordId: professions.profesor
+      WordKey: word.professions.profesor.name
+      DescriptionKey: word.professions.profesor.description
       Hints:
-      - Manzana.
-      Description: "Apple es una empresa tecnol\xF3gica conocida por sus dispositivos,
-        software y dise\xF1o integrado."
-    - Word: Samsung
+      - HintId: professions.profesor.hint.01
+        TextKey: hint.professions.profesor.hint.01
+    - WordId: professions.programador
+      WordKey: word.professions.programador.name
+      DescriptionKey: word.professions.programador.description
       Hints:
-      - Pantalla.
-      Description: "Samsung es una empresa surcoreana que fabrica celulares, televisores,
-        electrodom\xE9sticos y tecnolog\xEDa."
-    - Word: Coca-Cola
+      - HintId: professions.programador.hint.01
+        TextKey: hint.professions.programador.hint.01
+    - WordId: professions.disenador
+      WordKey: word.professions.disenador.name
+      DescriptionKey: word.professions.disenador.description
       Hints:
-      - Rojo.
-      Description: "Coca-Cola es una marca de bebida gaseosa reconocida mundialmente
-        por su identidad roja y sabor caracter\xEDstico."
-    - Word: Pepsi
+      - HintId: professions.disenador.hint.01
+        TextKey: hint.professions.disenador.hint.01
+    - WordId: professions.arquitecto
+      WordKey: word.professions.arquitecto.name
+      DescriptionKey: word.professions.arquitecto.description
       Hints:
-      - Azul.
-      Description: "Pepsi es una marca de bebida gaseosa cola y competidora hist\xF3rica
-        de Coca-Cola."
-    - Word: McDonald's
+      - HintId: professions.arquitecto.hint.01
+        TextKey: hint.professions.arquitecto.hint.01
+    - WordId: professions.ingeniero
+      WordKey: word.professions.ingeniero.name
+      DescriptionKey: word.professions.ingeniero.description
       Hints:
-      - Cajita.
-      Description: "McDonald's es una cadena internacional de comida r\xE1pida famosa
-        por hamburguesas y papas fritas."
-    - Word: Burger King
+      - HintId: professions.ingeniero.hint.01
+        TextKey: hint.professions.ingeniero.hint.01
+    - WordId: professions.cocinero
+      WordKey: word.professions.cocinero.name
+      DescriptionKey: word.professions.cocinero.description
       Hints:
-      - Corona.
-      Description: "Burger King es una cadena internacional de comida r\xE1pida conocida
-        por sus hamburguesas a la parrilla."
-    - Word: Netflix
+      - HintId: professions.cocinero.hint.01
+        TextKey: hint.professions.cocinero.hint.01
+    - WordId: professions.policia
+      WordKey: word.professions.policia.name
+      DescriptionKey: word.professions.policia.description
       Hints:
-      - Streaming.
-      Description: "Netflix es una plataforma de streaming de pel\xEDculas, series
-        y documentales."
-    - Word: Disney
+      - HintId: professions.policia.hint.01
+        TextKey: hint.professions.policia.hint.01
+    - WordId: professions.bombero
+      WordKey: word.professions.bombero.name
+      DescriptionKey: word.professions.bombero.description
       Hints:
-      - "Rat\xF3n."
-      Description: "Disney es una compa\xF1\xEDa de entretenimiento conocida por
-        animaci\xF3n, parques, pel\xEDculas y personajes ic\xF3nicos."
-    - Word: Google
+      - HintId: professions.bombero.hint.01
+        TextKey: hint.professions.bombero.hint.01
+    - WordId: professions.veterinario
+      WordKey: word.professions.veterinario.name
+      DescriptionKey: word.professions.veterinario.description
       Hints:
-      - Buscar.
-      Description: "Google es una empresa tecnol\xF3gica conocida por su buscador,
-        servicios digitales y productos de software."
-    - Word: Microsoft
+      - HintId: professions.veterinario.hint.01
+        TextKey: hint.professions.veterinario.hint.01
+    - WordId: professions.psicologo
+      WordKey: word.professions.psicologo.name
+      DescriptionKey: word.professions.psicologo.description
       Hints:
-      - Ventana.
-      Description: "Microsoft es una empresa tecnol\xF3gica conocida por Windows,
-        Office, Xbox y servicios en la nube."
-    - Word: Amazon
+      - HintId: professions.psicologo.hint.01
+        TextKey: hint.professions.psicologo.hint.01
+    - WordId: professions.contador
+      WordKey: word.professions.contador.name
+      DescriptionKey: word.professions.contador.description
       Hints:
-      - Paquete.
-      Description: "Amazon es una empresa de comercio electr\xF3nico, servicios en
-        la nube y entretenimiento digital."
-    - Word: PlayStation
+      - HintId: professions.contador.hint.01
+        TextKey: hint.professions.contador.hint.01
+    - WordId: professions.periodista
+      WordKey: word.professions.periodista.name
+      DescriptionKey: word.professions.periodista.description
       Hints:
-      - Control.
-      Description: PlayStation es una marca de consolas y videojuegos desarrollada
-        por Sony.
-    - Word: Xbox
+      - HintId: professions.periodista.hint.01
+        TextKey: hint.professions.periodista.hint.01
+    - WordId: professions.actor
+      WordKey: word.professions.actor.name
+      DescriptionKey: word.professions.actor.description
       Hints:
-      - Verde.
-      Description: Xbox es una marca de consolas, videojuegos y servicios creada
-        por Microsoft.
-    - Word: Nintendo
+      - HintId: professions.actor.hint.01
+        TextKey: hint.professions.actor.hint.01
+    - WordId: professions.cantante
+      WordKey: word.professions.cantante.name
+      DescriptionKey: word.professions.cantante.description
       Hints:
-      - Bigote.
-      Description: "Nintendo es una empresa japonesa de videojuegos conocida por
-        sus consolas y personajes ic\xF3nicos."
-    - Word: Puma
+      - HintId: professions.cantante.hint.01
+        TextKey: hint.professions.cantante.hint.01
+    - WordId: professions.electricista
+      WordKey: word.professions.electricista.name
+      DescriptionKey: word.professions.electricista.description
       Hints:
-      - Felino.
-      Description: Puma es una marca alemana de indumentaria, calzado y accesorios
-        deportivos.
-    - Word: Gucci
+      - HintId: professions.electricista.hint.01
+        TextKey: hint.professions.electricista.hint.01
+    - WordId: professions.plomero
+      WordKey: word.professions.plomero.name
+      DescriptionKey: word.professions.plomero.description
       Hints:
-      - Lujo.
-      Description: "Gucci es una marca italiana de moda de lujo conocida por ropa,
-        accesorios y dise\xF1o distintivo."
-    - Word: Zara
+      - HintId: professions.plomero.hint.01
+        TextKey: hint.professions.plomero.hint.01
+    - WordId: professions.carpintero
+      WordKey: word.professions.carpintero.name
+      DescriptionKey: word.professions.carpintero.description
       Hints:
-      - Ropa.
-      Description: "Zara es una marca espa\xF1ola de indumentaria conocida por moda
-        r\xE1pida y presencia internacional."
-    - Word: Mercado Libre
+      - HintId: professions.carpintero.hint.01
+        TextKey: hint.professions.carpintero.hint.01
+    - WordId: professions.peluquero
+      WordKey: word.professions.peluquero.name
+      DescriptionKey: word.professions.peluquero.description
       Hints:
-      - Compra.
-      Description: "Mercado Libre es una plataforma latinoamericana de comercio electr\xF3nico
-        y pagos digitales."
-  - CategoryName: Profesiones
-    Description: Oficios y carreras
+      - HintId: professions.peluquero.hint.01
+        TextKey: hint.professions.peluquero.hint.01
     CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
     CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryId: superheroes
+    NameKey: category.superheroes.name
+    SubtitleKey: category.superheroes.subtitle
     CategoryType: 0
     Words:
-    - Word: "M\xE9dico"
+    - WordId: superheroes.spider_man
+      WordKey: word.superheroes.spider_man.name
+      DescriptionKey: word.superheroes.spider_man.description
       Hints:
-      - Guardapolvo.
-      Description: 
-    - Word: Abogado
+      - HintId: superheroes.spider_man.hint.01
+        TextKey: hint.superheroes.spider_man.hint.01
+    - WordId: superheroes.batman
+      WordKey: word.superheroes.batman.name
+      DescriptionKey: word.superheroes.batman.description
       Hints:
-      - Juicio.
-      Description: 
-    - Word: Profesor
+      - HintId: superheroes.batman.hint.01
+        TextKey: hint.superheroes.batman.hint.01
+    - WordId: superheroes.superman
+      WordKey: word.superheroes.superman.name
+      DescriptionKey: word.superheroes.superman.description
       Hints:
-      - Aula.
-      Description: 
-    - Word: Programador
+      - HintId: superheroes.superman.hint.01
+        TextKey: hint.superheroes.superman.hint.01
+    - WordId: superheroes.mujer_maravilla
+      WordKey: word.superheroes.mujer_maravilla.name
+      DescriptionKey: word.superheroes.mujer_maravilla.description
       Hints:
-      - "C\xF3digo."
-      Description: 
-    - Word: "Dise\xF1ador"
+      - HintId: superheroes.mujer_maravilla.hint.01
+        TextKey: hint.superheroes.mujer_maravilla.hint.01
+    - WordId: superheroes.iron_man
+      WordKey: word.superheroes.iron_man.name
+      DescriptionKey: word.superheroes.iron_man.description
       Hints:
-      - Visual.
-      Description: 
-    - Word: Arquitecto
+      - HintId: superheroes.iron_man.hint.01
+        TextKey: hint.superheroes.iron_man.hint.01
+    - WordId: superheroes.capitan_america
+      WordKey: word.superheroes.capitan_america.name
+      DescriptionKey: word.superheroes.capitan_america.description
       Hints:
-      - Planos.
-      Description: 
-    - Word: Ingeniero
+      - HintId: superheroes.capitan_america.hint.01
+        TextKey: hint.superheroes.capitan_america.hint.01
+    - WordId: superheroes.thor
+      WordKey: word.superheroes.thor.name
+      DescriptionKey: word.superheroes.thor.description
       Hints:
-      - "T\xE9cnica."
-      Description: 
-    - Word: Cocinero
+      - HintId: superheroes.thor.hint.01
+        TextKey: hint.superheroes.thor.hint.01
+    - WordId: superheroes.hulk
+      WordKey: word.superheroes.hulk.name
+      DescriptionKey: word.superheroes.hulk.description
       Hints:
-      - Receta.
-      Description: 
-    - Word: "Polic\xEDa"
+      - HintId: superheroes.hulk.hint.01
+        TextKey: hint.superheroes.hulk.hint.01
+    - WordId: superheroes.viuda_negra
+      WordKey: word.superheroes.viuda_negra.name
+      DescriptionKey: word.superheroes.viuda_negra.description
       Hints:
-      - Sirena.
-      Description: 
-    - Word: Bombero
+      - HintId: superheroes.viuda_negra.hint.01
+        TextKey: hint.superheroes.viuda_negra.hint.01
+    - WordId: superheroes.doctor_strange
+      WordKey: word.superheroes.doctor_strange.name
+      DescriptionKey: word.superheroes.doctor_strange.description
       Hints:
-      - Fuego.
-      Description: 
-    - Word: Veterinario
+      - HintId: superheroes.doctor_strange.hint.01
+        TextKey: hint.superheroes.doctor_strange.hint.01
+    - WordId: superheroes.pantera_negra
+      WordKey: word.superheroes.pantera_negra.name
+      DescriptionKey: word.superheroes.pantera_negra.description
       Hints:
-      - Mascota.
-      Description: 
-    - Word: "Psic\xF3logo"
+      - HintId: superheroes.pantera_negra.hint.01
+        TextKey: hint.superheroes.pantera_negra.hint.01
+    - WordId: superheroes.flash
+      WordKey: word.superheroes.flash.name
+      DescriptionKey: word.superheroes.flash.description
       Hints:
-      - Mente.
-      Description: 
-    - Word: Contador
+      - HintId: superheroes.flash.hint.01
+        TextKey: hint.superheroes.flash.hint.01
+    - WordId: superheroes.aquaman
+      WordKey: word.superheroes.aquaman.name
+      DescriptionKey: word.superheroes.aquaman.description
       Hints:
-      - Impuestos.
-      Description: 
-    - Word: Periodista
+      - HintId: superheroes.aquaman.hint.01
+        TextKey: hint.superheroes.aquaman.hint.01
+    - WordId: superheroes.wolverine
+      WordKey: word.superheroes.wolverine.name
+      DescriptionKey: word.superheroes.wolverine.description
       Hints:
-      - Noticia.
-      Description: 
-    - Word: Actor
+      - HintId: superheroes.wolverine.hint.01
+        TextKey: hint.superheroes.wolverine.hint.01
+      - HintId: superheroes.wolverine.hint.02
+        TextKey: hint.superheroes.wolverine.hint.02
+    - WordId: superheroes.deadpool
+      WordKey: word.superheroes.deadpool.name
+      DescriptionKey: word.superheroes.deadpool.description
       Hints:
-      - Escena.
-      Description: 
-    - Word: Cantante
+      - HintId: superheroes.deadpool.hint.01
+        TextKey: hint.superheroes.deadpool.hint.01
+    - WordId: superheroes.ant_man
+      WordKey: word.superheroes.ant_man.name
+      DescriptionKey: word.superheroes.ant_man.description
       Hints:
-      - "Micr\xF3fono."
-      Description: 
-    - Word: Electricista
+      - HintId: superheroes.ant_man.hint.01
+        TextKey: hint.superheroes.ant_man.hint.01
+    - WordId: superheroes.capitana_marvel
+      WordKey: word.superheroes.capitana_marvel.name
+      DescriptionKey: word.superheroes.capitana_marvel.description
       Hints:
-      - Cable.
-      Description: 
-    - Word: Plomero
+      - HintId: superheroes.capitana_marvel.hint.01
+        TextKey: hint.superheroes.capitana_marvel.hint.01
+    - WordId: superheroes.linterna_verde
+      WordKey: word.superheroes.linterna_verde.name
+      DescriptionKey: word.superheroes.linterna_verde.description
       Hints:
-      - "Ca\xF1o."
-      Description: 
-    - Word: Carpintero
+      - HintId: superheroes.linterna_verde.hint.01
+        TextKey: hint.superheroes.linterna_verde.hint.01
+    - WordId: superheroes.daredevil
+      WordKey: word.superheroes.daredevil.name
+      DescriptionKey: word.superheroes.daredevil.description
       Hints:
-      - Madera.
-      Description: 
-    - Word: Peluquero
+      - HintId: superheroes.daredevil.hint.01
+        TextKey: hint.superheroes.daredevil.hint.01
+    - WordId: superheroes.venom
+      WordKey: word.superheroes.venom.name
+      DescriptionKey: word.superheroes.venom.description
       Hints:
-      - Tijera.
-      Description: 
-  - CategoryName: "Superh\xE9roes"
-    Description: "Personajes de c\xF3mic y cine"
+      - HintId: superheroes.venom.hint.01
+        TextKey: hint.superheroes.venom.hint.01
     CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
     CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
+  - CategoryId: hot
+    NameKey: category.hot.name
+    SubtitleKey: category.hot.subtitle
     CategoryType: 0
     Words:
-    - Word: Spider-Man
+    - WordId: hot.kamasutra
+      WordKey: word.hot.kamasutra.name
+      DescriptionKey: word.hot.kamasutra.description
       Hints:
-      - "M\xE1scara"
-      Description: 
-    - Word: Batman
+      - HintId: hot.kamasutra.hint.01
+        TextKey: hint.hot.kamasutra.hint.01
+    - WordId: hot.dildo
+      WordKey: word.hot.dildo.name
+      DescriptionKey: word.hot.dildo.description
       Hints:
-      - Animal
-      Description: "Spider-Man es un superh\xE9roe de Marvel con poderes ar\xE1cnidos,
-        agilidad y sentido de peligro."
-    - Word: Superman
+      - HintId: hot.dildo.hint.01
+        TextKey: hint.hot.dildo.hint.01
+    - WordId: hot.vibrador
+      WordKey: word.hot.vibrador.name
+      DescriptionKey: word.hot.vibrador.description
       Hints:
-      - Volar.
-      Description: "Batman es un h\xE9roe de DC que combate el crimen usando entrenamiento,
-        tecnolog\xEDa e inteligencia."
-    - Word: Wonder Woman
+      - HintId: hot.vibrador.hint.01
+        TextKey: hint.hot.vibrador.hint.01
+    - WordId: hot.muneca_inflable
+      WordKey: word.hot.muneca_inflable.name
+      DescriptionKey: word.hot.muneca_inflable.description
       Hints:
-      - "L\xE1tigo."
-      Description: "Superman es un superh\xE9roe de DC con fuerza, vuelo y poderes
-        derivados del sol amarillo."
-    - Word: Iron Man
+      - HintId: hot.muneca_inflable.hint.01
+        TextKey: hint.hot.muneca_inflable.hint.01
+    - WordId: hot.porno
+      WordKey: word.hot.porno.name
+      DescriptionKey: word.hot.porno.description
       Hints:
-      - Genio.
-      Description: "Wonder Woman es una hero\xEDna de DC, princesa amazona y guerrera
-        con habilidades sobrehumanas."
-    - Word: Captain America
+      - HintId: hot.porno.hint.01
+        TextKey: hint.hot.porno.hint.01
+    - WordId: hot.vagina
+      WordKey: word.hot.vagina.name
+      DescriptionKey: word.hot.vagina.description
       Hints:
-      - Escudo.
-      Description: "Iron Man es un h\xE9roe de Marvel que usa armaduras tecnol\xF3gicas
-        creadas por Tony Stark."
-    - Word: Thor
+      - HintId: hot.vagina.hint.01
+        TextKey: hint.hot.vagina.hint.01
+    - WordId: hot.pene
+      WordKey: word.hot.pene.name
+      DescriptionKey: word.hot.pene.description
       Hints:
-      - Dios
-      Description: "Captain America es un h\xE9roe de Marvel, s\xEDmbolo de justicia
-        y resultado de un experimento militar."
-    - Word: Hulk
+      - HintId: hot.pene.hint.01
+        TextKey: hint.hot.pene.hint.01
+    - WordId: hot.ano
+      WordKey: word.hot.ano.name
+      DescriptionKey: word.hot.ano.description
       Hints:
-      - Verde.
-      Description: "Thor es un h\xE9roe de Marvel inspirado en la mitolog\xEDa n\xF3rdica,
-        asociado al trueno y a un arma m\xE1gica."
-    - Word: Black Widow
+      - HintId: hot.ano.hint.01
+        TextKey: hint.hot.ano.hint.01
+    - WordId: hot.nude
+      WordKey: word.hot.nude.name
+      DescriptionKey: word.hot.nude.description
       Hints:
-      - Insecto.
-      Description: "Hulk es un h\xE9roe de Marvel que se transforma en una criatura
-        enorme y fuerte cuando se enfurece."
-    - Word: Doctor Strange
+      - HintId: hot.nude.hint.01
+        TextKey: hint.hot.nude.hint.01
+    - WordId: hot.tetas
+      WordKey: word.hot.tetas.name
+      DescriptionKey: word.hot.tetas.description
       Hints:
-      - Capa.
-      Description: "Black Widow es una hero\xEDna de Marvel experta en espionaje,
-        combate y operaciones encubiertas."
-    - Word: Black Panther
+      - HintId: hot.tetas.hint.01
+        TextKey: hint.hot.tetas.hint.01
+    - WordId: hot.orgia
+      WordKey: word.hot.orgia.name
+      DescriptionKey: word.hot.orgia.description
       Hints:
-      - "Naci\xF3n"
-      Description: "Doctor Strange es un h\xE9roe de Marvel que utiliza artes m\xEDsticas
-        para proteger la realidad."
-    - Word: Flash
+      - HintId: hot.orgia.hint.01
+        TextKey: hint.hot.orgia.hint.01
+    - WordId: hot.chupon
+      WordKey: word.hot.chupon.name
+      DescriptionKey: word.hot.chupon.description
       Hints:
-      - Velocidad.
-      Description: "Black Panther es un h\xE9roe de Marvel, rey de Wakanda y portador
-        de un traje de vibranium."
-    - Word: Aquaman
-      Hints:
-      - Tridente.
-      Description: "Flash es un h\xE9roe de DC con supervelocidad y conexi\xF3n con
-        la Speed Force."
-    - Word: Wolverine
-      Hints:
-      - Garras.
-      - Sexy
-      Description: "Aquaman es un h\xE9roe de DC, gobernante de Atlantis y capaz
-        de comunicarse con vida marina."
-    - Word: Deadpool
-      Hints:
-      - Sarcasmo.
-      Description: "Wolverine es un h\xE9roe de Marvel con regeneraci\xF3n, sentidos
-        agudos y garras de adamantium."
-    - Word: Ant-Man
-      Hints:
-      - Chiquito.
-      Description: "Deadpool es un antih\xE9roe de Marvel conocido por su humor,
-        regeneraci\xF3n y conciencia de estar en una ficci\xF3n."
-    - Word: Captain Marvel
-      Hints:
-      - "Energ\xEDa."
-      Description: "Ant-Man es un h\xE9roe de Marvel que puede reducir o aumentar
-        su tama\xF1o usando tecnolog\xEDa especial."
-    - Word: Green Lantern
-      Hints:
-      - "Intergal\xE1ctico"
-      Description: "Captain Marvel es una hero\xEDna de Marvel con fuerza, vuelo
-        y poderes de energ\xEDa c\xF3smica."
-    - Word: Daredevil
-      Hints:
-      - Vista.
-      Description: "Green Lantern es un h\xE9roe de DC que crea construcciones de
-        energ\xEDa usando un anillo de poder."
-    - Word: Venom
-      Hints:
-      - Negro.
-      Description: "Daredevil es un h\xE9roe de Marvel con sentidos aumentados que
-        combate el crimen en Hell's Kitchen."
-  - CategoryName: Hot
-    Description: "Sin descripci\xF3n"
-    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    CategoryImage: {fileID: 0}
-    CategoryType: 0
-    Words:
-    - Word: Kamasutra
-      Hints:
-      - Pose
-      Description: "Venom es un personaje de Marvel formado por la uni\xF3n de un
-        hu\xE9sped humano y un simbionte alien\xEDgena."
-    - Word: Dildo
-      Hints:
-      - Grande
-      Description: 
-    - Word: Vibrador
-      Hints:
-      - Negro.
-      Description: 
-    - Word: "Mu\xF1eca inflable"
-      Hints:
-      - Hombres
-      Description: 
-    - Word: Porno
-      Hints:
-      - Gay
-      Description: 
-    - Word: Vagina
-      Hints:
-      - Olor
-      Description: 
-    - Word: Pene
-      Hints:
-      - Medida
-      Description: 
-    - Word: Ano
-      Hints:
-      - Placer
-      Description: 
-    - Word: Nude
-      Hints:
-      - Snapchat
-      Description: 
-    - Word: Tetas
-      Hints:
-      - Agarrar
-      Description: 
-    - Word: "Org\xEDa"
-      Hints:
-      - Amigos
-      Description: 
-    - Word: "Chup\xF3n"
-      Hints:
-      - Marca
-      Description: 
-  - CategoryName: Funable
-    Description: "Sin descripci\xF3n"
-    CategoryColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    CategoryImage: {fileID: 0}
-    CategoryType: 0
-    Words:
-    - Word: Epstein
-      Hints:
-      - Nenes
-      Description: 
-    - Word: "Jud\xEDos"
-      Hints:
-      - Gorro
-      Description: 
-    - Word: Pedofilia
-      Hints:
-      - Iglesia
-      Description: 
-    - Word: Zoofilia
-      Hints:
-      - "Zool\xF3gico"
-      Description: 
-    - Word: Necrofilia
-      Hints:
-      - Morgue
-      Description: 
-  - CategoryName: Jugadores
-    Description: Participantes de la partida
-    CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 60f9d6d8aa1d6f34b9bf92b5dc7f6faa, type: 3}
-    CategoryType: 1
-    Words: []
-  categoryVisualData:
-  - CategoryName: Famosos argentinos
-    Description: Celebridades de Argentina
-    CategoryColor: {r: 0.92549026, g: 0.28235295, b: 0.6, a: 1}
-    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
-  - CategoryName: Animales
-    Description: Fauna del mundo
-    CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 1ac1e909073a80e47a63387c64b494a9, type: 3}
-  - CategoryName: Comidas
-    Description: "Gastronom\xEDa global"
-    CategoryColor: {r: 0.97647065, g: 0.45098042, b: 0.08627451, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 42fe27d3c86ed8f48b1a4e6534140fe0, type: 3}
-  - CategoryName: Objetos
-    Description: Objetos
-    CategoryColor: {r: 0.5529412, g: 0.34117648, b: 0.16078432, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 4912e7ea4ae37484fa35aadde3fb53b3, type: 3}
-  - CategoryName: "Pa\xEDses"
-    Description: Naciones del mundo
-    CategoryColor: {r: 0.9176471, g: 0.7019608, b: 0.03137255, a: 1}
-    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
-  - CategoryName: "Pel\xEDculas"
-    Description: Cine y series
-    CategoryColor: {r: 0.23137257, g: 0.50980395, b: 0.96470594, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 9a6e1a042db724646b8802e0adc1ac33, type: 3}
-  - CategoryName: Profesiones
-    Description: Oficios y carreras
-    CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
-    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
-  - CategoryName: Videojuegos
-    Description: "Personajes y t\xEDtulos"
-    CategoryColor: {r: 0.023529414, g: 0.7137255, b: 0.8313726, a: 1}
-    CategoryImage: {fileID: 21300000, guid: a09d3525dd1951f45a7c7a4ae541a983, type: 3}
-  - CategoryName: Famosos globales
-    Description: Celebridades globales
-    CategoryColor: {r: 0.46274513, g: 0.2392157, b: 0.34901962, a: 1}
-    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
-  - CategoryName: Marcas
-    Description: Empresas globales
-    CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 692b951fffc046144b386477375126aa, type: 3}
-  - CategoryName: "Superh\xE9roes"
-    Description: "Personajes de c\xF3mic y cine"
-    CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
-    CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
-  - CategoryName: Hot
-    Description: "Romance y pasi\xF3n..."
+      - HintId: hot.chupon.hint.01
+        TextKey: hint.hot.chupon.hint.01
     CategoryColor: {r: 0.81568635, g: 0.18823531, b: 0.078431375, a: 1}
     CategoryImage: {fileID: 21300000, guid: 70aa0976846d1e842b02f36fb5d31c88, type: 3}
-  - CategoryName: Funable
-    Description: Solo apto para personas con humor negro
+  - CategoryId: dark_humor
+    NameKey: category.dark_humor.name
+    SubtitleKey: category.dark_humor.subtitle
+    CategoryType: 0
+    Words:
+    - WordId: dark_humor.epstein
+      WordKey: word.dark_humor.epstein.name
+      DescriptionKey: word.dark_humor.epstein.description
+      Hints:
+      - HintId: dark_humor.epstein.hint.01
+        TextKey: hint.dark_humor.epstein.hint.01
+    - WordId: dark_humor.judios
+      WordKey: word.dark_humor.judios.name
+      DescriptionKey: word.dark_humor.judios.description
+      Hints:
+      - HintId: dark_humor.judios.hint.01
+        TextKey: hint.dark_humor.judios.hint.01
+    - WordId: dark_humor.pedofilia
+      WordKey: word.dark_humor.pedofilia.name
+      DescriptionKey: word.dark_humor.pedofilia.description
+      Hints:
+      - HintId: dark_humor.pedofilia.hint.01
+        TextKey: hint.dark_humor.pedofilia.hint.01
+    - WordId: dark_humor.zoofilia
+      WordKey: word.dark_humor.zoofilia.name
+      DescriptionKey: word.dark_humor.zoofilia.description
+      Hints:
+      - HintId: dark_humor.zoofilia.hint.01
+        TextKey: hint.dark_humor.zoofilia.hint.01
+    - WordId: dark_humor.necrofilia
+      WordKey: word.dark_humor.necrofilia.name
+      DescriptionKey: word.dark_humor.necrofilia.description
+      Hints:
+      - HintId: dark_humor.necrofilia.hint.01
+        TextKey: hint.dark_humor.necrofilia.hint.01
     CategoryColor: {r: 0, g: 0, b: 0, a: 1}
     CategoryImage: {fileID: 21300000, guid: f6dd6522e5177f641a87ae21377c3cb9, type: 3}
-  - CategoryName: Jugadores
-    Description: Participantes de la partida
+  - CategoryId: current_players
+    NameKey: category.current_players.name
+    SubtitleKey: category.current_players.subtitle
+    CategoryType: 1
+    Words: []
+    CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 60f9d6d8aa1d6f34b9bf92b5dc7f6faa, type: 3}
+  categoryVisualData:
+  - CategoryId: argentine_celebrities
+    LegacyDescription: 
+    CategoryColor: {r: 0.92549026, g: 0.28235295, b: 0.6, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryId: global_celebrities
+    LegacyDescription: 
+    CategoryColor: {r: 0.46274513, g: 0.2392157, b: 0.34901962, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e7f453c163213e54cb31d7513378a7f6, type: 3}
+  - CategoryId: countries
+    LegacyDescription: 
+    CategoryColor: {r: 0.9176471, g: 0.7019608, b: 0.03137255, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryId: foods
+    LegacyDescription: 
+    CategoryColor: {r: 0.97647065, g: 0.45098042, b: 0.08627451, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 42fe27d3c86ed8f48b1a4e6534140fe0, type: 3}
+  - CategoryId: objects
+    LegacyDescription: 
+    CategoryColor: {r: 0.5529412, g: 0.34117648, b: 0.16078432, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 4912e7ea4ae37484fa35aadde3fb53b3, type: 3}
+  - CategoryId: video_games
+    LegacyDescription: 
+    CategoryColor: {r: 0.023529414, g: 0.7137255, b: 0.8313726, a: 1}
+    CategoryImage: {fileID: 21300000, guid: a09d3525dd1951f45a7c7a4ae541a983, type: 3}
+  - CategoryId: animals
+    LegacyDescription: 
+    CategoryColor: {r: 0.13333334, g: 0.7725491, b: 0.36862746, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 1ac1e909073a80e47a63387c64b494a9, type: 3}
+  - CategoryId: movies
+    LegacyDescription: 
+    CategoryColor: {r: 0.23137257, g: 0.50980395, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 9a6e1a042db724646b8802e0adc1ac33, type: 3}
+  - CategoryId: brands
+    LegacyDescription: 
+    CategoryColor: {r: 0.9607844, g: 0.61960787, b: 0.043137256, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 692b951fffc046144b386477375126aa, type: 3}
+  - CategoryId: professions
+    LegacyDescription: 
+    CategoryColor: {r: 0.54509807, g: 0.36078432, b: 0.96470594, a: 1}
+    CategoryImage: {fileID: 21300000, guid: e19e4a858327f7f4ea2b32e2db4f40f7, type: 3}
+  - CategoryId: superheroes
+    LegacyDescription: 
+    CategoryColor: {r: 0.38823533, g: 0.40000004, b: 0.9450981, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 39c766510c49414488b1807e519634fb, type: 3}
+  - CategoryId: hot
+    LegacyDescription: 
+    CategoryColor: {r: 0.81568635, g: 0.18823531, b: 0.078431375, a: 1}
+    CategoryImage: {fileID: 21300000, guid: 70aa0976846d1e842b02f36fb5d31c88, type: 3}
+  - CategoryId: dark_humor
+    LegacyDescription: 
+    CategoryColor: {r: 0, g: 0, b: 0, a: 1}
+    CategoryImage: {fileID: 21300000, guid: f6dd6522e5177f641a87ae21377c3cb9, type: 3}
+  - CategoryId: current_players
+    LegacyDescription: 
     CategoryColor: {r: 0.078431375, g: 0.72156864, b: 0.6509804, a: 1}
     CategoryImage: {fileID: 21300000, guid: 60f9d6d8aa1d6f34b9bf92b5dc7f6faa, type: 3}

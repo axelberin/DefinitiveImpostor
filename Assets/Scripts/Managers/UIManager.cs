@@ -1,9 +1,8 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static GameRoundManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -107,6 +106,9 @@ public class UIManager : MonoBehaviour
     private readonly List<CategoryToggleUI> categoryToggles = new();
     private readonly List<RoleRevealPlayerRowUI> revealPlayerRows = new();
 
+    private PlayerData discussionStartingPlayer;
+    private GameRoundManager.ErrorData? lastError;
+
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
@@ -147,7 +149,6 @@ public class UIManager : MonoBehaviour
 
         UpdateNoPlayersConteiner();
         RefreshImpostorCountUI();
-        BuildCategoryToggles();
         UpdateStartGameButtonState();
     }
 
@@ -160,6 +161,7 @@ public class UIManager : MonoBehaviour
         gameRoundManager.OnRevealReset += HandleRevealReset;
         gameRoundManager.OnRevealFinished += HandleRevealFinished;
         gameRoundManager.OnError += HandleError;
+        GameLocalization.LanguageChanged += HandleLanguageChanged;
     }
 
     private void OnDisable()
@@ -171,11 +173,14 @@ public class UIManager : MonoBehaviour
         gameRoundManager.OnRevealReset -= HandleRevealReset;
         gameRoundManager.OnRevealFinished -= HandleRevealFinished;
         gameRoundManager.OnError -= HandleError;
+        GameLocalization.LanguageChanged -= HandleLanguageChanged;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return GameLocalization.Initialize();
         PrewarmScreens();
+        BuildCategoryToggles();
         ShowInitialScreen();
     }
 
@@ -296,10 +301,8 @@ public class UIManager : MonoBehaviour
 
         categoryToggles.Clear();
 
-        foreach (string categoryName in wordDatabase.GetCategoryNames())
+        foreach (WordCategory category in wordDatabase.Categories)
         {
-            WordCategory category = wordDatabase.GetCategory(categoryName);
-
             if (category == null)
                 continue;
 
@@ -320,7 +323,9 @@ public class UIManager : MonoBehaviour
 
         if (selectedCategoriesText != null)
         {
-            selectedCategoriesText.text = $"{selectedCount} seleccionadas";
+            selectedCategoriesText.text = GameLocalization.GetUi(
+                "ui.categories.selected_count",
+                GameLocalization.Args("count", selectedCount));
         }
 
         if (selectAllCategoriesButton != null)
@@ -420,7 +425,7 @@ public class UIManager : MonoBehaviour
         foreach (CategoryToggleUI toggleUI in categoryToggles)
         {
             if (toggleUI.IsOn)
-                enabled.Add(toggleUI.CategoryName);
+                enabled.Add(toggleUI.CategoryId);
         }
 
         return enabled;
@@ -445,7 +450,7 @@ public class UIManager : MonoBehaviour
         }
 
         impostorsResultText.text = string.Join("\n", impostorNames);
-        wordResultText.text = gameRoundManager.CurrentWordData.Word;
+        wordResultText.text = gameRoundManager.CurrentWordData.GetLocalizedWord();
     }
 
     public void RevealRoleButton()
@@ -461,12 +466,17 @@ public class UIManager : MonoBehaviour
     public void CloseErrorButton()
     {
         errorScreen.SetActive(false);
+        lastError = null;
     }
 
     private void HandlePlayerChanged(PlayerData player, int playerIndex)
     {
         playerNameText.text = player.PlayerName;
-        playerCounterText.text = $"Jugador {playerIndex + 1}/{gameRoundManager.Settings.Players.Count}";
+        playerCounterText.text = GameLocalization.GetUi(
+            "ui.reveal.player_counter",
+            GameLocalization.Args(
+                "current", playerIndex + 1,
+                "total", gameRoundManager.Settings.Players.Count));
 
         UpdateCurrentPlayerRevealVisual(playerIndex);
         ClearRevealTexts();
@@ -474,15 +484,9 @@ public class UIManager : MonoBehaviour
         ShowRoleHiddenState();
     }
 
-    private void HandleRoleRevealed(RoleRevealData revealData)
+    private void HandleRoleRevealed(GameRoundManager.RoleRevealData revealData)
     {
-        bool isImpostor = revealData.Role == "Impostor";
-
-        SetTextAndVisibility(categoryText, revealData.HasHint && isImpostor ? "" : $"Categoría: {revealData.Category}");
-        SetTextAndVisibility(roleText, isImpostor ? $"{revealData.Role}" : "");
-        SetTextAndVisibility(wordText, revealData.HasWord && !isImpostor ? $"{revealData.Word}" : "");
-        SetTextAndVisibility(hintText, revealData.HasHint ? $"Pista: {revealData.Hint}" : "");
-
+        RefreshRoleRevealTexts(revealData);
         ShowRoleVisibleState();
     }
 
@@ -527,9 +531,10 @@ public class UIManager : MonoBehaviour
         gameRoundManager.RerollCurrentWord();
     }
 
-    private void HandleError(string message)
+    private void HandleError(GameRoundManager.ErrorData error)
     {
-        errorText.text = message;
+        lastError = error;
+        errorText.text = GameLocalization.GetUi(error.Key, error.Arguments);
         errorScreen.SetActive(true);
     }
 
@@ -665,14 +670,20 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < revealPlayerRows.Count; i++)
         {
+            if (i >= gameRoundManager.Settings.Players.Count)
+                continue;
+
             PlayerData player = gameRoundManager.Settings.Players[i];
             revealPlayerRows[i].SetRevealed(gameRoundManager.HasPlayerRevealed(player));
         }
 
         if (revealPlayersCounterText != null)
         {
-            revealPlayersCounterText.text =
-                $"{gameRoundManager.RevealedPlayerCount}/{gameRoundManager.Settings.Players.Count} revelados";
+            revealPlayersCounterText.text = GameLocalization.GetUi(
+                "ui.reveal_selection.counter",
+                GameLocalization.Args(
+                    "revealed", gameRoundManager.RevealedPlayerCount,
+                    "total", gameRoundManager.Settings.Players.Count));
         }
     }
 
@@ -712,9 +723,9 @@ public class UIManager : MonoBehaviour
         errorScreen.SetActive(false);
 
         var players = gameRoundManager.Settings.Players;
-        var randomPlayer = players[UnityEngine.Random.Range(0, players.Count)];
-        discussionTitleText.text = $"Jugador {randomPlayer.PlayerName} comienza la ronda";
-        initialPlayerIcon.sprite = GetRevealVisualData(players.IndexOf(randomPlayer)).Emoji;
+        discussionStartingPlayer = players[UnityEngine.Random.Range(0, players.Count)];
+        RefreshDiscussionTitle();
+        initialPlayerIcon.sprite = GetRevealVisualData(players.IndexOf(discussionStartingPlayer)).Emoji;
         HideWordDescription();
     }
 
@@ -798,15 +809,16 @@ public class UIManager : MonoBehaviour
 
         if (currentWord == null)
         {
-            wordDescriptionText.text = "No hay una palabra cargada.";
-        }
-        else if (string.IsNullOrWhiteSpace(currentWord.Description))
-        {
-            wordDescriptionText.text = $"{currentWord.Word}: no tiene descripción cargada todavía.";
+            wordDescriptionText.text = GameLocalization.GetUi("ui.description.no_word");
         }
         else
         {
-            wordDescriptionText.text = currentWord.Description;
+            string description = currentWord.GetLocalizedDescription();
+            wordDescriptionText.text = string.IsNullOrWhiteSpace(description)
+                ? GameLocalization.GetUi(
+                    "ui.description.missing",
+                    GameLocalization.Args("word", currentWord.GetLocalizedWord()))
+                : description;
         }
 
         wordDescriptionPanel.SetActive(true);
@@ -845,5 +857,86 @@ public class UIManager : MonoBehaviour
         SetTextAndVisibility(roleText, "");
         SetTextAndVisibility(wordText, "");
         SetTextAndVisibility(hintText, "");
+    }
+
+    private void RefreshRoleRevealTexts(GameRoundManager.RoleRevealData revealData)
+    {
+        bool isImpostor = revealData.Role == PlayerRole.Impostor;
+        WordCategory category = wordDatabase.GetCategory(revealData.CategoryId);
+        string localizedCategory = category != null
+            ? category.GetLocalizedName()
+            : revealData.CategoryId;
+
+        SetTextAndVisibility(
+            categoryText,
+            revealData.HasHint && isImpostor
+                ? string.Empty
+                : GameLocalization.GetUi(
+                    "ui.reveal.category",
+                    GameLocalization.Args("category", localizedCategory)));
+
+        SetTextAndVisibility(
+            roleText,
+            isImpostor ? GameLocalization.GetUi("ui.reveal.role.impostor") : string.Empty);
+
+        SetTextAndVisibility(
+            wordText,
+            revealData.HasWord && !isImpostor
+                ? revealData.Word.GetLocalizedWord()
+                : string.Empty);
+
+        SetTextAndVisibility(
+            hintText,
+            revealData.HasHint
+                ? GameLocalization.GetUi(
+                    "ui.reveal.hint",
+                    GameLocalization.Args("hint", revealData.Hint.GetLocalizedText()))
+                : string.Empty);
+    }
+
+    private void RefreshDiscussionTitle()
+    {
+        if (discussionTitleText == null || discussionStartingPlayer == null)
+            return;
+
+        discussionTitleText.text = GameLocalization.GetUi(
+            "ui.discussion.start",
+            GameLocalization.Args("player", discussionStartingPlayer.PlayerName));
+    }
+
+    private void HandleLanguageChanged()
+    {
+        foreach (CategoryToggleUI toggle in categoryToggles)
+            toggle.RefreshLocalizedText();
+
+        UpdateCategoriesUI();
+
+        if (gameRoundManager.Settings != null)
+        {
+            UpdateRevealPlayerRows();
+
+            if (gameRoundManager.HasCurrentPlayer && playerCounterText != null)
+            {
+                playerCounterText.text = GameLocalization.GetUi(
+                    "ui.reveal.player_counter",
+                    GameLocalization.Args(
+                        "current", gameRoundManager.CurrentPlayerIndex + 1,
+                        "total", gameRoundManager.Settings.Players.Count));
+            }
+
+            if (gameRoundManager.IsRoleVisible)
+                RefreshRoleRevealTexts(gameRoundManager.GetCurrentRevealData());
+        }
+
+        RefreshDiscussionTitle();
+
+        if (resultsScreen != null && resultsScreen.activeSelf && gameRoundManager.CurrentWordData != null)
+            wordResultText.text = gameRoundManager.CurrentWordData.GetLocalizedWord();
+
+        if (wordDescriptionPanel != null && wordDescriptionPanel.activeSelf)
+            ShowWordDescription();
+
+        if (lastError.HasValue && errorScreen != null && errorScreen.activeSelf)
+            errorText.text = GameLocalization.GetUi(lastError.Value.Key, lastError.Value.Arguments);
     }
 }
