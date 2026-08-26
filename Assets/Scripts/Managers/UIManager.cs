@@ -60,6 +60,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button selectAllCategoriesButton;
     [SerializeField] private Button deselectAllCategoriesButton;
 
+    [SerializeField]
+    private List<string> disabledCategoryIds = new()
+{
+    "hot",
+    "dark_humor"
+};
+
     [Header("Reveal Selection UI")]
     [SerializeField] private Transform revealPlayersContent;
     [SerializeField] private RoleRevealPlayerRowUI revealPlayerRowPrefab;
@@ -318,14 +325,13 @@ public class UIManager : MonoBehaviour
 
         foreach (WordCategory category in wordDatabase.Categories)
         {
-            if (category == null)
+            if (category == null || disabledCategoryIds.Contains(category.CategoryId))
                 continue;
 
             CategoryToggleUI toggleUI = Instantiate(categoryTogglePrefab, categoriesContent);
             toggleUI.Setup(category);
 
             toggleUI.OnValueChanged += UpdateCategoriesUI;
-
             categoryToggles.Add(toggleUI);
         }
 
