@@ -76,5 +76,5 @@ ui.error.invalid_player_index,Error: índice de jugador inválido,false,El índi
 ui.error.category_missing,Error: categoría inexistente,true,No existe la categoría: {category},Category does not exist: {category}
 ui.error.reroll_failed,Error: no se pudo cambiar la palabra,false,No se pudo elegir una nueva palabra.,Could not choose a new word.
 ui.error.no_available_words,Error: categorías sin palabras,false,No hay categorías habilitadas con palabras.,No enabled category contains any words.
-content.dynamic.player_hint,Pista para la categoría de jugadores actuales,false,Jugador,Player
+content.dynamic.player_hint,Pista para la categoría de jugadores actuales,false,Jugador de esta partida,Player in This Game
 content.dynamic.player_description,Descripción de palabra dinámica para un jugador,true,{player} es un jugador de esta partida.,{player} is a player in this game.
