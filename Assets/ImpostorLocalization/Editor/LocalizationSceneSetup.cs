@@ -29,6 +29,23 @@ public static class LocalizationSceneSetup
         "errorText"
     };
 
+    private static readonly string[] StartupDisabledScreenProperties =
+    {
+        "setupScreen",
+        "menuSetupScreen",
+        "impostorSetupScreen",
+        "playersSetupScreen",
+        "categorySetupScreen",
+        "revealScreen",
+        "playerRevealSelectionScreen",
+        "roleHiddenScreen",
+        "roleVisibleScreen",
+        "discussionScreen",
+        "resultsScreen",
+        "errorScreen",
+        "wordDescriptionPanel"
+    };
+
     private static readonly Dictionary<string, string> LegacyTextAliases = new(StringComparer.Ordinal)
     {
         ["Configura tu partida"] = "ui.setup.title",
@@ -66,6 +83,7 @@ public static class LocalizationSceneSetup
             HashSet<TMP_Text> dynamicTexts = GetDynamicTexts(uiManager);
             int boundCount = BindStaticTexts(root, staticKeys, dynamicTexts);
             EnsureLanguageSelector(root);
+            ConfigureSafeStartupState(uiManager);
 
             PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
             AssetDatabase.SaveAssets();
@@ -88,6 +106,28 @@ public static class LocalizationSceneSetup
         {
             PrefabUtility.UnloadPrefabContents(root);
         }
+    }
+
+    private static void ConfigureSafeStartupState(UIManager uiManager)
+    {
+        SerializedObject serializedManager = new(uiManager);
+        SetReferencedObjectActive(serializedManager, "initialScreen", true);
+
+        foreach (string propertyName in StartupDisabledScreenProperties)
+            SetReferencedObjectActive(serializedManager, propertyName, false);
+    }
+
+    private static void SetReferencedObjectActive(
+        SerializedObject serializedManager,
+        string propertyName,
+        bool isActive)
+    {
+        SerializedProperty property = serializedManager.FindProperty(propertyName);
+        if (property?.objectReferenceValue is not GameObject target)
+            return;
+
+        target.SetActive(isActive);
+        EditorUtility.SetDirty(target);
     }
 
     private static string FindCanvasPrefab()

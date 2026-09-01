@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +17,9 @@ public class LocalizedTextUI : MonoBehaviour
     private void OnEnable()
     {
         GameLocalization.LanguageChanged += Refresh;
-        StartCoroutine(InitializeAndRefresh());
+
+        if (GameLocalization.IsInitialized)
+            Refresh();
     }
 
     private void OnDisable()
@@ -47,11 +48,5 @@ public class LocalizedTextUI : MonoBehaviour
         target.text = tableName == GameLocalization.ContentTable
             ? GameLocalization.GetContent(entryKey)
             : GameLocalization.GetUi(entryKey);
-    }
-
-    private IEnumerator InitializeAndRefresh()
-    {
-        yield return GameLocalization.Initialize();
-        Refresh();
     }
 }

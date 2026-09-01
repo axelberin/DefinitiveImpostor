@@ -119,6 +119,10 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        // Establish a valid visual state before any asynchronous initialization begins.
+        // This also protects the UI if localization or persistence fail later.
+        ShowInitialScreen();
+
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
 
@@ -189,9 +193,9 @@ public class UIManager : MonoBehaviour
     private IEnumerator Start()
     {
         yield return GameLocalization.Initialize();
-        PrewarmScreens();
         BuildCategoryToggles();
         LoadSavedConfiguration();
+        PrewarmScreens();
         ShowInitialScreen();
     }
 
@@ -226,18 +230,33 @@ public class UIManager : MonoBehaviour
             wordDescriptionPanel
         };
 
-        foreach (GameObject screen in screens)
+        bool[] previousStates = new bool[screens.Length];
+
+        for (int i = 0; i < screens.Length; i++)
         {
-            if (screen != null)
-                screen.SetActive(true);
+            if (screens[i] != null)
+                previousStates[i] = screens[i].activeSelf;
         }
 
-        Canvas.ForceUpdateCanvases();
-
-        foreach (GameObject screen in screens)
+        try
         {
-            if (screen != null)
-                screen.SetActive(false);
+            foreach (GameObject screen in screens)
+            {
+                if (screen != null)
+                    screen.SetActive(true);
+            }
+
+            Canvas.ForceUpdateCanvases();
+        }
+        finally
+        {
+            for (int i = 0; i < screens.Length; i++)
+            {
+                if (screens[i] != null)
+                    screens[i].SetActive(previousStates[i]);
+            }
+
+            Canvas.ForceUpdateCanvases();
         }
     }
 
@@ -650,8 +669,11 @@ public class UIManager : MonoBehaviour
     {
         initialScreen.SetActive(true);
         setupScreen.SetActive(false);
+        menuSetupScreen.SetActive(false);
         revealScreen.SetActive(false);
         playerRevealSelectionScreen.SetActive(false);
+        roleHiddenScreen.SetActive(false);
+        roleVisibleScreen.SetActive(false);
         discussionScreen.SetActive(false);
         resultsScreen.SetActive(false);
         errorScreen.SetActive(false);

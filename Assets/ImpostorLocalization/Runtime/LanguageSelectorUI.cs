@@ -9,6 +9,8 @@ public class LanguageSelectorUI : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private TMP_Text label;
 
+    private bool languageChangeInProgress;
+
     private void Awake()
     {
         if (button == null)
@@ -16,13 +18,24 @@ public class LanguageSelectorUI : MonoBehaviour
         if (label == null)
             label = GetComponentInChildren<TMP_Text>(true);
 
-        button?.onClick.AddListener(GameLocalization.ToggleLanguage);
+        button?.onClick.AddListener(HandleButtonPressed);
     }
 
     private void OnEnable()
     {
         GameLocalization.LanguageChanged += Refresh;
-        StartCoroutine(InitializeAndRefresh());
+
+        if (GameLocalization.IsInitialized)
+        {
+            Refresh();
+        }
+        else
+        {
+            if (label != null)
+                label.text = "EN";
+            if (button != null)
+                button.interactable = false;
+        }
     }
 
     private void OnDisable()
@@ -32,7 +45,7 @@ public class LanguageSelectorUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        button?.onClick.RemoveListener(GameLocalization.ToggleLanguage);
+        button?.onClick.RemoveListener(HandleButtonPressed);
     }
 
     public void Setup(Button targetButton, TMP_Text targetLabel)
@@ -43,9 +56,23 @@ public class LanguageSelectorUI : MonoBehaviour
             Refresh();
     }
 
-    private IEnumerator InitializeAndRefresh()
+    private void HandleButtonPressed()
     {
-        yield return GameLocalization.Initialize();
+        if (languageChangeInProgress || !GameLocalization.IsReady)
+            return;
+
+        StartCoroutine(ChangeLanguage());
+    }
+
+    private IEnumerator ChangeLanguage()
+    {
+        languageChangeInProgress = true;
+        if (button != null)
+            button.interactable = false;
+
+        yield return GameLocalization.ToggleLanguageAsync();
+
+        languageChangeInProgress = false;
         Refresh();
     }
 
@@ -59,5 +86,10 @@ public class LanguageSelectorUI : MonoBehaviour
             System.StringComparison.OrdinalIgnoreCase)
             ? "ES"
             : "EN";
+
+        if (button != null)
+            button.interactable = GameLocalization.IsReady
+                && !GameLocalization.IsChangingLanguage
+                && !languageChangeInProgress;
     }
 }

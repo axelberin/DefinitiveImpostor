@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -60,6 +62,7 @@ public static class LocalizationContentImporter
             WriteStringTable(GameLocalization.ContentTable, result.ContentEntries, spanish, english);
             WriteStringTable(GameLocalization.UiTable, result.UiEntries, spanish, english);
             WriteWordDatabase(result.Categories);
+            ConfigureAddressablesBuild();
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -250,21 +253,37 @@ public static class LocalizationContentImporter
     private static void ConfigureFallbackAndProjectLocale(
         LocalizationSettings settings, Locale spanish, Locale english)
     {
-        FallbackLocale fallback = english.Metadata.GetMetadata<FallbackLocale>();
+        FallbackLocale invalidEnglishFallback = english.Metadata.GetMetadata<FallbackLocale>();
+        if (invalidEnglishFallback != null)
+            english.Metadata.RemoveMetadata(invalidEnglishFallback);
+
+        FallbackLocale fallback = spanish.Metadata.GetMetadata<FallbackLocale>();
         if (fallback == null)
         {
-            fallback = new FallbackLocale(spanish);
-            english.Metadata.AddMetadata(fallback);
+            fallback = new FallbackLocale(english);
+            spanish.Metadata.AddMetadata(fallback);
         }
         else
         {
-            fallback.Locale = spanish;
+            fallback.Locale = english;
         }
 
         LocalizationSettings.ProjectLocale = english;
         LocalizationSettings.StringDatabase.UseFallback = true;
 
+        EditorUtility.SetDirty(spanish);
         EditorUtility.SetDirty(english);
+        EditorUtility.SetDirty(settings);
+    }
+
+    private static void ConfigureAddressablesBuild()
+    {
+        AddressableAssetSettings settings = AddressableAssetSettingsDefaultObject.Settings;
+        if (settings == null)
+            throw new InvalidOperationException("Addressables Settings could not be found.");
+
+        settings.BuildAddressablesWithPlayerBuild =
+            AddressableAssetSettings.PlayerBuildOption.BuildWithPlayer;
         EditorUtility.SetDirty(settings);
     }
 
