@@ -19,396 +19,696 @@ MonoBehaviour:
     m_Items:
     - rid: 8581773505777632252
   m_TableData:
-  - m_Id: 7228622221312
-    m_Localized: THE ULTIMATE IMPOSTOR
+  - m_Id: 2434849217818624
+    m_Localized: DEFINITIVE IMPOSTOR
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306087
-  - m_Id: 7228630609920
+      - rid: 4311677712361063209
+  - m_Id: 2434849230401536
     m_Localized: PLAY
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306088
-  - m_Id: 7228630609921
+      - rid: 4311677712361063210
+  - m_Id: 2434849230401537
     m_Localized: Set Up Your Game
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306089
-  - m_Id: 7228630609922
+      - rid: 4311677712361063211
+  - m_Id: 2434849230401538
     m_Localized: Settings
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306090
-  - m_Id: 7228630609923
+      - rid: 4311677712361063212
+  - m_Id: 2434849230401539
     m_Localized: Set Up Impostors
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306091
-  - m_Id: 7228630609924
+      - rid: 4311677712361063213
+  - m_Id: 2434849230401540
     m_Localized: Number of impostors
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306092
-  - m_Id: 7228630609925
+      - rid: 4311677712361063214
+  - m_Id: 2434849230401541
     m_Localized: Set Up Players
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306093
-  - m_Id: 7228630609926
+      - rid: 4311677712361063215
+  - m_Id: 2434849230401542
     m_Localized: Add player names
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306094
-  - m_Id: 7228630609927
+      - rid: 4311677712361063216
+  - m_Id: 2434849230401543
     m_Localized: Select Categories
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306095
-  - m_Id: 7228630609928
+      - rid: 4311677712361063217
+  - m_Id: 2434849230401544
     m_Localized: Word settings
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306096
-  - m_Id: 7228630609929
+      - rid: 4311677712361063218
+  - m_Id: 2434849230401545
     m_Localized: Start Game!
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306097
-  - m_Id: 7228630609930
+      - rid: 4311677712361063219
+  - m_Id: 2434849230401546
     m_Localized: Back to Menu
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306098
-  - m_Id: 7228630609931
+      - rid: 4311677712361063220
+  - m_Id: 2434849230401547
     m_Localized: Back
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306099
-  - m_Id: 7228630609932
+      - rid: 4311677712361063221
+  - m_Id: 2434849230401548
     m_Localized: Clear
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306100
-  - m_Id: 7228630609933
+      - rid: 4311677712361063222
+  - m_Id: 2434849230401549
     m_Localized: All
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306101
-  - m_Id: 7228630609934
+      - rid: 4311677712361063223
+  - m_Id: 2434849230401550
     m_Localized: Description
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306102
-  - m_Id: 7228630609935
+      - rid: 4311677712361063224
+  - m_Id: 2434849230401551
     m_Localized: Impostor
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306103
-  - m_Id: 7228630609936
+      - rid: 4311677712361063225
+  - m_Id: 2434849230401552
     m_Localized: Tweak the Impostor rules
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306104
-  - m_Id: 7228630609937
+      - rid: 4311677712361063226
+  - m_Id: 2434849230401553
     m_Localized: Number of impostors
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306105
-  - m_Id: 7228630609938
+      - rid: 4311677712361063227
+  - m_Id: 2434849230401554
     m_Localized: How many impostors will be in the game
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306106
-  - m_Id: 7228630609939
+      - rid: 4311677712361063228
+  - m_Id: 2434849230401555
     m_Localized: Hints for impostors
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306107
-  - m_Id: 7228630609940
+      - rid: 4311677712361063229
+  - m_Id: 2434849230401556
     m_Localized: Impostors will receive hints
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306108
-  - m_Id: 7228630609941
+      - rid: 4311677712361063230
+  - m_Id: 2434849230401557
     m_Localized: Players
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306109
-  - m_Id: 7228630609942
+      - rid: 4311677712361063231
+  - m_Id: 2434849230401558
     m_Localized: Add player names
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306110
-  - m_Id: 7228630609943
+      - rid: 4311677712361063232
+  - m_Id: 2434849230401559
     m_Localized: Players
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306111
-  - m_Id: 7228630609944
+      - rid: 4311677712361063233
+  - m_Id: 2434849230401560
     m_Localized: Name...
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306112
-  - m_Id: 7228630609945
+      - rid: 4311677712361063234
+  - m_Id: 2434849230401561
     m_Localized: No players yet
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306113
-  - m_Id: 7228630609946
+      - rid: 4311677712361063235
+  - m_Id: 2434849230401562
     m_Localized: Add at least 3 players to start
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306114
-  - m_Id: 7228630609947
+      - rid: 4311677712361063236
+  - m_Id: 2434849230401563
     m_Localized: Change word
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306115
-  - m_Id: 7228630609948
+      - rid: 4311677712361063237
+  - m_Id: 2434849230401564
     m_Localized: Civilians can change the word
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306116
-  - m_Id: 7228630609949
+      - rid: 4311677712361063238
+  - m_Id: 2434849230401565
     m_Localized: Categories
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306117
-  - m_Id: 7228630609950
+      - rid: 4311677712361063239
+  - m_Id: 2434849230401566
     m_Localized: Word settings
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306118
-  - m_Id: 7228630609951
+      - rid: 4311677712361063240
+  - m_Id: 2434849230401567
     m_Localized: Categories
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306119
-  - m_Id: 7228630609952
+      - rid: 4311677712361063241
+  - m_Id: 2434849230401568
     m_Localized: '{count} selected'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306120
-  - m_Id: 7228630609953
+      - rid: 4311677712361063242
+  - m_Id: 2434849230401569
     m_Localized: LET'S PLAY!
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306121
-  - m_Id: 7228630609954
+      - rid: 4311677712361063243
+  - m_Id: 2434849230401570
     m_Localized: 'Tap your name to reveal your word,
 
       then pass the device
       to the next player.'
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306122
-  - m_Id: 7228630609955
+      - rid: 4311677712361063244
+  - m_Id: 2434849230401571
     m_Localized: '{revealed}/{total} revealed'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306123
-  - m_Id: 7228630609956
+      - rid: 4311677712361063245
+  - m_Id: 2434849230401572
     m_Localized: Tap to reveal
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306124
-  - m_Id: 7228630609957
+      - rid: 4311677712361063246
+  - m_Id: 2434849230401573
     m_Localized: Make sure nobody else sees the screen
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306125
-  - m_Id: 7228630609958
+      - rid: 4311677712361063247
+  - m_Id: 2434849230401574
     m_Localized: Player {current}/{total}
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306126
-  - m_Id: 7228630609959
+      - rid: 4311677712361063248
+  - m_Id: 2434849230401575
     m_Localized: 'Category: {category}'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306127
-  - m_Id: 7228630609960
+      - rid: 4311677712361063249
+  - m_Id: 2434849230401576
     m_Localized: Impostor
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306128
-  - m_Id: 7228630609961
+      - rid: 4311677712361063250
+  - m_Id: 2434849230401577
     m_Localized: 'Hint: {hint}'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306129
-  - m_Id: 7228630609962
+      - rid: 4311677712361063251
+  - m_Id: 2434849230401578
     m_Localized: Next player
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306130
-  - m_Id: 7228630609963
+      - rid: 4311677712361063252
+  - m_Id: 2434849230401579
     m_Localized: Change word
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306131
-  - m_Id: 7228630609964
+      - rid: 4311677712361063253
+  - m_Id: 2434849230401580
     m_Localized: No word is currently loaded.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306132
-  - m_Id: 7228630609965
+      - rid: 4311677712361063254
+  - m_Id: 2434849230401581
     m_Localized: '{word} does not have a description yet.'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306133
-  - m_Id: 7228630609966
+      - rid: 4311677712361063255
+  - m_Id: 2434849230401582
     m_Localized: Discussion
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306134
-  - m_Id: 7228630609967
+      - rid: 4311677712361063256
+  - m_Id: 2434849230401583
     m_Localized: '{player} starts the round'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306135
-  - m_Id: 7228630609968
+      - rid: 4311677712361063257
+  - m_Id: 2434849230401584
     m_Localized: Starting Player
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306136
-  - m_Id: 7228630609969
+      - rid: 4311677712361063258
+  - m_Id: 2434849230401585
     m_Localized: Who Is the Impostor?
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306137
-  - m_Id: 7228630609970
+      - rid: 4311677712361063259
+  - m_Id: 2434849230401586
     m_Localized: Ask questions, make reckless accusations, and figure out who is
       lying. Reveal the result when you are ready.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306138
-  - m_Id: 7228630609971
+      - rid: 4311677712361063260
+  - m_Id: 2434849230401587
     m_Localized: Reveal Result
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306139
-  - m_Id: 7228630609972
+      - rid: 4311677712361063261
+  - m_Id: 2434849230401588
     m_Localized: Reveal
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306140
-  - m_Id: 7228630609973
+      - rid: 4311677712361063262
+  - m_Id: 2434849230401589
     m_Localized: 'Impostors:'
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306141
-  - m_Id: 7228630609974
+      - rid: 4311677712361063263
+  - m_Id: 2434849230401590
     m_Localized: 'Secret word:'
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306142
-  - m_Id: 7228630609975
+      - rid: 4311677712361063264
+  - m_Id: 2434849230401591
     m_Localized: Play Again
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306143
-  - m_Id: 7228630609976
+      - rid: 4311677712361063265
+  - m_Id: 2434849230401592
     m_Localized: Back to Menu
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306144
-  - m_Id: 7228630609977
+      - rid: 4311677712361063266
+  - m_Id: 2434849230401593
     m_Localized: Close
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306145
-  - m_Id: 7228630609978
+      - rid: 4311677712361063267
+  - m_Id: 2434849230401594
     m_Localized: WordDatabase is not assigned in the Inspector.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306146
-  - m_Id: 7228630609979
+      - rid: 4311677712361063268
+  - m_Id: 2434849230401595
     m_Localized: The game settings are missing.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306147
-  - m_Id: 7228630609980
+      - rid: 4311677712361063269
+  - m_Id: 2434849230401596
     m_Localized: You need at least 3 players.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306148
-  - m_Id: 7228630609981
+      - rid: 4311677712361063270
+  - m_Id: 2434849230401597
     m_Localized: Enable at least one category.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306149
-  - m_Id: 7228630609982
+      - rid: 4311677712361063271
+  - m_Id: 2434849230401598
     m_Localized: Choose at least 1 impostor.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306150
-  - m_Id: 7228630609983
+      - rid: 4311677712361063272
+  - m_Id: 2434849230401599
     m_Localized: There must be fewer impostors than players.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306151
-  - m_Id: 7228630609984
+      - rid: 4311677712361063273
+  - m_Id: 2434849230401600
     m_Localized: The game has not started yet.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306152
-  - m_Id: 7228630609985
+      - rid: 4311677712361063274
+  - m_Id: 2434849230401601
     m_Localized: The game settings are invalid.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306153
-  - m_Id: 7228630609986
+      - rid: 4311677712361063275
+  - m_Id: 2434849230401602
     m_Localized: No word is selected.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306154
-  - m_Id: 7228630609987
+      - rid: 4311677712361063276
+  - m_Id: 2434849230401603
     m_Localized: No player is selected for reveal.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306155
-  - m_Id: 7228630609988
+      - rid: 4311677712361063277
+  - m_Id: 2434849230401604
     m_Localized: The selected player is invalid.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306156
-  - m_Id: 7228630609989
+      - rid: 4311677712361063278
+  - m_Id: 2434849230401605
     m_Localized: The selected player is not part of this game.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306157
-  - m_Id: 7228630609990
+      - rid: 4311677712361063279
+  - m_Id: 2434849230401606
     m_Localized: The selected player index is invalid.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306158
-  - m_Id: 7228630609991
+      - rid: 4311677712361063280
+  - m_Id: 2434849230401607
     m_Localized: 'Category does not exist: {category}'
     m_Metadata:
       m_Items:
       - rid: 8581773505777632252
-      - rid: 8581773506229306159
-  - m_Id: 7228630609992
+      - rid: 4311677712361063281
+  - m_Id: 2434849230401608
     m_Localized: Could not choose a new word.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306160
-  - m_Id: 7228630609993
+      - rid: 4311677712361063282
+  - m_Id: 2434849230401609
     m_Localized: No enabled category contains any words.
     m_Metadata:
       m_Items:
-      - rid: 8581773506229306161
+      - rid: 4311677712361063283
   references:
     version: 2
     RefIds:
+    - rid: 4311677712361063209
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Marca principal del juego
+    - rid: 4311677712361063210
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n de la pantalla inicial"
+    - rid: 4311677712361063211
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo del men\xFA de configuraci\xF3n"
+    - rid: 4311677712361063212
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Subt\xEDtulo del men\xFA de configuraci\xF3n"
+    - rid: 4311677712361063213
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Acceso a configuraci\xF3n de impostores"
+    - rid: 4311677712361063214
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Resumen de configuraci\xF3n de impostores"
+    - rid: 4311677712361063215
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Acceso a configuraci\xF3n de jugadores"
+    - rid: 4311677712361063216
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Resumen de configuraci\xF3n de jugadores"
+    - rid: 4311677712361063217
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Acceso a selecci\xF3n de categor\xEDas"
+    - rid: 4311677712361063218
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Resumen de categor\xEDas"
+    - rid: 4311677712361063219
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n que inicia la partida"
+    - rid: 4311677712361063220
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para volver al men\xFA"
+    - rid: 4311677712361063221
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para volver a la pantalla anterior"
+    - rid: 4311677712361063222
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para desmarcar todas las opciones"
+    - rid: 4311677712361063223
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para seleccionar todas las opciones"
+    - rid: 4311677712361063224
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n o t\xEDtulo de descripci\xF3n"
+    - rid: 4311677712361063225
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de configuraci\xF3n de impostores"
+    - rid: 4311677712361063226
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Subt\xEDtulo de configuraci\xF3n de impostores"
+    - rid: 4311677712361063227
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta de cantidad de impostores
+    - rid: 4311677712361063228
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Ayuda de cantidad de impostores
+    - rid: 4311677712361063229
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta del interruptor de pistas
+    - rid: 4311677712361063230
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Ayuda del interruptor de pistas
+    - rid: 4311677712361063231
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de configuraci\xF3n de jugadores"
+    - rid: 4311677712361063232
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Subt\xEDtulo de configuraci\xF3n de jugadores"
+    - rid: 4311677712361063233
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta de la lista de jugadores
+    - rid: 4311677712361063234
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Placeholder del campo de nombre
+    - rid: 4311677712361063235
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo cuando no hay jugadores"
+    - rid: 4311677712361063236
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Ayuda cuando no hay jugadores
+    - rid: 4311677712361063237
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta de cambio de palabra
+    - rid: 4311677712361063238
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Ayuda de cambio de palabra
+    - rid: 4311677712361063239
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de selecci\xF3n de categor\xEDas"
+    - rid: 4311677712361063240
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Subt\xEDtulo de selecci\xF3n de categor\xEDas"
+    - rid: 4311677712361063241
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Etiqueta de lista de categor\xEDas"
+    - rid: 4311677712361063242
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Cantidad de categor\xEDas seleccionadas"
+    - rid: 4311677712361063243
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de selecci\xF3n del jugador a revelar"
+    - rid: 4311677712361063244
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Instrucci\xF3n de selecci\xF3n del jugador"
+    - rid: 4311677712361063245
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Contador de jugadores revelados
+    - rid: 4311677712361063246
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Instrucci\xF3n para revelar el rol"
+    - rid: 4311677712361063247
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Advertencia de privacidad al revelar
+    - rid: 4311677712361063248
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Contador del jugador actual
+    - rid: 4311677712361063249
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Categor\xEDa revelada"
+    - rid: 4311677712361063250
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Rol del jugador impostor
+    - rid: 4311677712361063251
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Pista revelada al impostor
+    - rid: 4311677712361063252
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para pasar al siguiente jugador"
+    - rid: 4311677712361063253
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para cambiar la palabra"
+    - rid: 4311677712361063254
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Mensaje si no existe una palabra actual
+    - rid: 4311677712361063255
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Respaldo si una palabra no tiene descripci\xF3n"
+    - rid: 4311677712361063256
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de la pantalla de debate"
+    - rid: 4311677712361063257
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo que indica qui\xE9n comienza la ronda"
+    - rid: 4311677712361063258
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta del jugador que inicia
+    - rid: 4311677712361063259
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de instrucciones del debate"
+    - rid: 4311677712361063260
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Texto de ayuda del debate
+    - rid: 4311677712361063261
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para mostrar los resultados"
+    - rid: 4311677712361063262
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "T\xEDtulo de la pantalla de resultados"
+    - rid: 4311677712361063263
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta de los impostores del resultado
+    - rid: 4311677712361063264
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Etiqueta de la palabra del resultado
+    - rid: 4311677712361063265
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para jugar otra vez"
+    - rid: 4311677712361063266
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para volver al men\xFA"
+    - rid: 4311677712361063267
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Bot\xF3n para cerrar un error"
+    - rid: 4311677712361063268
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: falta WordDatabase'
+    - rid: 4311677712361063269
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: GameSettings nulo'
+    - rid: 4311677712361063270
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: faltan jugadores'
+    - rid: 4311677712361063271
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: no hay categor\xEDas habilitadas"
+    - rid: 4311677712361063272
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: faltan impostores'
+    - rid: 4311677712361063273
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: hay demasiados impostores'
+    - rid: 4311677712361063274
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: la ronda no empez\xF3"
+    - rid: 4311677712361063275
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: configuraci\xF3n inv\xE1lida"
+    - rid: 4311677712361063276
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: no hay palabra seleccionada'
+    - rid: 4311677712361063277
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: no hay jugador para revelar'
+    - rid: 4311677712361063278
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: jugador inv\xE1lido"
+    - rid: 4311677712361063279
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: jugador ajeno a la partida'
+    - rid: 4311677712361063280
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: \xEDndice de jugador inv\xE1lido"
+    - rid: 4311677712361063281
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: categor\xEDa inexistente"
+    - rid: 4311677712361063282
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: 'Error: no se pudo cambiar la palabra'
+    - rid: 4311677712361063283
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "Error: categor\xEDas sin palabras"
     - rid: 8581773505777632252
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
@@ -438,303 +738,11 @@ MonoBehaviour:
         - id: 7228630609965
         - id: 7228630609967
         - id: 7228630609991
-    - rid: 8581773506229306087
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Marca principal del juego
-    - rid: 8581773506229306088
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n de la pantalla inicial"
-    - rid: 8581773506229306089
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo del men\xFA de configuraci\xF3n"
-    - rid: 8581773506229306090
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Subt\xEDtulo del men\xFA de configuraci\xF3n"
-    - rid: 8581773506229306091
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Acceso a configuraci\xF3n de impostores"
-    - rid: 8581773506229306092
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Resumen de configuraci\xF3n de impostores"
-    - rid: 8581773506229306093
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Acceso a configuraci\xF3n de jugadores"
-    - rid: 8581773506229306094
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Resumen de configuraci\xF3n de jugadores"
-    - rid: 8581773506229306095
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Acceso a selecci\xF3n de categor\xEDas"
-    - rid: 8581773506229306096
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Resumen de categor\xEDas"
-    - rid: 8581773506229306097
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n que inicia la partida"
-    - rid: 8581773506229306098
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para volver al men\xFA"
-    - rid: 8581773506229306099
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para volver a la pantalla anterior"
-    - rid: 8581773506229306100
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para desmarcar todas las opciones"
-    - rid: 8581773506229306101
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para seleccionar todas las opciones"
-    - rid: 8581773506229306102
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n o t\xEDtulo de descripci\xF3n"
-    - rid: 8581773506229306103
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de configuraci\xF3n de impostores"
-    - rid: 8581773506229306104
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Subt\xEDtulo de configuraci\xF3n de impostores"
-    - rid: 8581773506229306105
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta de cantidad de impostores
-    - rid: 8581773506229306106
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Ayuda de cantidad de impostores
-    - rid: 8581773506229306107
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta del interruptor de pistas
-    - rid: 8581773506229306108
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Ayuda del interruptor de pistas
-    - rid: 8581773506229306109
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de configuraci\xF3n de jugadores"
-    - rid: 8581773506229306110
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Subt\xEDtulo de configuraci\xF3n de jugadores"
-    - rid: 8581773506229306111
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta de la lista de jugadores
-    - rid: 8581773506229306112
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Placeholder del campo de nombre
-    - rid: 8581773506229306113
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo cuando no hay jugadores"
-    - rid: 8581773506229306114
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Ayuda cuando no hay jugadores
-    - rid: 8581773506229306115
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta de cambio de palabra
-    - rid: 8581773506229306116
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Ayuda de cambio de palabra
-    - rid: 8581773506229306117
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de selecci\xF3n de categor\xEDas"
-    - rid: 8581773506229306118
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Subt\xEDtulo de selecci\xF3n de categor\xEDas"
-    - rid: 8581773506229306119
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Etiqueta de lista de categor\xEDas"
-    - rid: 8581773506229306120
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Cantidad de categor\xEDas seleccionadas"
-    - rid: 8581773506229306121
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de selecci\xF3n del jugador a revelar"
-    - rid: 8581773506229306122
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Instrucci\xF3n de selecci\xF3n del jugador"
-    - rid: 8581773506229306123
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Contador de jugadores revelados
-    - rid: 8581773506229306124
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Instrucci\xF3n para revelar el rol"
-    - rid: 8581773506229306125
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Advertencia de privacidad al revelar
-    - rid: 8581773506229306126
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Contador del jugador actual
-    - rid: 8581773506229306127
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Categor\xEDa revelada"
-    - rid: 8581773506229306128
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Rol del jugador impostor
-    - rid: 8581773506229306129
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Pista revelada al impostor
-    - rid: 8581773506229306130
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para pasar al siguiente jugador"
-    - rid: 8581773506229306131
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para cambiar la palabra"
-    - rid: 8581773506229306132
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Mensaje si no existe una palabra actual
-    - rid: 8581773506229306133
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Respaldo si una palabra no tiene descripci\xF3n"
-    - rid: 8581773506229306134
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de la pantalla de debate"
-    - rid: 8581773506229306135
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo que indica qui\xE9n comienza la ronda"
-    - rid: 8581773506229306136
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta del jugador que inicia
-    - rid: 8581773506229306137
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de instrucciones del debate"
-    - rid: 8581773506229306138
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Texto de ayuda del debate
-    - rid: 8581773506229306139
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para mostrar los resultados"
-    - rid: 8581773506229306140
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "T\xEDtulo de la pantalla de resultados"
-    - rid: 8581773506229306141
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta de los impostores del resultado
-    - rid: 8581773506229306142
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: Etiqueta de la palabra del resultado
-    - rid: 8581773506229306143
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para jugar otra vez"
-    - rid: 8581773506229306144
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para volver al men\xFA"
-    - rid: 8581773506229306145
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Bot\xF3n para cerrar un error"
-    - rid: 8581773506229306146
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: falta WordDatabase'
-    - rid: 8581773506229306147
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: GameSettings nulo'
-    - rid: 8581773506229306148
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: faltan jugadores'
-    - rid: 8581773506229306149
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: no hay categor\xEDas habilitadas"
-    - rid: 8581773506229306150
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: faltan impostores'
-    - rid: 8581773506229306151
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: hay demasiados impostores'
-    - rid: 8581773506229306152
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: la ronda no empez\xF3"
-    - rid: 8581773506229306153
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: configuraci\xF3n inv\xE1lida"
-    - rid: 8581773506229306154
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: no hay palabra seleccionada'
-    - rid: 8581773506229306155
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: no hay jugador para revelar'
-    - rid: 8581773506229306156
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: jugador inv\xE1lido"
-    - rid: 8581773506229306157
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: jugador ajeno a la partida'
-    - rid: 8581773506229306158
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: \xEDndice de jugador inv\xE1lido"
-    - rid: 8581773506229306159
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: categor\xEDa inexistente"
-    - rid: 8581773506229306160
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: 'Error: no se pudo cambiar la palabra'
-    - rid: 8581773506229306161
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: "Error: categor\xEDas sin palabras"
+        - id: 2434849230401568
+        - id: 2434849230401571
+        - id: 2434849230401574
+        - id: 2434849230401575
+        - id: 2434849230401577
+        - id: 2434849230401581
+        - id: 2434849230401583
+        - id: 2434849230401607
