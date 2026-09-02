@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
+using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -284,6 +285,34 @@ public static class LocalizationContentImporter
 
         settings.BuildAddressablesWithPlayerBuild =
             AddressableAssetSettings.PlayerBuildOption.BuildWithPlayer;
+
+        string spanishTablePath =
+            $"{TableFolder}/{GameLocalization.ContentTable}_{GameLocalization.SpanishArgentina}.asset";
+        string spanishTableGuid = AssetDatabase.AssetPathToGUID(spanishTablePath);
+        AddressableAssetEntry spanishEntry = settings.FindAssetEntry(spanishTableGuid);
+        AddressableAssetGroup spanishGroup = spanishEntry?.parentGroup;
+
+        if (spanishGroup == null)
+        {
+            throw new InvalidOperationException(
+                $"The Spanish table at '{spanishTablePath}' is not part of an Addressables group.");
+        }
+
+        BundledAssetGroupSchema schema = spanishGroup.GetSchema<BundledAssetGroupSchema>();
+        if (schema == null)
+        {
+            throw new InvalidOperationException(
+                "The Spanish Addressables group has no BundledAssetGroupSchema.");
+        }
+
+        // Localization owns the group's display name and may restore its localized name.
+        // Use a hash-only runtime filename instead, so the Android bundle path remains ASCII
+        // regardless of the locale/group name (for example, the 'ñ' in "Español").
+        schema.BundleNaming = BundledAssetGroupSchema.BundleNamingStyle.OnlyHash;
+        schema.IncludeInBuild = true;
+
+        EditorUtility.SetDirty(schema);
+        EditorUtility.SetDirty(spanishGroup);
         EditorUtility.SetDirty(settings);
     }
 

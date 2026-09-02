@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: "Localization-String-Tables-Espa\xF1ol (Argentina)"
+  m_Name: Localization-String-Tables-Spanish-Argentina
   m_EditorClassIdentifier: 
   m_GroupName: "Localization-String-Tables-Espa\xF1ol (Argentina)"
-  m_GUID: de1606f7de3e1814dafe72ac10dac130
+  m_GUID: ea91e5152ebac2f4296868847bd1b310
   m_SerializeEntries:
   - m_GUID: 6a371f725f9358942b16c181e1b37ac2
     m_Address: Content_es-AR
