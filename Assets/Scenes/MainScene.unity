@@ -416,10 +416,6 @@ PrefabInstance:
       propertyPath: gameRoundManager
       value: 
       objectReference: {fileID: 581693304}
-    - target: {fileID: 2816043674531605315, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3528693246803638607, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -441,10 +437,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286950686927136457, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638789956942356519, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -526,10 +518,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6973145529708332079, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582032260882775350, guid: 78bf6ea867aa0104197222911dcb2707, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
